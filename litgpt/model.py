@@ -17,7 +17,7 @@ from typing_extensions import Self
 
 from litgpt.config import Config
 from litgpt.scripts.convert_hf_checkpoint import qkv_reassemble
-
+from .chunk import *
 
 class GPT(nn.Module):
     def __init__(self, config: Config) -> None:
@@ -345,7 +345,7 @@ class CausalSelfAttention(nn.Module):
         # output projection
         self.proj = nn.Linear(config.head_size * config.n_head, config.n_embd, bias=config.bias)
         # disabled by default
-        self.kv_cache: Optional[KVCache] = None
+        self.kv_cache: Optional[ChunkManager] = None
         self.apply_sliding_window_attention = False
         if config.sliding_window_size is not None and config.sliding_window_indices is not None:
             self.apply_sliding_window_attention = config.sliding_window_indices[block_idx]
@@ -423,21 +423,19 @@ class CausalSelfAttention(nn.Module):
         q = torch.cat((q_roped, q[..., rope_n_elem:]), dim=-1)  # (B, nh_q, T, hs)
         k = torch.cat((k_roped, k[..., rope_n_elem:]), dim=-1)  # (B, nh_k, T, hs)
 
-        # Apply kv-cache during inference.
-        if input_pos is not None:
-            if not isinstance(self.kv_cache, KVCache):
-                raise TypeError("You need to call `gpt.set_kv_cache()`")
-            k, v = self.kv_cache(input_pos, k, v)
-            if input_pos_maxp1 is not None:
-                # Subselect along sequence dimension
-                k = k[..., :input_pos_maxp1, :]
-                v = v[..., :input_pos_maxp1, :]
-            # k, v: (B, nh_k, input_pos_maxp1, hs)
-            # If input_pos_maxp1 is None -> max_seq_length
+        # if input_pos is not None:
+        #     if not isinstance(self.kv_cache, KVCache):
+        #         raise TypeError("You need to call `gpt.set_kv_cache()`")
+        #     k, v = self.kv_cache(input_pos, k, v)
+        #     if input_pos_maxp1 is not None:
+        #         # Subselect along sequence dimension
+        #         k = k[..., :input_pos_maxp1, :]
+        #         v = v[..., :input_pos_maxp1, :]
 
-        # Grouped queries: balance the number of heads across all three matrices.
-        # NOTE: flash attention requires it in training mode.
-        # Multi-query: this step can be skipped since there is only 1 head, allowing us to use broadcasting.
+        # Actual SDPA starts happening here so we need to do a batched sdpa based on chunks streaming, in this case we want to stream chunks but for now we will do a simple loop
+        
+
+       
         if n_query_groups != n_head and (input_pos is None or n_query_groups != 1):
             q_per_kv = n_head // n_query_groups
             k = k.repeat_interleave(q_per_kv, dim=1)  # (B, nh_q, T, hs)
@@ -466,6 +464,9 @@ class CausalSelfAttention(nn.Module):
         # NOTE: efficient implementation is disabled if `mask` is not None or softcapping is enabled.
         # ↓ (B, nh, T, hs) @ (B, nh, T, hs).mT --> (B, nh, T, T) @ (B, nh, T, hs) --> (B, nh, T, hs)
         y = self.scaled_dot_product_attention(q, k, v, mask)
+
+
+        y = chunked_sdpa(q, self.kv_cache, mask, self.config, input_pos)
 
         # Re-assemble all head outputs side by side.
         y = y.reshape(B, T, head_size * n_head)
@@ -514,7 +515,10 @@ class CausalSelfAttention(nn.Module):
                 max_seq_length,
                 rope_cache_length + self.config.head_size - self.config.rope_n_elem,
             )
-        return KVCache(k_shape, v_shape, device=device, dtype=dtype)
+        
+        # return KVCache(k_shape, v_shape, device=device, dtype=dtype)
+        
+        return ChunkManager(k_shape=k_shape, v_shape=v_shape, device=device, dtype=dtype)
 
     def _load_from_state_dict(self, state_dict: dict, prefix: str, *args: Any, **kwargs: Any) -> None:
         """For compatibility with legacy checkpoints."""
