@@ -7,7 +7,8 @@ build
 dist
 .venv
 .vscode
-
+*.sh
+.env
 # data
 data
 datasets
