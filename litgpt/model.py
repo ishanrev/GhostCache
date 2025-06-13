@@ -18,6 +18,8 @@ from typing_extensions import Self
 from litgpt.config import Config
 from litgpt.scripts.convert_hf_checkpoint import qkv_reassemble
 from .chunk import *
+import chunked_sdpa
+from offload_manager import OffloadManager, offload
 
 class GPT(nn.Module):
     def __init__(self, config: Config) -> None:
@@ -423,14 +425,14 @@ class CausalSelfAttention(nn.Module):
         q = torch.cat((q_roped, q[..., rope_n_elem:]), dim=-1)  # (B, nh_q, T, hs)
         k = torch.cat((k_roped, k[..., rope_n_elem:]), dim=-1)  # (B, nh_k, T, hs)
 
-        # if input_pos is not None:
-        #     if not isinstance(self.kv_cache, KVCache):
-        #         raise TypeError("You need to call `gpt.set_kv_cache()`")
-        #     k, v = self.kv_cache(input_pos, k, v)
-        #     if input_pos_maxp1 is not None:
-        #         # Subselect along sequence dimension
-        #         k = k[..., :input_pos_maxp1, :]
-        #         v = v[..., :input_pos_maxp1, :]
+        if input_pos is not None:
+            if not isinstance(self.kv_cache, KVCache):
+                raise TypeError("You need to call `gpt.set_kv_cache()`")
+            k, v = self.kv_cache(input_pos, k, v)
+            if input_pos_maxp1 is not None:
+                # Subselect along sequence dimension
+                k = k[..., :input_pos_maxp1, :]
+                v = v[..., :input_pos_maxp1, :]
 
         # Actual SDPA starts happening here so we need to do a batched sdpa based on chunks streaming, in this case we want to stream chunks but for now we will do a simple loop
         
@@ -464,10 +466,7 @@ class CausalSelfAttention(nn.Module):
         # NOTE: efficient implementation is disabled if `mask` is not None or softcapping is enabled.
         # ↓ (B, nh, T, hs) @ (B, nh, T, hs).mT --> (B, nh, T, T) @ (B, nh, T, hs) --> (B, nh, T, hs)
         y = self.scaled_dot_product_attention(q, k, v, mask)
-
-
-        y = chunked_sdpa(q, self.kv_cache, mask, self.config, input_pos)
-
+        
         # Re-assemble all head outputs side by side.
         y = y.reshape(B, T, head_size * n_head)
 
@@ -490,9 +489,11 @@ class CausalSelfAttention(nn.Module):
             scores = F.softmax(scores, dim=-1, dtype=torch.float).to(dtype=q.dtype)
             y = scores @ v
         else:
-            y = F.scaled_dot_product_attention(
-                q, k, v, attn_mask=mask, dropout_p=0.0, scale=scale, is_causal=mask is None
-            )
+            # y = F.scaled_dot_product_attention(
+            #     q, k, v, attn_mask=mask, dropout_p=0.0, scale=scale, is_causal=mask is None
+            # )
+            
+            y, weights = chunked_sdpa.chunked_sdpa(q, k, v, mask, 0.0, mask is None, None, None, False)
         return y.transpose(1, 2)
 
     def build_kv_cache(
@@ -516,9 +517,9 @@ class CausalSelfAttention(nn.Module):
                 rope_cache_length + self.config.head_size - self.config.rope_n_elem,
             )
         
-        # return KVCache(k_shape, v_shape, device=device, dtype=dtype)
+        return KVCache(k_shape, v_shape, device=device, dtype=dtype)
         
-        return ChunkManager(k_shape=k_shape, v_shape=v_shape, device=device, dtype=dtype)
+        # return ChunkManager(k_shape=k_shape, v_shape=v_shape, device=device, dtype=dtype)
 
     def _load_from_state_dict(self, state_dict: dict, prefix: str, *args: Any, **kwargs: Any) -> None:
         """For compatibility with legacy checkpoints."""
@@ -794,6 +795,8 @@ class KVCache(nn.Module):
         super().__init__()
         self.register_buffer("k", torch.zeros(k_shape, device=device, dtype=dtype), persistent=False)
         self.register_buffer("v", torch.zeros(v_shape, device=device, dtype=dtype), persistent=False)
+        self.tokens_stored = torch.tensor(0, device = device, dtype = torch.int32)
+        self.offload_manager = OffloadManager()
 
     def forward(self, input_pos: torch.Tensor, k: torch.Tensor, v: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         """
@@ -817,9 +820,18 @@ class KVCache(nn.Module):
         if self.v.dtype != v.dtype:
             self.v = self.v.to(v.dtype)
         # update the cache
+        
+        # Condition for offloading. For now I am adding a basic condition of more than half the max_tokens then I start offloading it.
+        
+        if self.tokens_stored > 250:
+            offload_refernce = offload(k, v, input_pos )
+            self.offload_manager.add_reference(offload_refernce)
+        
         bs = k.size(0)
         k = batched_index_copy_(self.k[:bs, ...], -2, input_pos, k)
         v = batched_index_copy_(self.v[:bs, ...], -2, input_pos, v)
+        
+        self.tokens_stored.add_(k.shape[-2])
         return k, v
 
     def reset_parameters(self) -> None:

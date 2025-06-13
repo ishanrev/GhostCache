@@ -1,0 +1,32 @@
+import torch
+
+# Simple setup
+T, hd = 10, 128
+q = torch.rand(1, hd, dtype=torch.float32)
+k = torch.rand(T, hd, dtype=torch.float32)
+v = torch.rand(T, hd, dtype=torch.float32)
+
+# Torch SDPA reference
+reference = torch.nn.functional.scaled_dot_product_attention(
+    q.unsqueeze(0),  # [1, 1, hd]
+    k.unsqueeze(0),  # [1, T, hd]
+    v.unsqueeze(0),  # [1, T, hd]
+    is_causal=False
+).squeeze(0)  # shape: [1, hd]
+
+# Manual LSE softmax SDPA
+scale = 1 / torch.sqrt(torch.tensor(hd, dtype=q.dtype))
+z = (q @ k.T) * scale                     # [1, T]
+m = z.max()
+numerator = torch.exp(z - m)             # [1, T]
+denominator = numerator.sum()            # scalar
+softmax_weights = numerator / denominator  # [1, T]
+manual_output = softmax_weights @ v      # [1, hd]
+
+# Final squeeze and compare
+manual_output = manual_output.squeeze(0)
+reference = reference.squeeze(0)
+
+print("Shapes match:", manual_output.shape == reference.shape)
+print("Max absolute difference:", (manual_output - reference).abs().max().item())
+print("Allclose:", torch.allclose(manual_output, reference, atol=1e-5, rtol=1e-5))

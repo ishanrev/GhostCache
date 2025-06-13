@@ -43,7 +43,7 @@ class ChunkManager(nn.Module):
         else:
           location = "cuda"
         
-        if len(self.chunks) == 0: # Prefill section
+        if len(self.chunks) == 0: # Prefill sectiong
           
           T = k.shape[-2]
           num_chunks = (T // self.max_chunk_size) + 1
@@ -172,26 +172,3 @@ class Chunk:
     v = self.batched_index_copy_(self.v[:bs, ...], -2, self.filled, v)
     self.filled = self.filled + 1
     
-def chunked_sdpa(q, chunk_manager: ChunkManager, mask: torch.Tensor, config, input_pos: torch.Tensor):
-  # raw attention scores need to be in the form of B, nh, T, hd
-  
-  head_size = config.head_size
-  n_head = config.n_head
-  n_query_groups = config.n_query_groups
-  B, nh_q, T, hs = q.shape
-  y = torch.tensor(q.shape, device = q.device, dtype = torch.dtype)
-  scale = 1.0 / math.sqrt(chunk_manager.config.attention_scores_scalar or chunk_manager.config.head_size)
-
-  for i in range(len(chunk_manager.chunks)):
-    chunk = chunk_manager.chunks[i]
-    
-    if n_query_groups != n_head and (input_pos is None or n_query_groups != 1):
-        q_per_kv = n_head // n_query_groups
-        k = k.repeat_interleave(q_per_kv, dim=1)  # (B, nh_q, T, hs)
-        v = v.repeat_interleave(q_per_kv, dim=1)  # (B, nh_q, T, hs)
-        
-        temp_y = F.scaled_dot_product_attention(
-            q, chunk.k_buffer, chunk.v_buffer, attn_mask=mask, dropout_p=0.0, scale=scale, is_causal=mask is None
-        )
-
-  return y.transpose(1,2)
