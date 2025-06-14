@@ -72,7 +72,7 @@ std::tuple<at::Tensor, at::Tensor> pre_process_group_query_attention_input(
 }
 
 
-std::tuple<at::Tensor, at::Tensor> chunked_sdpa(
+std::tuple<at::Tensor, at::Tensor> normal_sdpa(
         const at::Tensor& query_, const at::Tensor& key, const at::Tensor& value,
         const std::optional<at::Tensor>& attn_mask_, double dropout_p, bool is_causal,
         const std::optional<at::Tensor>& dropout_mask, std::optional<double> scale, bool enable_gqa) {
@@ -140,6 +140,8 @@ std::tuple<at::Tensor, at::Tensor> chunked_sdpa(
     return std::make_tuple(at::matmul(attn, value_expanded).to(origin_dtype), attn.to(origin_dtype));
 }
 
-PYBIND11_MODULE(chunked_sdpa, m){
-    m.def("chunked_sdpa", &chunked_sdpa, "Chunked SDPA");
+
+
+PYBIND11_MODULE(normal_sdpa, m){
+    m.def("normal_sdpa", &normal_sdpa, "Normal SDPA");
 }

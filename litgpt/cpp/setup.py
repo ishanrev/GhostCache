@@ -5,14 +5,20 @@ setup(
     name='GhostCache',
     version='0.1.0',
     ext_modules=[
+        # CppExtension(
+        #     name='offload_manager',
+        #     sources=['offload_manager.cpp'],
+        #     extra_compile_args=['-O3'],  # optional optimization flag
+        # ),
         CppExtension(
-            name='offload_manager',
-            sources=['offload_manager.cpp'],
+            name='ghost',
+            # sources=["offload_manager.cpp", "async.cpp"],
+            sources = ["offload_manager.cpp", "async.cpp", "chunked_sdpa.cpp", "ghost.cpp"],
             extra_compile_args=['-O3'],  # optional optimization flag
         ),
         CppExtension(
-            name='chunked_sdpa',
-            sources=['chunked_sdpa.cpp'],
+            name='normal_sdpa',
+            sources=['normal_sdpa.cpp'],
             extra_compile_args=['-O3'],  # optional optimization flag
         ),
         

@@ -11,27 +11,13 @@
 #include <ATen/TensorOperators.h>
 #include <pybind11/pybind11.h>
 
-#ifdef offload_manager
-#undef offload_manager
-#endif
+#include "offload_manager.h"
+#include <list>
+
 
 namespace py = pybind11;
 
-enum class StorageType { RAM, DISK, NVME_CACHE, REMOTE };
 
-struct LazyTensorReference {
-  StorageType location;
-  std::optional<std::pair<torch::Tensor, torch::Tensor>> in_memory;
-  at::ScalarType dtype;
-  // int64_t last_access;
-};
-
-struct OffloadedKVTensor {
-  LazyTensorReference ref;
-  // size_t token_id;
-  torch::Tensor token_num;
-
-};
 
 OffloadedKVTensor offload(torch::Tensor k, torch::Tensor v, torch::Tensor token_number){
     // Offloading logic here that will actally be based on a lot  of cahcing strategies and everything hopefully fingers crossed basically - essentially
@@ -48,7 +34,6 @@ OffloadedKVTensor offload(torch::Tensor k, torch::Tensor v, torch::Tensor token_
         k = k.cpu();
         v = v.cpu();
         LazyTensorReference reference = LazyTensorReference {
-          .location = kv_location,
           .in_memory = std::pair{
             k,v
           },
@@ -57,48 +42,51 @@ OffloadedKVTensor offload(torch::Tensor k, torch::Tensor v, torch::Tensor token_
         
         off_tensor = OffloadedKVTensor{
           
+          .location = kv_location,
           .ref = reference,
           .token_num = token_number
 
         };
+        break;
     }
 
     return off_tensor;
 
 }
 
-class OffloadManager{
-  public:
+// defining the OffloadManager class
 
-  OffloadManager(
-     
-  ){
+OffloadManager::OffloadManager() {
     reference_count_ = torch::zeros(1);
-  }
-
-  void add_reference(LazyTensorReference ref){
+}
+void OffloadManager::add_reference(const OffloadedKVTensor& ref) {
     offload_references_.push_back(ref);
-    reference_count_.add_(1);
-  }
-  
-  private:
-  
-  std::list<LazyTensorReference> offload_references_;
-  torch::Tensor reference_count_;
+    reference_count_ += 1;
+}
+
+torch::Tensor OffloadManager::get_reference_count() const {
+    return reference_count_;
+}
+
+std::list<OffloadedKVTensor> OffloadManager::get_reference_list() const {
+    return offload_references_;
+}
 
 
-};
 
+// Binding function
+void bind_offload_manager(pybind11::module_& m){
 
-
-
-PYBIND11_MODULE(TORCH_EXTENSION_NAME, m){
 
   py::class_<LazyTensorReference>(m, "LazyTensorReference")
-        .def(py::init<>())  // default constructor
-        .def_readwrite("location", &LazyTensorReference::location)
-        .def_readwrite("in_memory", &LazyTensorReference::in_memory)
+        .def(py::init<>()).def_readwrite("in_memory", &LazyTensorReference::in_memory)
         .def_readwrite("dtype", &LazyTensorReference::dtype);
+
+  py::class_<OffloadedKVTensor>(m, "OffloadedKVTensor")
+        .def(py::init<>())  // default constructor
+        .def_readwrite("location", &OffloadedKVTensor::location)
+        .def_readwrite("ref", &OffloadedKVTensor::ref)
+        .def_readwrite("token_num", &OffloadedKVTensor::token_num);
 
   py::class_<OffloadManager>(m, "OffloadManager")
       .def(py::init<>())
