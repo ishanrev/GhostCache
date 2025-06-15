@@ -121,9 +121,9 @@ std::tuple<at::Tensor, at::Tensor, at::Tensor> chunked_sdpa(
     }
 
     // Custom chunking mechanisms.
-    auto local_max = attn.max();
+    auto [local_max, indices] = attn.max(-1, true);
     auto exp_attn = torch::exp(attn-local_max);
-    auto local_sum = exp_attn.sum();
+    auto local_sum = exp_attn.sum(-1, true);
     auto local_output = at::matmul(exp_attn, value_expanded).to(origin_dtype);
 
     

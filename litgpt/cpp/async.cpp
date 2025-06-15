@@ -82,7 +82,7 @@ torch::Tensor streamed_sdpa(OffloadManager& manager,
         );
     }
 
-    auto final_output = (numerator/denominator).squeeze(0);
+    auto final_output = (numerator/denominator);
 
 
     return final_output;  
