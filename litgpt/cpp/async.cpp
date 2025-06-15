@@ -71,8 +71,7 @@ torch::Tensor streamed_sdpa(OffloadManager& manager,
 
         auto [off_key, off_value] = retrieve(offloaded_tensor);
         // TODO: off_key and off_value  tensor shape checks to ensure everything is running smoothly
-
-
+  
         // Here my assumption are that is_causal will probably be false, scale is chill it dont matter, neither does enable_gqa and dropout p is also chill. I just need to focus on the mask eralistically
         auto [local_max, local_output, local_sum] = chunked_sdpa(
             query_, off_key, off_value, attn_mask_,  dropout_p,  is_causal, dropout_mask, scale,  enable_gqa

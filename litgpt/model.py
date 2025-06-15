@@ -17,9 +17,8 @@ from typing_extensions import Self
 
 from litgpt.config import Config
 from litgpt.scripts.convert_hf_checkpoint import qkv_reassemble
-from .chunk import *
-import chunked_sdpa
-from offload_manager import OffloadManager, offload
+from ghost import OffloadManager, offload, streamed_sdpa
+from normal_sdpa import normal_sdpa
 
 class GPT(nn.Module):
     def __init__(self, config: Config) -> None:
@@ -428,20 +427,34 @@ class CausalSelfAttention(nn.Module):
         if input_pos is not None:
             if not isinstance(self.kv_cache, KVCache):
                 raise TypeError("You need to call `gpt.set_kv_cache()`")
-            k, v = self.kv_cache(input_pos, k, v)
-            if input_pos_maxp1 is not None:
-                # Subselect along sequence dimension
-                k = k[..., :input_pos_maxp1, :]
-                v = v[..., :input_pos_maxp1, :]
+            
+            
+            if input_pos_maxp1<50:
+                k, v = self.kv_cache(input_pos, k, v)
+                if input_pos_maxp1 is not None:
+                    # Subselect along sequence dimension
+                    k = k[..., :input_pos_maxp1, :]
+                    v = v[..., :input_pos_maxp1, :]
+            else:
+                offload_manager = self.kv_cache.offload_manager
+                off_t = offload(k, v, input_pos)
+                offload_manager.add_reference(off_t)
+                k = self.kv_cache.k[..., :50, :]
+                v = self.kv_cache.v[..., :50, :]
 
         # Actual SDPA starts happening here so we need to do a batched sdpa based on chunks streaming, in this case we want to stream chunks but for now we will do a simple loop
         
-
+        # Just for debugging purposes for now atleast.
+        assert input_pos_maxp1 is not None, "For debugging streamed sdpa, input_pos_maxp1 cannot be null"
+        
+        
        
+        # Its fine both functions internally take care of any gqa computations
         if n_query_groups != n_head and (input_pos is None or n_query_groups != 1):
-            q_per_kv = n_head // n_query_groups
-            k = k.repeat_interleave(q_per_kv, dim=1)  # (B, nh_q, T, hs)
-            v = v.repeat_interleave(q_per_kv, dim=1)  # (B, nh_q, T, hs)
+            enable_gqa = True            
+        #     q_per_kv = n_head // n_query_groups
+        #     k = k.repeat_interleave(q_per_kv, dim=1)  # (B, nh_q, T, hs)
+        #     v = v.repeat_interleave(q_per_kv, dim=1)  # (B, nh_q, T, hs)
 
         if self.apply_sliding_window_attention:
             """
@@ -465,7 +478,7 @@ class CausalSelfAttention(nn.Module):
         # Efficient attention using Flash Attention CUDA kernels.
         # NOTE: efficient implementation is disabled if `mask` is not None or softcapping is enabled.
         # ↓ (B, nh, T, hs) @ (B, nh, T, hs).mT --> (B, nh, T, T) @ (B, nh, T, hs) --> (B, nh, T, hs)
-        y = self.scaled_dot_product_attention(q, k, v, mask)
+        y = self.scaled_dot_product_attention(q, k, v, mask, enable_gqa)
         
         # Re-assemble all head outputs side by side.
         y = y.reshape(B, T, head_size * n_head)
@@ -474,7 +487,7 @@ class CausalSelfAttention(nn.Module):
         return self.proj(y)  # (B, T, C)
 
     def scaled_dot_product_attention(
-        self, q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, mask: Optional[torch.Tensor] = None
+        self, q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, mask: Optional[torch.Tensor] = None, enable_gqa = None
     ) -> torch.Tensor:
         scale = 1.0 / math.sqrt(self.config.attention_scores_scalar or self.config.head_size)
 
@@ -492,8 +505,12 @@ class CausalSelfAttention(nn.Module):
             # y = F.scaled_dot_product_attention(
             #     q, k, v, attn_mask=mask, dropout_p=0.0, scale=scale, is_causal=mask is None
             # )
-            
-            y, weights = chunked_sdpa.chunked_sdpa(q, k, v, mask, 0.0, mask is None, None, None, False)
+            print(q.shape, k.shape, v.shape)
+            y = streamed_sdpa(
+                    self.kv_cache.offload_manager, q, k, v,
+                    None, 0.0, mask is None, None, None, enable_gqa
+                )
+            # y, weights = normal_sdpa(q, k, v, mask, 0.0, mask is None, None, None, False)
         return y.transpose(1, 2)
 
     def build_kv_cache(
@@ -823,10 +840,7 @@ class KVCache(nn.Module):
         
         # Condition for offloading. For now I am adding a basic condition of more than half the max_tokens then I start offloading it.
         
-        if self.tokens_stored > 250:
-            offload_refernce = offload(k, v, input_pos )
-            self.offload_manager.add_reference(offload_refernce)
-        
+       
         bs = k.size(0)
         k = batched_index_copy_(self.k[:bs, ...], -2, input_pos, k)
         v = batched_index_copy_(self.v[:bs, ...], -2, input_pos, v)

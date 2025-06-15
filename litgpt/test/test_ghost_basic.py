@@ -1,83 +1,87 @@
 import torch
 from torch.nn.functional import scaled_dot_product_attention
 from ghost import OffloadManager, offload, streamed_sdpa
-from normal_sdpa import normal_sdpa
-def test_streamed_sdpa_chunked_flow():
+
+def test_streamed_sdpa_with_static_prefix():
     """
-    Simulates a 3-step autoregressive decode where:
-      - Each step's (K, V) pair is passed as the 'in-memory' chunk to streamed_sdpa.
-      - All *previous* KV pairs are offloaded and managed by OffloadManager.
-      - Verifies streamed_sdpa matches torch's standard SDPA at each step.
+    Simulates a 5-step autoregressive decode with:
+      - Prefix KV cache maintained up to 'threshold', then kept static for streamed_sdpa.
+      - Normal SDPA uses a dynamic KV cache that grows each step.
+      - Compares streamed_sdpa (with static prefix + offload manager) against standard SDPA.
+      - Reports a final allclose check and max absolute difference.
     """
     torch.manual_seed(0)
     device = "cuda"
-    B, H, D = 3, 2, 8  # Batch, Heads, Head dimension
+    B, H, D = 2, 2, 8
+    total_steps = 200
+    threshold = 3  # number of tokens to keep in in-memory prefix
 
     manager = OffloadManager()
-    all_kv = []  # To keep track of all (key, value) pairs for baseline
+    prefix_k, prefix_v = [], []
+    normal_k, normal_v = [], []
+    last_out_stream = None
+    last_out_normal = None
 
-    for step in range(3):
+    for step in range(total_steps):
         print(f"\n--- Decode Step {step + 1} ---")
 
-        # Simulate current step's model outputs
+        # Simulate model outputs
         query = torch.randn(B, H, 1, D, device=device)
         key   = torch.randn(B, H, 1, D, device=device)
         value = torch.randn(B, H, 1, D, device=device)
 
-        # Offload all *previous* KV pairs into the manager
-        if step > 0:
-            prev_k, prev_v = all_kv[-1]
-            off_tensor = offload(prev_k, prev_v, torch.tensor([step - 1], device=device))
+        # Append to normal cache every step
+        normal_k.append(key)
+        normal_v.append(value)
+
+        # Build or freeze prefix cache
+        if step < threshold:
+            prefix_k.append(key)
+            prefix_v.append(value)
+
+        # After threshold, offload new KV pairs only to manager
+        if step >= threshold:
+            off_tensor = offload(key, value, torch.tensor([step], device=device))
             manager.add_reference(off_tensor)
 
-        # Run chunked/streamed SDPA
-        if False:
-         [ out_stream, bruh] = normal_sdpa(
-              query,
-              key,           # acts as the "in-RAM" starter chunk
-              value,
-              None,          # no attention mask
-              0.0,           # dropout probability
-              False,         # not causal for simplicity
-              None,          # no dropout mask
-              None,          # no custom scale
-              False          # disable GQA
-        )
-        else:
-          
-          out_stream = streamed_sdpa(
-              manager,
-              query,
-              key,           # acts as the "in-RAM" starter chunk
-              value,
-              None,          # no attention mask
-              0.0,           # dropout probability
-              False,         # not causal for simplicity
-              None,          # no dropout mask
-              None,          # no custom scale
-              False          # disable GQA
-          )
+        # Prepare inputs
+        # For streamed: static prefix + offloaded in manager
+        k_prefix = torch.cat(prefix_k, dim=2)
+        v_prefix = torch.cat(prefix_v, dim=2)
 
-        print(out_stream.shape)
-        # Baseline SDPA over all tokens so far (including current)
-        all_kv.append((key, value))
-        k_stack = torch.cat([kv[0] for kv in all_kv], dim=2)
-        v_stack = torch.cat([kv[1] for kv in all_kv], dim=2)
-        out_baseline = scaled_dot_product_attention(
+        # Run streamed SDPA workflow
+        out_stream = streamed_sdpa(
+            manager,
+            query,
+            k_prefix,
+            v_prefix,
+            None, 0.0, False, None, None, False
+        )
+
+        # Run standard SDPA workflow on full dynamic cache
+        k_stack = torch.cat(normal_k, dim=2)
+        v_stack = torch.cat(normal_v, dim=2)
+        out_normal = scaled_dot_product_attention(
             query, k_stack, v_stack,
-            attn_mask=None,
-            dropout_p=0.0,
-            is_causal=False
+            attn_mask=None, dropout_p=0.0, is_causal=False
         )
 
-        # Verify outputs match
+        # Store last outputs
+        last_out_stream = out_stream
+        last_out_normal = out_normal
+
+        # Verify step-by-step
         try:
-            torch.testing.assert_allclose(out_stream, out_baseline, atol=1e-6, rtol=1e-5)
+            torch.testing.assert_allclose(out_stream, out_normal, atol=1e-6, rtol=1e-5)
             print(f"Step {step + 1}: PASS")
         except AssertionError as e:
             print(f"Step {step + 1}: FAIL\n{e}")
 
-    print("\nAll steps matched between streamed_sdpa and standard SDPA.")
+    # Final overall comparison
+    max_diff = (last_out_stream - last_out_normal).abs().max().item()
+    allclose = torch.allclose(last_out_stream, last_out_normal, atol=1e-6, rtol=1e-5)
+    print(f"\nFinal allclose: {allclose}")
+    print(f"Final max absolute difference: {max_diff}")
 
 if __name__ == "__main__":
-    test_streamed_sdpa_chunked_flow()
+    test_streamed_sdpa_with_static_prefix()
