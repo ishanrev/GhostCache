@@ -1,6 +1,6 @@
 import torch
 from torch.nn.functional import scaled_dot_product_attention
-from ghost import OffloadManager, offload, streamed_sdpa
+from ghost import OffloadManager, offload, streamed_sdpa_cuda
 
 def test_streamed_sdpa_with_static_prefix():
     """
@@ -12,11 +12,11 @@ def test_streamed_sdpa_with_static_prefix():
     """
     torch.manual_seed(0)
     device = "cuda"
-    B, H, D = 2, 2, 8
-    total_steps = 200
+    B, H, D = 7, 4, 8
+    total_steps = 100
     threshold = 3  # number of tokens to keep in in-memory prefix
 
-    manager = OffloadManager()
+    manager = OffloadManager(B, H, D, torch.float32, 30, 30)
     prefix_k, prefix_v = [], []
     normal_k, normal_v = [], []
     last_out_stream = None
@@ -26,9 +26,9 @@ def test_streamed_sdpa_with_static_prefix():
         print(f"\n--- Decode Step {step + 1} ---")
 
         # Simulate model outputs
-        query = torch.randn(B, H, 1, D, device=device)
-        key   = torch.randn(B, H, 1, D, device=device)
-        value = torch.randn(B, H, 1, D, device=device)
+        query = torch.randn(B, H, 1, D, dtype = torch.float32, device=device)
+        key   = torch.randn(B, H, 1, D, dtype = torch.float32, device=device)
+        value = torch.randn(B, H, 1, D, dtype = torch.float32, device=device)
 
         # Append to normal cache every step
         normal_k.append(key)
@@ -41,8 +41,7 @@ def test_streamed_sdpa_with_static_prefix():
 
         # After threshold, offload new KV pairs only to manager
         if step >= threshold:
-            off_tensor = offload(key, value, torch.tensor([step], device=device))
-            manager.add_reference(off_tensor)
+            offload(manager, key, value, torch.tensor([step], device=device))
 
         # Prepare inputs
         # For streamed: static prefix + offloaded in manager
@@ -50,7 +49,7 @@ def test_streamed_sdpa_with_static_prefix():
         v_prefix = torch.cat(prefix_v, dim=2)
 
         # Run streamed SDPA workflow
-        out_stream = streamed_sdpa(
+        out_stream = streamed_sdpa_cuda(
             manager,
             query,
             k_prefix,

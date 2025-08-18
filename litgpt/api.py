@@ -506,21 +506,26 @@ class LLM(torch.nn.Module):
             )
         input_ids = self._text_to_token_ids(prompt, sys_prompt)
         prompt_length = input_ids.size(0)
+        # max_returned_tokens = prompt_length + max_new_tokens
         max_returned_tokens = prompt_length + max_new_tokens
+        
+        print(f"I reach this funciton {prompt_length}")
+        
 
         if not self.kv_cache_initialized:
             if self.fabric is not None:
                 device = self.fabric.device
             else:
                 device = self.preprocessor.device
-            self.model.set_kv_cache(batch_size=1, max_seq_length=max_returned_tokens, device=device)
+            print(device)
+            self.model.set_kv_cache(batch_size=1,prompt_length=prompt_length, max_seq_length=max_returned_tokens, device=device)
             self.kv_cache_initialized = True
 
         # Dynamically grow the kv cache size if necessary
         if not self.fixed_kv_cache_size and self.prev_generated_seq_length < max_returned_tokens:
             tmp_device = self.model.mask_cache.device
             self.model.clear_kv_cache()
-            self.model.set_kv_cache(batch_size=1, max_seq_length=max_returned_tokens, device=tmp_device)
+            self.model.set_kv_cache(batch_size=1,prompt_length=prompt_length, max_seq_length=max_returned_tokens, device=tmp_device)
 
         else:
             for block in self.model.transformer.h:
@@ -586,6 +591,7 @@ class LLM(torch.nn.Module):
         for i in range(num_iterations):
             time_to_first_token = None
             t0 = time.perf_counter()
+            print(f"starting iteration {i}")
             outputs = self.generate(**kwargs)
 
             if kwargs.get("stream", False):
@@ -612,6 +618,7 @@ class LLM(torch.nn.Module):
                 benchmark_dict.setdefault("Total GPU memory allocated in GB", []).append(
                     torch.cuda.max_memory_allocated() / 1e9
                 )
+            print(f"done with iteration {i}")
 
         return outputs, benchmark_dict
 

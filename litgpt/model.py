@@ -17,7 +17,7 @@ from typing_extensions import Self
 
 from litgpt.config import Config
 from litgpt.scripts.convert_hf_checkpoint import qkv_reassemble
-from ghost import OffloadManager, offload, streamed_sdpa
+from ghost import OffloadManager, offload, streamed_sdpa_cuda
 from normal_sdpa import normal_sdpa
 
 class GPT(nn.Module):
@@ -161,7 +161,7 @@ class GPT(nn.Module):
                     x,
                     cos[..., self.config.rope_indices[block_idx]],
                     sin[..., self.config.rope_indices[block_idx]],
-                    mask,
+                    mask, 
                     input_pos,
                     input_pos_maxp1,
                 )
@@ -224,6 +224,7 @@ class GPT(nn.Module):
     def set_kv_cache(
         self,
         batch_size: int,
+        prompt_length:int,
         max_seq_length: Optional[int] = None,
         rope_cache_length: Optional[int] = None,
         device: Optional[torch.device] = None,
@@ -243,6 +244,7 @@ class GPT(nn.Module):
             block.attn.kv_cache = block.attn.build_kv_cache(
                 batch_size,
                 max_seq_length,
+                prompt_length,
                 rope_cache_length,
                 device,
                 dtype,
@@ -385,11 +387,9 @@ class CausalSelfAttention(nn.Module):
         n_query_groups = self.config.n_query_groups
         rope_n_elem = self.config.rope_n_elem
         B, T, C = x.size()  # batch size, sequence length, embedding dimensionality (n_embd)
-
         # Perform a single multiplication operation using a combined QKV matrix to calculate `query`, `key`, and `value`
         # instead of individually multiplying the input `x` with the respective weight matrices.
         qkv = self.qkv(x)  # (B, T, 3xC*)
-
         # Define query, key and value sizes.
         # If grouped/multi query is enabled, these sizes are not equal (see the diagram in `lit_gpt/config.py::Config`).
         query_size = n_head * head_size
@@ -428,33 +428,48 @@ class CausalSelfAttention(nn.Module):
             if not isinstance(self.kv_cache, KVCache):
                 raise TypeError("You need to call `gpt.set_kv_cache()`")
             
-            
-            if input_pos_maxp1<50:
+            # print("THis is the input position", input_pos)
+            # if input_pos_maxp1<50:
+            print(T)
+            if T>1:
                 k, v = self.kv_cache(input_pos, k, v)
-                if input_pos_maxp1 is not None:
-                    # Subselect along sequence dimension
-                    k = k[..., :input_pos_maxp1, :]
-                    v = v[..., :input_pos_maxp1, :]
+           
+                print("Memory before Offload Manager initialization", torch.cuda.memory_allocated() / 1024**2, "MB")
+                self.kv_cache.offload_manager = OffloadManager(B, n_head, n_query_groups, head_size, k.dtype, 50, 100)
+                print("Memory after Offload Manager initialization", torch.cuda.memory_allocated() / 1024**2, "MB")
+                
+                # if input_pos_maxp1 is not None:
+                #     # Subselect along sequence dimension
+                #     k = k[..., :input_pos_maxp1, :]
+                #     v = v[..., :input_pos_maxp1, :]
             else:
                 offload_manager = self.kv_cache.offload_manager
-                off_t = offload(k, v, input_pos)
-                offload_manager.add_reference(off_t)
-                k = self.kv_cache.k[..., :50, :]
-                v = self.kv_cache.v[..., :50, :]
+                
+                print("Memory before offload ", torch.cuda.memory_allocated() / 1024**2, "MB")
+                offload(offload_manager, k, v, input_pos)
+                print("Memory after offload ", torch.cuda.memory_allocated() / 1024**2, "MB")
+                
+
+                
+                # off_t = offload(k, v, input_pos)
+                # offload_manager.add_reference(off_t)
+                # k = self.kv_cache.k[..., :50, :]
+                # v = self.kv_cache.v[..., :50, :]
 
         # Actual SDPA starts happening here so we need to do a batched sdpa based on chunks streaming, in this case we want to stream chunks but for now we will do a simple loop
         
         # Just for debugging purposes for now atleast.
-        assert input_pos_maxp1 is not None, "For debugging streamed sdpa, input_pos_maxp1 cannot be null"
+        # assert input_pos_maxp1 is not None, "For debugging streamed sdpa, input_pos_maxp1 cannot be null"
         
         
        
         # Its fine both functions internally take care of any gqa computations
         if n_query_groups != n_head and (input_pos is None or n_query_groups != 1):
-            enable_gqa = True            
-        #     q_per_kv = n_head // n_query_groups
-        #     k = k.repeat_interleave(q_per_kv, dim=1)  # (B, nh_q, T, hs)
-        #     v = v.repeat_interleave(q_per_kv, dim=1)  # (B, nh_q, T, hs)
+            enable_gqa = True
+            # if T>1:            
+            q_per_kv = n_head // n_query_groups
+            k = k.repeat_interleave(q_per_kv, dim=1)  # (B, nh_q, T, hs)
+            v = v.repeat_interleave(q_per_kv, dim=1)  # (B, nh_q, T, hs)
 
         if self.apply_sliding_window_attention:
             """
@@ -478,8 +493,16 @@ class CausalSelfAttention(nn.Module):
         # Efficient attention using Flash Attention CUDA kernels.
         # NOTE: efficient implementation is disabled if `mask` is not None or softcapping is enabled.
         # ↓ (B, nh, T, hs) @ (B, nh, T, hs).mT --> (B, nh, T, T) @ (B, nh, T, hs) --> (B, nh, T, hs)
-        y = self.scaled_dot_product_attention(q, k, v, mask, enable_gqa)
-        
+        if T>1:
+            
+            y = self.scaled_dot_product_attention(q, k, v, mask, enable_gqa, prefill = True)
+        else:
+            # print(self.kv_cache.v)
+            # q_per_kv = n_head // n_query_groups
+            k_fix = self.kv_cache.k
+            v_fix = self.kv_cache.v
+            y = self.scaled_dot_product_attention(q, k_fix, v_fix, mask, enable_gqa, prefill = False)
+            
         # Re-assemble all head outputs side by side.
         y = y.reshape(B, T, head_size * n_head)
 
@@ -487,7 +510,7 @@ class CausalSelfAttention(nn.Module):
         return self.proj(y)  # (B, T, C)
 
     def scaled_dot_product_attention(
-        self, q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, mask: Optional[torch.Tensor] = None, enable_gqa = None
+        self, q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, mask: Optional[torch.Tensor] = None, enable_gqa = None, prefill = False
     ) -> torch.Tensor:
         scale = 1.0 / math.sqrt(self.config.attention_scores_scalar or self.config.head_size)
 
@@ -502,14 +525,20 @@ class CausalSelfAttention(nn.Module):
             scores = F.softmax(scores, dim=-1, dtype=torch.float).to(dtype=q.dtype)
             y = scores @ v
         else:
-            # y = F.scaled_dot_product_attention(
-            #     q, k, v, attn_mask=mask, dropout_p=0.0, scale=scale, is_causal=mask is None
-            # )
-            print(q.shape, k.shape, v.shape)
-            y = streamed_sdpa(
-                    self.kv_cache.offload_manager, q, k, v,
-                    None, 0.0, mask is None, None, None, enable_gqa
+            if prefill:
+                # print(str(mask.shape))
+                y = F.scaled_dot_product_attention(
+                    q, k, v, attn_mask=mask, dropout_p=0.0, scale=scale, is_causal= mask is None, enable_gqa = enable_gqa
                 )
+            else:
+            
+                print("Memory before cuda sdpa", torch.cuda.memory_allocated() / 1024**2, "MB")
+                y = streamed_sdpa_cuda(
+                        self.kv_cache.offload_manager, q, k, v,
+                        None, 0.0, False, None, None, enable_gqa
+                    )
+                print("Memory after cuda sdpa", torch.cuda.memory_allocated() / 1024**2, "MB")
+                
             # y, weights = normal_sdpa(q, k, v, mask, 0.0, mask is None, None, None, False)
         return y.transpose(1, 2)
 
@@ -517,11 +546,13 @@ class CausalSelfAttention(nn.Module):
         self,
         batch_size: int,
         max_seq_length: int,
+        prompt_length: int,
         rope_cache_length: Optional[int] = None,
         device: Optional[torch.device] = None,
         dtype: Optional[torch.dtype] = None,
     ) -> "KVCache":
-        v_shape = (batch_size, self.config.n_query_groups, max_seq_length, self.config.head_size)
+        self.prompt_length = prompt_length
+        v_shape = (batch_size, self.config.n_query_groups, prompt_length, self.config.head_size)
         if rope_cache_length is None:
             if self.config.rotary_percentage != 1.0:
                 raise TypeError("Please pass the `rope_cache_length=gpt.cos.size(-1)` value")
@@ -530,11 +561,11 @@ class CausalSelfAttention(nn.Module):
             k_shape = (
                 batch_size,
                 self.config.n_query_groups,
-                max_seq_length,
+                prompt_length,
                 rope_cache_length + self.config.head_size - self.config.rope_n_elem,
             )
         
-        return KVCache(k_shape, v_shape, device=device, dtype=dtype)
+        return KVCache(k_shape, v_shape, self.config.n_head, device=device, dtype=dtype)
         
         # return ChunkManager(k_shape=k_shape, v_shape=v_shape, device=device, dtype=dtype)
 
@@ -806,14 +837,16 @@ class KVCache(nn.Module):
         self,
         k_shape: Tuple[int, int, int, int],
         v_shape: Tuple[int, int, int, int],
+        n_head: int, 
         device: Optional[torch.device] = None,
         dtype: Optional[torch.dtype] = None,
     ) -> None:
         super().__init__()
+        B, H, M, D = k_shape
         self.register_buffer("k", torch.zeros(k_shape, device=device, dtype=dtype), persistent=False)
         self.register_buffer("v", torch.zeros(v_shape, device=device, dtype=dtype), persistent=False)
         self.tokens_stored = torch.tensor(0, device = device, dtype = torch.int32)
-        self.offload_manager = OffloadManager()
+        
 
     def forward(self, input_pos: torch.Tensor, k: torch.Tensor, v: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         """

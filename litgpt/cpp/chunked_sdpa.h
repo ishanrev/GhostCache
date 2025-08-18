@@ -28,9 +28,14 @@ std::tuple<at::Tensor, at::Tensor> pre_process_group_query_attention_input(
     const at::Tensor& value,
     const bool enable_gqa) ;
 
-std::tuple<at::Tensor, at::Tensor, at::Tensor> chunked_sdpa(
-        const at::Tensor& query_, const at::Tensor& key, const at::Tensor& value,
-        const std::optional<at::Tensor>& attn_mask_, double dropout_p, bool is_causal,
-        const std::optional<at::Tensor>& dropout_mask, std::optional<double> scale, bool enable_gqa);
+// std::tuple<at::Tensor, at::Tensor, at::Tensor> chunked_sdpa(
+//         const at::Tensor& query_, const at::Tensor& key, const at::Tensor& value,
+//         const std::optional<at::Tensor>& attn_mask_, double dropout_p, bool is_causal,
+//         const std::optional<at::Tensor>& dropout_mask, std::optional<double> scale, bool enable_gqa);
 
 
+void chunked_sdpa(
+    const at::Tensor& query_, const at::Tensor& key, const at::Tensor& value,
+    const std::optional<at::Tensor>& attn_mask_, double dropout_p, bool is_causal,
+    const std::optional<at::Tensor>& dropout_mask, std::optional<double> scale, bool enable_gqa,
+    at::Tensor& local_max, at::Tensor& local_output, at::Tensor& local_sum, int T);

@@ -14,22 +14,33 @@
 #include <pybind11/pybind11.h>
 //Local imports
 #include "offload_manager.h"
+#include <cuda_runtime.h>
+#include <ATen/cuda/CUDAContext.h> // gives you at::cuda::CUDAStream
+#include <ATen/cuda/CUDAEvent.h>
+
 // A lot of the operations are static so I dont really need a class based appraoch right I dont 
 // right I dont really want to update state or anything. can we this is happening in vram 
 //  so it still shouldnt be a problem
-std::tuple<torch::Tensor, torch::Tensor, torch::Tensor> combine(
+void combine(
 
     torch::Tensor local_max, 
     torch::Tensor local_output, 
     torch::Tensor local_sum, 
-    torch::Tensor numerator, 
-    torch::Tensor denominator,
-    torch::Tensor global_max
+    const at::Tensor& numerator, 
+    const at::Tensor& denominator,
+    const at::Tensor& global_max,
+    int T
+  
+  );
 
-);
 
+// torch::Tensor streamed_sdpa(OffloadManager& manager,
+//     const at::Tensor& query_, const at::Tensor& key, const at::Tensor& value,
+//     const std::optional<at::Tensor>& attn_mask_, double dropout_p, bool is_causal,
+//     const std::optional<at::Tensor>& dropout_mask, std::optional<double> scale, bool enable_gqa);
 
-torch::Tensor streamed_sdpa(OffloadManager& manager,
+    
+torch::Tensor streamed_sdpa_cuda(OffloadManager& manager,
     const at::Tensor& query_, const at::Tensor& key, const at::Tensor& value,
     const std::optional<at::Tensor>& attn_mask_, double dropout_p, bool is_causal,
     const std::optional<at::Tensor>& dropout_mask, std::optional<double> scale, bool enable_gqa);

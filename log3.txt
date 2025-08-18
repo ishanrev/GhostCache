@@ -1,0 +1,3809 @@
+starting iteration 0
+I reach this funciton 32
+cuda:0
+Yes I use this function ----------------------------------
+32
+Memory before Offload Manager initialization 15337.92041015625 MB
+Memory after Offload Manager initialization 15338.32861328125 MB
+32
+Memory before Offload Manager initialization 15338.51611328125 MB
+Memory after Offload Manager initialization 15338.92431640625 MB
+32
+Memory before Offload Manager initialization 15339.11181640625 MB
+Memory after Offload Manager initialization 15339.52001953125 MB
+32
+Memory before Offload Manager initialization 15339.70751953125 MB
+Memory after Offload Manager initialization 15340.11572265625 MB
+32
+Memory before Offload Manager initialization 15340.30322265625 MB
+Memory after Offload Manager initialization 15340.71142578125 MB
+32
+Memory before Offload Manager initialization 15340.89892578125 MB
+Memory after Offload Manager initialization 15341.30712890625 MB
+32
+Memory before Offload Manager initialization 15341.49462890625 MB
+Memory after Offload Manager initialization 15341.90283203125 MB
+32
+Memory before Offload Manager initialization 15342.09033203125 MB
+Memory after Offload Manager initialization 15342.49853515625 MB
+32
+Memory before Offload Manager initialization 15342.68603515625 MB
+Memory after Offload Manager initialization 15343.09423828125 MB
+32
+Memory before Offload Manager initialization 15343.28173828125 MB
+Memory after Offload Manager initialization 15343.68994140625 MB
+32
+Memory before Offload Manager initialization 15343.87744140625 MB
+Memory after Offload Manager initialization 15344.28564453125 MB
+32
+Memory before Offload Manager initialization 15344.47314453125 MB
+Memory after Offload Manager initialization 15344.88134765625 MB
+32
+Memory before Offload Manager initialization 15345.06884765625 MB
+Memory after Offload Manager initialization 15345.47705078125 MB
+32
+Memory before Offload Manager initialization 15345.66455078125 MB
+Memory after Offload Manager initialization 15346.07275390625 MB
+32
+Memory before Offload Manager initialization 15346.26025390625 MB
+Memory after Offload Manager initialization 15346.66845703125 MB
+32
+Memory before Offload Manager initialization 15346.85595703125 MB
+Memory after Offload Manager initialization 15347.26416015625 MB
+32
+Memory before Offload Manager initialization 15347.45166015625 MB
+Memory after Offload Manager initialization 15347.85986328125 MB
+32
+Memory before Offload Manager initialization 15348.04736328125 MB
+Memory after Offload Manager initialization 15348.45556640625 MB
+32
+Memory before Offload Manager initialization 15348.64306640625 MB
+Memory after Offload Manager initialization 15349.05126953125 MB
+32
+Memory before Offload Manager initialization 15349.23876953125 MB
+Memory after Offload Manager initialization 15349.64697265625 MB
+32
+Memory before Offload Manager initialization 15349.83447265625 MB
+Memory after Offload Manager initialization 15350.24267578125 MB
+32
+Memory before Offload Manager initialization 15350.43017578125 MB
+Memory after Offload Manager initialization 15350.83837890625 MB
+32
+Memory before Offload Manager initialization 15351.02587890625 MB
+Memory after Offload Manager initialization 15351.43408203125 MB
+32
+Memory before Offload Manager initialization 15351.62158203125 MB
+Memory after Offload Manager initialization 15352.02978515625 MB
+32
+Memory before Offload Manager initialization 15352.21728515625 MB
+Memory after Offload Manager initialization 15352.62548828125 MB
+32
+Memory before Offload Manager initialization 15352.81298828125 MB
+Memory after Offload Manager initialization 15353.22119140625 MB
+32
+Memory before Offload Manager initialization 15353.40869140625 MB
+Memory after Offload Manager initialization 15353.81689453125 MB
+32
+Memory before Offload Manager initialization 15354.00439453125 MB
+Memory after Offload Manager initialization 15354.41259765625 MB
+32
+Memory before Offload Manager initialization 15354.60009765625 MB
+Memory after Offload Manager initialization 15355.00830078125 MB
+32
+Memory before Offload Manager initialization 15355.19580078125 MB
+Memory after Offload Manager initialization 15355.60400390625 MB
+32
+Memory before Offload Manager initialization 15355.79150390625 MB
+Memory after Offload Manager initialization 15356.19970703125 MB
+32
+Memory before Offload Manager initialization 15356.38720703125 MB
+Memory after Offload Manager initialization 15356.79541015625 MB
+1
+Memory after offload  15355.76416015625 MB
+Memory spike after cuda sdpa 15363.91064453125 MB
+1
+Memory after offload  15363.88916015625 MB
+Memory spike after cuda sdpa 15372.03564453125 MB
+1
+Memory after offload  15372.01416015625 MB
+Memory spike after cuda sdpa 15380.16064453125 MB
+1
+Memory after offload  15380.13916015625 MB
+Memory spike after cuda sdpa 15388.28564453125 MB
+1
+Memory after offload  15388.26416015625 MB
+Memory spike after cuda sdpa 15396.41064453125 MB
+1
+Memory after offload  15396.38916015625 MB
+Memory spike after cuda sdpa 15404.53564453125 MB
+1
+Memory after offload  15404.51416015625 MB
+Memory spike after cuda sdpa 15412.66064453125 MB
+1
+Memory after offload  15412.63916015625 MB
+Memory spike after cuda sdpa 15420.78564453125 MB
+1
+Memory after offload  15420.76416015625 MB
+Memory spike after cuda sdpa 15428.91064453125 MB
+1
+Memory after offload  15428.88916015625 MB
+Memory spike after cuda sdpa 15437.03564453125 MB
+1
+Memory after offload  15437.01416015625 MB
+Memory spike after cuda sdpa 15445.16064453125 MB
+1
+Memory after offload  15445.13916015625 MB
+Memory spike after cuda sdpa 15453.28564453125 MB
+1
+Memory after offload  15453.26416015625 MB
+Memory spike after cuda sdpa 15461.41064453125 MB
+1
+Memory after offload  15461.38916015625 MB
+Memory spike after cuda sdpa 15469.53564453125 MB
+1
+Memory after offload  15469.51416015625 MB
+Memory spike after cuda sdpa 15477.66064453125 MB
+1
+Memory after offload  15477.63916015625 MB
+Memory spike after cuda sdpa 15485.78564453125 MB
+1
+Memory after offload  15485.76416015625 MB
+Memory spike after cuda sdpa 15493.91064453125 MB
+1
+Memory after offload  15493.88916015625 MB
+Memory spike after cuda sdpa 15502.03564453125 MB
+1
+Memory after offload  15502.01416015625 MB
+Memory spike after cuda sdpa 15510.16064453125 MB
+1
+Memory after offload  15510.13916015625 MB
+Memory spike after cuda sdpa 15518.28564453125 MB
+1
+Memory after offload  15518.26416015625 MB
+Memory spike after cuda sdpa 15526.41064453125 MB
+1
+Memory after offload  15526.38916015625 MB
+Memory spike after cuda sdpa 15534.53564453125 MB
+1
+Memory after offload  15534.51416015625 MB
+Memory spike after cuda sdpa 15542.66064453125 MB
+1
+Memory after offload  15542.63916015625 MB
+Memory spike after cuda sdpa 15550.78564453125 MB
+1
+Memory after offload  15550.76416015625 MB
+Memory spike after cuda sdpa 15558.91064453125 MB
+1
+Memory after offload  15558.88916015625 MB
+Memory spike after cuda sdpa 15567.03564453125 MB
+1
+Memory after offload  15567.01416015625 MB
+Memory spike after cuda sdpa 15575.16064453125 MB
+1
+Memory after offload  15575.13916015625 MB
+Memory spike after cuda sdpa 15583.28564453125 MB
+1
+Memory after offload  15583.26416015625 MB
+Memory spike after cuda sdpa 15591.41064453125 MB
+1
+Memory after offload  15591.38916015625 MB
+Memory spike after cuda sdpa 15599.53564453125 MB
+1
+Memory after offload  15599.51416015625 MB
+Memory spike after cuda sdpa 15607.66064453125 MB
+1
+Memory after offload  15607.63916015625 MB
+Memory spike after cuda sdpa 15615.78564453125 MB
+1
+Memory after offload  15615.7646484375 MB
+Memory spike after cuda sdpa 15623.9111328125 MB
+1
+Memory after offload  15623.8896484375 MB
+Memory spike after cuda sdpa 15632.0361328125 MB
+1
+Memory after offload  15632.0146484375 MB
+Memory spike after cuda sdpa 15640.1611328125 MB
+1
+Memory after offload  15640.1396484375 MB
+Memory spike after cuda sdpa 15648.2861328125 MB
+1
+Memory after offload  15648.2646484375 MB
+Memory spike after cuda sdpa 15656.4111328125 MB
+1
+Memory after offload  15656.3896484375 MB
+Memory spike after cuda sdpa 15664.5361328125 MB
+1
+Memory after offload  15664.5146484375 MB
+Memory spike after cuda sdpa 15672.6611328125 MB
+1
+Memory after offload  15672.6396484375 MB
+Memory spike after cuda sdpa 15680.7861328125 MB
+1
+Memory after offload  15680.7646484375 MB
+Memory spike after cuda sdpa 15688.9111328125 MB
+1
+Memory after offload  15688.8896484375 MB
+Memory spike after cuda sdpa 15697.0361328125 MB
+1
+Memory after offload  15697.0146484375 MB
+Memory spike after cuda sdpa 15705.1611328125 MB
+1
+Memory after offload  15705.1396484375 MB
+Memory spike after cuda sdpa 15713.2861328125 MB
+1
+Memory after offload  15713.2646484375 MB
+Memory spike after cuda sdpa 15721.4111328125 MB
+1
+Memory after offload  15721.3896484375 MB
+Memory spike after cuda sdpa 15729.5361328125 MB
+1
+Memory after offload  15729.5146484375 MB
+Memory spike after cuda sdpa 15737.6611328125 MB
+1
+Memory after offload  15737.6396484375 MB
+Memory spike after cuda sdpa 15745.7861328125 MB
+1
+Memory after offload  15745.7646484375 MB
+Memory spike after cuda sdpa 15753.9111328125 MB
+1
+Memory after offload  15753.8896484375 MB
+Memory spike after cuda sdpa 15762.0361328125 MB
+1
+Memory after offload  15762.0146484375 MB
+Memory spike after cuda sdpa 15770.1611328125 MB
+1
+Memory after offload  15770.1396484375 MB
+Memory spike after cuda sdpa 15778.2861328125 MB
+1
+Memory after offload  15778.2646484375 MB
+Memory spike after cuda sdpa 15786.4111328125 MB
+1
+Memory after offload  15786.3896484375 MB
+Memory spike after cuda sdpa 15794.5361328125 MB
+1
+Memory after offload  15794.5146484375 MB
+Memory spike after cuda sdpa 15802.6611328125 MB
+1
+Memory after offload  15802.6396484375 MB
+Memory spike after cuda sdpa 15810.7861328125 MB
+1
+Memory after offload  15810.7646484375 MB
+Memory spike after cuda sdpa 15818.9111328125 MB
+1
+Memory after offload  15818.8896484375 MB
+Memory spike after cuda sdpa 15827.0361328125 MB
+1
+Memory after offload  15827.0146484375 MB
+Memory spike after cuda sdpa 15835.1611328125 MB
+1
+Memory after offload  15835.1396484375 MB
+Memory spike after cuda sdpa 15843.2861328125 MB
+1
+Memory after offload  15843.2646484375 MB
+Memory spike after cuda sdpa 15851.4111328125 MB
+1
+Memory after offload  15851.3896484375 MB
+Memory spike after cuda sdpa 15859.5361328125 MB
+1
+Memory after offload  15859.5146484375 MB
+Memory spike after cuda sdpa 15867.6611328125 MB
+1
+Memory after offload  15867.6396484375 MB
+Memory spike after cuda sdpa 15875.7861328125 MB
+1
+Memory after offload  15875.76513671875 MB
+Memory spike after cuda sdpa 15883.91162109375 MB
+1
+Memory after offload  15883.89013671875 MB
+Memory spike after cuda sdpa 15892.03662109375 MB
+1
+Memory after offload  15892.01513671875 MB
+Memory spike after cuda sdpa 15900.16162109375 MB
+1
+Memory after offload  15900.14013671875 MB
+Memory spike after cuda sdpa 15908.28662109375 MB
+1
+Memory after offload  15908.26513671875 MB
+Memory spike after cuda sdpa 15916.41162109375 MB
+1
+Memory after offload  15916.39013671875 MB
+Memory spike after cuda sdpa 15924.53662109375 MB
+1
+Memory after offload  15924.51513671875 MB
+Memory spike after cuda sdpa 15932.66162109375 MB
+1
+Memory after offload  15932.64013671875 MB
+Memory spike after cuda sdpa 15940.78662109375 MB
+1
+Memory after offload  15940.76513671875 MB
+Memory spike after cuda sdpa 15948.91162109375 MB
+1
+Memory after offload  15948.89013671875 MB
+Memory spike after cuda sdpa 15957.03662109375 MB
+1
+Memory after offload  15957.01513671875 MB
+Memory spike after cuda sdpa 15965.16162109375 MB
+1
+Memory after offload  15965.14013671875 MB
+Memory spike after cuda sdpa 15973.28662109375 MB
+1
+Memory after offload  15973.26513671875 MB
+Memory spike after cuda sdpa 15981.41162109375 MB
+1
+Memory after offload  15981.39013671875 MB
+Memory spike after cuda sdpa 15989.53662109375 MB
+1
+Memory after offload  15989.51513671875 MB
+Memory spike after cuda sdpa 15997.66162109375 MB
+1
+Memory after offload  15997.64013671875 MB
+Memory spike after cuda sdpa 16005.78662109375 MB
+1
+Memory after offload  16005.76513671875 MB
+Memory spike after cuda sdpa 16013.91162109375 MB
+1
+Memory after offload  16013.89013671875 MB
+Memory spike after cuda sdpa 16022.03662109375 MB
+1
+Memory after offload  16022.01513671875 MB
+Memory spike after cuda sdpa 16030.16162109375 MB
+1
+Memory after offload  16030.14013671875 MB
+Memory spike after cuda sdpa 16038.28662109375 MB
+1
+Memory after offload  16038.26513671875 MB
+Memory spike after cuda sdpa 16046.41162109375 MB
+1
+Memory after offload  16046.39013671875 MB
+Memory spike after cuda sdpa 16054.53662109375 MB
+1
+Memory after offload  16054.51513671875 MB
+Memory spike after cuda sdpa 16062.66162109375 MB
+1
+Memory after offload  16062.64013671875 MB
+Memory spike after cuda sdpa 16070.78662109375 MB
+1
+Memory after offload  16070.76513671875 MB
+Memory spike after cuda sdpa 16078.91162109375 MB
+1
+Memory after offload  16078.89013671875 MB
+Memory spike after cuda sdpa 16087.03662109375 MB
+1
+Memory after offload  16087.01513671875 MB
+Memory spike after cuda sdpa 16095.16162109375 MB
+1
+Memory after offload  16095.14013671875 MB
+Memory spike after cuda sdpa 16103.28662109375 MB
+1
+Memory after offload  16103.26513671875 MB
+Memory spike after cuda sdpa 16111.41162109375 MB
+1
+Memory after offload  16111.39013671875 MB
+Memory spike after cuda sdpa 16119.53662109375 MB
+1
+Memory after offload  16119.51513671875 MB
+Memory spike after cuda sdpa 16127.66162109375 MB
+1
+Memory after offload  16127.64013671875 MB
+Memory spike after cuda sdpa 16135.78662109375 MB
+1
+Memory after offload  16135.765625 MB
+Memory spike after cuda sdpa 16143.912109375 MB
+1
+Memory after offload  16143.890625 MB
+Memory spike after cuda sdpa 16152.037109375 MB
+1
+Memory after offload  16152.015625 MB
+Memory spike after cuda sdpa 16160.162109375 MB
+1
+Memory after offload  16160.140625 MB
+Memory spike after cuda sdpa 16168.287109375 MB
+1
+Memory after offload  16168.265625 MB
+Memory spike after cuda sdpa 16176.412109375 MB
+1
+Memory after offload  16176.390625 MB
+Memory spike after cuda sdpa 16184.537109375 MB
+1
+Memory after offload  16184.515625 MB
+Memory spike after cuda sdpa 16192.662109375 MB
+1
+Memory after offload  16192.640625 MB
+Memory spike after cuda sdpa 16200.787109375 MB
+1
+Memory after offload  16200.765625 MB
+Memory spike after cuda sdpa 16208.912109375 MB
+1
+Memory after offload  16208.890625 MB
+Memory spike after cuda sdpa 16217.037109375 MB
+1
+Memory after offload  16217.015625 MB
+Memory spike after cuda sdpa 16225.162109375 MB
+1
+Memory after offload  16225.140625 MB
+Memory spike after cuda sdpa 16233.287109375 MB
+1
+Memory after offload  16233.265625 MB
+Memory spike after cuda sdpa 16241.412109375 MB
+1
+Memory after offload  16241.390625 MB
+Memory spike after cuda sdpa 16249.537109375 MB
+1
+Memory after offload  16249.515625 MB
+Memory spike after cuda sdpa 16257.662109375 MB
+1
+Memory after offload  16257.640625 MB
+Memory spike after cuda sdpa 16265.787109375 MB
+1
+Memory after offload  16265.765625 MB
+Memory spike after cuda sdpa 16273.912109375 MB
+1
+Memory after offload  16273.890625 MB
+Memory spike after cuda sdpa 16282.037109375 MB
+1
+Memory after offload  16282.015625 MB
+Memory spike after cuda sdpa 16290.162109375 MB
+1
+Memory after offload  16290.140625 MB
+Memory spike after cuda sdpa 16298.287109375 MB
+1
+Memory after offload  16298.265625 MB
+Memory spike after cuda sdpa 16306.412109375 MB
+1
+Memory after offload  16306.390625 MB
+Memory spike after cuda sdpa 16314.537109375 MB
+1
+Memory after offload  16314.515625 MB
+Memory spike after cuda sdpa 16322.662109375 MB
+1
+Memory after offload  16322.640625 MB
+Memory spike after cuda sdpa 16330.787109375 MB
+1
+Memory after offload  16330.765625 MB
+Memory spike after cuda sdpa 16338.912109375 MB
+1
+Memory after offload  16338.890625 MB
+Memory spike after cuda sdpa 16347.037109375 MB
+1
+Memory after offload  16347.015625 MB
+Memory spike after cuda sdpa 16355.162109375 MB
+1
+Memory after offload  16355.140625 MB
+Memory spike after cuda sdpa 16363.287109375 MB
+1
+Memory after offload  16363.265625 MB
+Memory spike after cuda sdpa 16371.412109375 MB
+1
+Memory after offload  16371.390625 MB
+Memory spike after cuda sdpa 16379.537109375 MB
+1
+Memory after offload  16379.515625 MB
+Memory spike after cuda sdpa 16387.662109375 MB
+1
+Memory after offload  16387.640625 MB
+Memory spike after cuda sdpa 16395.787109375 MB
+1
+Memory after offload  16395.76611328125 MB
+Memory spike after cuda sdpa 16403.91259765625 MB
+1
+Memory after offload  16403.89111328125 MB
+Memory spike after cuda sdpa 16412.03759765625 MB
+1
+Memory after offload  16412.01611328125 MB
+Memory spike after cuda sdpa 16420.16259765625 MB
+1
+Memory after offload  16420.14111328125 MB
+Memory spike after cuda sdpa 16428.28759765625 MB
+1
+Memory after offload  16428.26611328125 MB
+Memory spike after cuda sdpa 16436.41259765625 MB
+1
+Memory after offload  16436.39111328125 MB
+Memory spike after cuda sdpa 16444.53759765625 MB
+1
+Memory after offload  16444.51611328125 MB
+Memory spike after cuda sdpa 16452.66259765625 MB
+1
+Memory after offload  16452.64111328125 MB
+Memory spike after cuda sdpa 16460.78759765625 MB
+1
+Memory after offload  16460.76611328125 MB
+Memory spike after cuda sdpa 16468.91259765625 MB
+1
+Memory after offload  16468.89111328125 MB
+Memory spike after cuda sdpa 16477.03759765625 MB
+1
+Memory after offload  16477.01611328125 MB
+Memory spike after cuda sdpa 16485.16259765625 MB
+1
+Memory after offload  16485.14111328125 MB
+Memory spike after cuda sdpa 16493.28759765625 MB
+1
+Memory after offload  16493.26611328125 MB
+Memory spike after cuda sdpa 16501.41259765625 MB
+1
+Memory after offload  16501.39111328125 MB
+Memory spike after cuda sdpa 16509.53759765625 MB
+1
+Memory after offload  16509.51611328125 MB
+Memory spike after cuda sdpa 16517.66259765625 MB
+1
+Memory after offload  16517.64111328125 MB
+Memory spike after cuda sdpa 16525.78759765625 MB
+1
+Memory after offload  16525.76611328125 MB
+Memory spike after cuda sdpa 16533.91259765625 MB
+1
+Memory after offload  16533.89111328125 MB
+Memory spike after cuda sdpa 16542.03759765625 MB
+1
+Memory after offload  16542.01611328125 MB
+Memory spike after cuda sdpa 16550.16259765625 MB
+1
+Memory after offload  16550.14111328125 MB
+Memory spike after cuda sdpa 16558.28759765625 MB
+1
+Memory after offload  16558.26611328125 MB
+Memory spike after cuda sdpa 16566.41259765625 MB
+1
+Memory after offload  16566.39111328125 MB
+Memory spike after cuda sdpa 16574.53759765625 MB
+1
+Memory after offload  16574.51611328125 MB
+Memory spike after cuda sdpa 16582.66259765625 MB
+1
+Memory after offload  16582.64111328125 MB
+Memory spike after cuda sdpa 16590.78759765625 MB
+1
+Memory after offload  16590.76611328125 MB
+Memory spike after cuda sdpa 16598.91259765625 MB
+1
+Memory after offload  16598.89111328125 MB
+Memory spike after cuda sdpa 16607.03759765625 MB
+1
+Memory after offload  16607.01611328125 MB
+Memory spike after cuda sdpa 16615.16259765625 MB
+1
+Memory after offload  16615.14111328125 MB
+Memory spike after cuda sdpa 16623.28759765625 MB
+1
+Memory after offload  16623.26611328125 MB
+Memory spike after cuda sdpa 16631.41259765625 MB
+1
+Memory after offload  16631.39111328125 MB
+Memory spike after cuda sdpa 16639.53759765625 MB
+1
+Memory after offload  16639.51611328125 MB
+Memory spike after cuda sdpa 16647.66259765625 MB
+1
+Memory after offload  16647.64111328125 MB
+Memory spike after cuda sdpa 16655.78759765625 MB
+1
+Memory after offload  16655.7666015625 MB
+Memory spike after cuda sdpa 16663.9130859375 MB
+1
+Memory after offload  16663.8916015625 MB
+Memory spike after cuda sdpa 16672.0380859375 MB
+1
+Memory after offload  16672.0166015625 MB
+Memory spike after cuda sdpa 16680.1630859375 MB
+1
+Memory after offload  16680.1416015625 MB
+Memory spike after cuda sdpa 16688.2880859375 MB
+1
+Memory after offload  16688.2666015625 MB
+Memory spike after cuda sdpa 16696.4130859375 MB
+1
+Memory after offload  16696.3916015625 MB
+Memory spike after cuda sdpa 16704.5380859375 MB
+1
+Memory after offload  16704.5166015625 MB
+Memory spike after cuda sdpa 16712.6630859375 MB
+1
+Memory after offload  16712.6416015625 MB
+Memory spike after cuda sdpa 16720.7880859375 MB
+1
+Memory after offload  16720.7666015625 MB
+Memory spike after cuda sdpa 16728.9130859375 MB
+1
+Memory after offload  16728.8916015625 MB
+Memory spike after cuda sdpa 16737.0380859375 MB
+1
+Memory after offload  16737.0166015625 MB
+Memory spike after cuda sdpa 16745.1630859375 MB
+1
+Memory after offload  16745.1416015625 MB
+Memory spike after cuda sdpa 16753.2880859375 MB
+1
+Memory after offload  16753.2666015625 MB
+Memory spike after cuda sdpa 16761.4130859375 MB
+1
+Memory after offload  16761.3916015625 MB
+Memory spike after cuda sdpa 16769.5380859375 MB
+1
+Memory after offload  16769.5166015625 MB
+Memory spike after cuda sdpa 16777.6630859375 MB
+1
+Memory after offload  16777.6416015625 MB
+Memory spike after cuda sdpa 16785.7880859375 MB
+1
+Memory after offload  16785.7666015625 MB
+Memory spike after cuda sdpa 16793.9130859375 MB
+1
+Memory after offload  16793.8916015625 MB
+Memory spike after cuda sdpa 16802.0380859375 MB
+1
+Memory after offload  16802.0166015625 MB
+Memory spike after cuda sdpa 16810.1630859375 MB
+1
+Memory after offload  16810.1416015625 MB
+Memory spike after cuda sdpa 16818.2880859375 MB
+1
+Memory after offload  16818.2666015625 MB
+Memory spike after cuda sdpa 16826.4130859375 MB
+1
+Memory after offload  16826.3916015625 MB
+Memory spike after cuda sdpa 16834.5380859375 MB
+1
+Memory after offload  16834.5166015625 MB
+Memory spike after cuda sdpa 16842.6630859375 MB
+1
+Memory after offload  16842.6416015625 MB
+Memory spike after cuda sdpa 16850.7880859375 MB
+1
+Memory after offload  16850.7666015625 MB
+Memory spike after cuda sdpa 16858.9130859375 MB
+1
+Memory after offload  16858.8916015625 MB
+Memory spike after cuda sdpa 16867.0380859375 MB
+1
+Memory after offload  16867.0166015625 MB
+Memory spike after cuda sdpa 16875.1630859375 MB
+1
+Memory after offload  16875.1416015625 MB
+Memory spike after cuda sdpa 16883.2880859375 MB
+1
+Memory after offload  16883.2666015625 MB
+Memory spike after cuda sdpa 16891.4130859375 MB
+1
+Memory after offload  16891.3916015625 MB
+Memory spike after cuda sdpa 16899.5380859375 MB
+1
+Memory after offload  16899.5166015625 MB
+Memory spike after cuda sdpa 16907.6630859375 MB
+1
+Memory after offload  16907.6416015625 MB
+Memory spike after cuda sdpa 16915.7880859375 MB
+1
+Memory after offload  16915.76708984375 MB
+Memory spike after cuda sdpa 16923.91357421875 MB
+1
+Memory after offload  16923.89208984375 MB
+Memory spike after cuda sdpa 16932.03857421875 MB
+1
+Memory after offload  16932.01708984375 MB
+Memory spike after cuda sdpa 16940.16357421875 MB
+1
+Memory after offload  16940.14208984375 MB
+Memory spike after cuda sdpa 16948.28857421875 MB
+1
+Memory after offload  16948.26708984375 MB
+Memory spike after cuda sdpa 16956.41357421875 MB
+1
+Memory after offload  16956.39208984375 MB
+Memory spike after cuda sdpa 16964.53857421875 MB
+1
+Memory after offload  16964.51708984375 MB
+Memory spike after cuda sdpa 16972.66357421875 MB
+1
+Memory after offload  16972.64208984375 MB
+Memory spike after cuda sdpa 16980.78857421875 MB
+1
+Memory after offload  16980.76708984375 MB
+Memory spike after cuda sdpa 16988.91357421875 MB
+1
+Memory after offload  16988.89208984375 MB
+Memory spike after cuda sdpa 16997.03857421875 MB
+1
+Memory after offload  16997.01708984375 MB
+Memory spike after cuda sdpa 17005.16357421875 MB
+1
+Memory after offload  17005.14208984375 MB
+Memory spike after cuda sdpa 17013.28857421875 MB
+1
+Memory after offload  17013.26708984375 MB
+Memory spike after cuda sdpa 17021.41357421875 MB
+1
+Memory after offload  17021.39208984375 MB
+Memory spike after cuda sdpa 17029.53857421875 MB
+1
+Memory after offload  17029.51708984375 MB
+Memory spike after cuda sdpa 17037.66357421875 MB
+1
+Memory after offload  17037.64208984375 MB
+Memory spike after cuda sdpa 17045.78857421875 MB
+1
+Memory after offload  17045.76708984375 MB
+Memory spike after cuda sdpa 17053.91357421875 MB
+1
+Memory after offload  17053.89208984375 MB
+Memory spike after cuda sdpa 17062.03857421875 MB
+1
+Memory after offload  17062.01708984375 MB
+Memory spike after cuda sdpa 17070.16357421875 MB
+1
+Memory after offload  17070.14208984375 MB
+Memory spike after cuda sdpa 17078.28857421875 MB
+1
+Memory after offload  17078.26708984375 MB
+Memory spike after cuda sdpa 17086.41357421875 MB
+1
+Memory after offload  17086.39208984375 MB
+Memory spike after cuda sdpa 17094.53857421875 MB
+1
+Memory after offload  17094.51708984375 MB
+Memory spike after cuda sdpa 17102.66357421875 MB
+1
+Memory after offload  17102.64208984375 MB
+Memory spike after cuda sdpa 17110.78857421875 MB
+1
+Memory after offload  17110.76708984375 MB
+Memory spike after cuda sdpa 17118.91357421875 MB
+1
+Memory after offload  17118.89208984375 MB
+Memory spike after cuda sdpa 17127.03857421875 MB
+1
+Memory after offload  17127.01708984375 MB
+Memory spike after cuda sdpa 17135.16357421875 MB
+1
+Memory after offload  17135.14208984375 MB
+Memory spike after cuda sdpa 17143.28857421875 MB
+1
+Memory after offload  17143.26708984375 MB
+Memory spike after cuda sdpa 17151.41357421875 MB
+1
+Memory after offload  17151.39208984375 MB
+Memory spike after cuda sdpa 17159.53857421875 MB
+1
+Memory after offload  17159.51708984375 MB
+Memory spike after cuda sdpa 17167.66357421875 MB
+1
+Memory after offload  17167.64208984375 MB
+Memory spike after cuda sdpa 17175.78857421875 MB
+1
+Memory after offload  17175.767578125 MB
+Memory spike after cuda sdpa 17183.9140625 MB
+1
+Memory after offload  17183.892578125 MB
+Memory spike after cuda sdpa 17192.0390625 MB
+1
+Memory after offload  17192.017578125 MB
+Memory spike after cuda sdpa 17200.1640625 MB
+1
+Memory after offload  17200.142578125 MB
+Memory spike after cuda sdpa 17208.2890625 MB
+1
+Memory after offload  17208.267578125 MB
+Memory spike after cuda sdpa 17216.4140625 MB
+1
+Memory after offload  17216.392578125 MB
+Memory spike after cuda sdpa 17224.5390625 MB
+1
+Memory after offload  17224.517578125 MB
+Memory spike after cuda sdpa 17232.6640625 MB
+1
+Memory after offload  17232.642578125 MB
+Memory spike after cuda sdpa 17240.7890625 MB
+1
+Memory after offload  17240.767578125 MB
+Memory spike after cuda sdpa 17248.9140625 MB
+1
+Memory after offload  17248.892578125 MB
+Memory spike after cuda sdpa 17257.0390625 MB
+1
+Memory after offload  17257.017578125 MB
+Memory spike after cuda sdpa 17265.1640625 MB
+1
+Memory after offload  17265.142578125 MB
+Memory spike after cuda sdpa 17273.2890625 MB
+1
+Memory after offload  17273.267578125 MB
+Memory spike after cuda sdpa 17281.4140625 MB
+1
+Memory after offload  17281.392578125 MB
+Memory spike after cuda sdpa 17289.5390625 MB
+1
+Memory after offload  17289.517578125 MB
+Memory spike after cuda sdpa 17297.6640625 MB
+1
+Memory after offload  17297.642578125 MB
+Memory spike after cuda sdpa 17305.7890625 MB
+1
+Memory after offload  17305.767578125 MB
+Memory spike after cuda sdpa 17313.9140625 MB
+1
+Memory after offload  17313.892578125 MB
+Memory spike after cuda sdpa 17322.0390625 MB
+1
+Memory after offload  17322.017578125 MB
+Memory spike after cuda sdpa 17330.1640625 MB
+1
+Memory after offload  17330.142578125 MB
+Memory spike after cuda sdpa 17338.2890625 MB
+1
+Memory after offload  17338.267578125 MB
+Memory spike after cuda sdpa 17346.4140625 MB
+1
+Memory after offload  17346.392578125 MB
+Memory spike after cuda sdpa 17354.5390625 MB
+1
+Memory after offload  17354.517578125 MB
+Memory spike after cuda sdpa 17362.6640625 MB
+1
+Memory after offload  17362.642578125 MB
+Memory spike after cuda sdpa 17370.7890625 MB
+1
+Memory after offload  17370.767578125 MB
+Memory spike after cuda sdpa 17378.9140625 MB
+1
+Memory after offload  17378.892578125 MB
+Memory spike after cuda sdpa 17387.0390625 MB
+1
+Memory after offload  17387.017578125 MB
+Memory spike after cuda sdpa 17395.1640625 MB
+1
+Memory after offload  17395.142578125 MB
+Memory spike after cuda sdpa 17403.2890625 MB
+1
+Memory after offload  17403.267578125 MB
+Memory spike after cuda sdpa 17411.4140625 MB
+1
+Memory after offload  17411.392578125 MB
+Memory spike after cuda sdpa 17419.5390625 MB
+1
+Memory after offload  17419.517578125 MB
+Memory spike after cuda sdpa 17427.6640625 MB
+1
+Memory after offload  17427.642578125 MB
+Memory spike after cuda sdpa 17435.7890625 MB
+1
+Memory after offload  17435.76806640625 MB
+Memory spike after cuda sdpa 17443.91455078125 MB
+1
+Memory after offload  17443.89306640625 MB
+Memory spike after cuda sdpa 17452.03955078125 MB
+1
+Memory after offload  17452.01806640625 MB
+Memory spike after cuda sdpa 17460.16455078125 MB
+1
+Memory after offload  17460.14306640625 MB
+Memory spike after cuda sdpa 17468.28955078125 MB
+1
+Memory after offload  17468.26806640625 MB
+Memory spike after cuda sdpa 17476.41455078125 MB
+1
+Memory after offload  17476.39306640625 MB
+Memory spike after cuda sdpa 17484.53955078125 MB
+1
+Memory after offload  17484.51806640625 MB
+Memory spike after cuda sdpa 17492.66455078125 MB
+1
+Memory after offload  17492.64306640625 MB
+Memory spike after cuda sdpa 17500.78955078125 MB
+1
+Memory after offload  17500.76806640625 MB
+Memory spike after cuda sdpa 17508.91455078125 MB
+1
+Memory after offload  17508.89306640625 MB
+Memory spike after cuda sdpa 17517.03955078125 MB
+1
+Memory after offload  17517.01806640625 MB
+Memory spike after cuda sdpa 17525.16455078125 MB
+1
+Memory after offload  17525.14306640625 MB
+Memory spike after cuda sdpa 17533.28955078125 MB
+1
+Memory after offload  17533.26806640625 MB
+Memory spike after cuda sdpa 17541.41455078125 MB
+1
+Memory after offload  17541.39306640625 MB
+Memory spike after cuda sdpa 17549.53955078125 MB
+1
+Memory after offload  17549.51806640625 MB
+Memory spike after cuda sdpa 17557.66455078125 MB
+1
+Memory after offload  17557.64306640625 MB
+Memory spike after cuda sdpa 17565.78955078125 MB
+1
+Memory after offload  17565.76806640625 MB
+Memory spike after cuda sdpa 17573.91455078125 MB
+1
+Memory after offload  17573.89306640625 MB
+Memory spike after cuda sdpa 17582.03955078125 MB
+1
+Memory after offload  17582.01806640625 MB
+Memory spike after cuda sdpa 17590.16455078125 MB
+1
+Memory after offload  17590.14306640625 MB
+Memory spike after cuda sdpa 17598.28955078125 MB
+1
+Memory after offload  17598.26806640625 MB
+Memory spike after cuda sdpa 17606.41455078125 MB
+1
+Memory after offload  17606.39306640625 MB
+Memory spike after cuda sdpa 17614.53955078125 MB
+1
+Memory after offload  17614.51806640625 MB
+Memory spike after cuda sdpa 17622.66455078125 MB
+1
+Memory after offload  17622.64306640625 MB
+Memory spike after cuda sdpa 17630.78955078125 MB
+1
+Memory after offload  17630.76806640625 MB
+Memory spike after cuda sdpa 17638.91455078125 MB
+1
+Memory after offload  17638.89306640625 MB
+Memory spike after cuda sdpa 17647.03955078125 MB
+1
+Memory after offload  17647.01806640625 MB
+Memory spike after cuda sdpa 17655.16455078125 MB
+1
+Memory after offload  17655.14306640625 MB
+Memory spike after cuda sdpa 17663.28955078125 MB
+1
+Memory after offload  17663.26806640625 MB
+Memory spike after cuda sdpa 17671.41455078125 MB
+1
+Memory after offload  17671.39306640625 MB
+Memory spike after cuda sdpa 17679.53955078125 MB
+1
+Memory after offload  17679.51806640625 MB
+Memory spike after cuda sdpa 17687.66455078125 MB
+1
+Memory after offload  17687.64306640625 MB
+Memory spike after cuda sdpa 17695.78955078125 MB
+1
+Memory after offload  17695.7685546875 MB
+Memory spike after cuda sdpa 17703.9150390625 MB
+1
+Memory after offload  17703.8935546875 MB
+Memory spike after cuda sdpa 17712.0400390625 MB
+1
+Memory after offload  17712.0185546875 MB
+Memory spike after cuda sdpa 17720.1650390625 MB
+1
+Memory after offload  17720.1435546875 MB
+Memory spike after cuda sdpa 17728.2900390625 MB
+1
+Memory after offload  17728.2685546875 MB
+Memory spike after cuda sdpa 17736.4150390625 MB
+1
+Memory after offload  17736.3935546875 MB
+Memory spike after cuda sdpa 17744.5400390625 MB
+1
+Memory after offload  17744.5185546875 MB
+Memory spike after cuda sdpa 17752.6650390625 MB
+1
+Memory after offload  17752.6435546875 MB
+Memory spike after cuda sdpa 17760.7900390625 MB
+1
+Memory after offload  17760.7685546875 MB
+Memory spike after cuda sdpa 17768.9150390625 MB
+1
+Memory after offload  17768.8935546875 MB
+Memory spike after cuda sdpa 17777.0400390625 MB
+1
+Memory after offload  17777.0185546875 MB
+Memory spike after cuda sdpa 17785.1650390625 MB
+1
+Memory after offload  17785.1435546875 MB
+Memory spike after cuda sdpa 17793.2900390625 MB
+1
+Memory after offload  17793.2685546875 MB
+Memory spike after cuda sdpa 17801.4150390625 MB
+1
+Memory after offload  17801.3935546875 MB
+Memory spike after cuda sdpa 17809.5400390625 MB
+1
+Memory after offload  17809.5185546875 MB
+Memory spike after cuda sdpa 17817.6650390625 MB
+1
+Memory after offload  17817.6435546875 MB
+Memory spike after cuda sdpa 17825.7900390625 MB
+1
+Memory after offload  17825.7685546875 MB
+Memory spike after cuda sdpa 17833.9150390625 MB
+1
+Memory after offload  17833.8935546875 MB
+Memory spike after cuda sdpa 17842.0400390625 MB
+1
+Memory after offload  17842.0185546875 MB
+Memory spike after cuda sdpa 17850.1650390625 MB
+1
+Memory after offload  17850.1435546875 MB
+Memory spike after cuda sdpa 17858.2900390625 MB
+1
+Memory after offload  17858.2685546875 MB
+Memory spike after cuda sdpa 17866.4150390625 MB
+1
+Memory after offload  17866.3935546875 MB
+Memory spike after cuda sdpa 17874.5400390625 MB
+1
+Memory after offload  17874.5185546875 MB
+Memory spike after cuda sdpa 17882.6650390625 MB
+1
+Memory after offload  17882.6435546875 MB
+Memory spike after cuda sdpa 17890.7900390625 MB
+1
+Memory after offload  17890.7685546875 MB
+Memory spike after cuda sdpa 17898.9150390625 MB
+1
+Memory after offload  17898.8935546875 MB
+Memory spike after cuda sdpa 17907.0400390625 MB
+1
+Memory after offload  17907.0185546875 MB
+Memory spike after cuda sdpa 17915.1650390625 MB
+1
+Memory after offload  17915.1435546875 MB
+Memory spike after cuda sdpa 17923.2900390625 MB
+1
+Memory after offload  17923.2685546875 MB
+Memory spike after cuda sdpa 17931.4150390625 MB
+1
+Memory after offload  17931.3935546875 MB
+Memory spike after cuda sdpa 17939.5400390625 MB
+1
+Memory after offload  17939.5185546875 MB
+Memory spike after cuda sdpa 17947.6650390625 MB
+1
+Memory after offload  17947.6435546875 MB
+Memory spike after cuda sdpa 17955.7900390625 MB
+1
+Memory after offload  17955.76904296875 MB
+Memory spike after cuda sdpa 17963.91552734375 MB
+1
+Memory after offload  17963.89404296875 MB
+Memory spike after cuda sdpa 17972.04052734375 MB
+1
+Memory after offload  17972.01904296875 MB
+Memory spike after cuda sdpa 17980.16552734375 MB
+1
+Memory after offload  17980.14404296875 MB
+Memory spike after cuda sdpa 17988.29052734375 MB
+1
+Memory after offload  17988.26904296875 MB
+Memory spike after cuda sdpa 17996.41552734375 MB
+1
+Memory after offload  17996.39404296875 MB
+Memory spike after cuda sdpa 18004.54052734375 MB
+1
+Memory after offload  18004.51904296875 MB
+Memory spike after cuda sdpa 18012.66552734375 MB
+1
+Memory after offload  18012.64404296875 MB
+Memory spike after cuda sdpa 18020.79052734375 MB
+1
+Memory after offload  18020.76904296875 MB
+Memory spike after cuda sdpa 18028.91552734375 MB
+1
+Memory after offload  18028.89404296875 MB
+Memory spike after cuda sdpa 18037.04052734375 MB
+1
+Memory after offload  18037.01904296875 MB
+Memory spike after cuda sdpa 18045.16552734375 MB
+1
+Memory after offload  18045.14404296875 MB
+Memory spike after cuda sdpa 18053.29052734375 MB
+1
+Memory after offload  18053.26904296875 MB
+Memory spike after cuda sdpa 18061.41552734375 MB
+1
+Memory after offload  18061.39404296875 MB
+Memory spike after cuda sdpa 18069.54052734375 MB
+1
+Memory after offload  18069.51904296875 MB
+Memory spike after cuda sdpa 18077.66552734375 MB
+1
+Memory after offload  18077.64404296875 MB
+Memory spike after cuda sdpa 18085.79052734375 MB
+1
+Memory after offload  18085.76904296875 MB
+Memory spike after cuda sdpa 18093.91552734375 MB
+1
+Memory after offload  18093.89404296875 MB
+Memory spike after cuda sdpa 18102.04052734375 MB
+1
+Memory after offload  18102.01904296875 MB
+Memory spike after cuda sdpa 18110.16552734375 MB
+1
+Memory after offload  18110.14404296875 MB
+Memory spike after cuda sdpa 18118.29052734375 MB
+1
+Memory after offload  18118.26904296875 MB
+Memory spike after cuda sdpa 18126.41552734375 MB
+1
+Memory after offload  18126.39404296875 MB
+Memory spike after cuda sdpa 18134.54052734375 MB
+1
+Memory after offload  18134.51904296875 MB
+Memory spike after cuda sdpa 18142.66552734375 MB
+1
+Memory after offload  18142.64404296875 MB
+Memory spike after cuda sdpa 18150.79052734375 MB
+1
+Memory after offload  18150.76904296875 MB
+Memory spike after cuda sdpa 18158.91552734375 MB
+1
+Memory after offload  18158.89404296875 MB
+Memory spike after cuda sdpa 18167.04052734375 MB
+1
+Memory after offload  18167.01904296875 MB
+Memory spike after cuda sdpa 18175.16552734375 MB
+1
+Memory after offload  18175.14404296875 MB
+Memory spike after cuda sdpa 18183.29052734375 MB
+1
+Memory after offload  18183.26904296875 MB
+Memory spike after cuda sdpa 18191.41552734375 MB
+1
+Memory after offload  18191.39404296875 MB
+Memory spike after cuda sdpa 18199.54052734375 MB
+1
+Memory after offload  18199.51904296875 MB
+Memory spike after cuda sdpa 18207.66552734375 MB
+1
+Memory after offload  18207.64404296875 MB
+Memory spike after cuda sdpa 18215.79052734375 MB
+1
+Memory after offload  18215.76953125 MB
+Memory spike after cuda sdpa 18223.916015625 MB
+1
+Memory after offload  18223.89453125 MB
+Memory spike after cuda sdpa 18232.041015625 MB
+1
+Memory after offload  18232.01953125 MB
+Memory spike after cuda sdpa 18240.166015625 MB
+1
+Memory after offload  18240.14453125 MB
+Memory spike after cuda sdpa 18248.291015625 MB
+1
+Memory after offload  18248.26953125 MB
+Memory spike after cuda sdpa 18256.416015625 MB
+1
+Memory after offload  18256.39453125 MB
+Memory spike after cuda sdpa 18264.541015625 MB
+1
+Memory after offload  18264.51953125 MB
+Memory spike after cuda sdpa 18272.666015625 MB
+1
+Memory after offload  18272.64453125 MB
+Memory spike after cuda sdpa 18280.791015625 MB
+1
+Memory after offload  18280.76953125 MB
+Memory spike after cuda sdpa 18288.916015625 MB
+1
+Memory after offload  18288.89453125 MB
+Memory spike after cuda sdpa 18297.041015625 MB
+1
+Memory after offload  18297.01953125 MB
+Memory spike after cuda sdpa 18305.166015625 MB
+1
+Memory after offload  18305.14453125 MB
+Memory spike after cuda sdpa 18313.291015625 MB
+1
+Memory after offload  18313.26953125 MB
+Memory spike after cuda sdpa 18321.416015625 MB
+1
+Memory after offload  18321.39453125 MB
+Memory spike after cuda sdpa 18329.541015625 MB
+1
+Memory after offload  18329.51953125 MB
+Memory spike after cuda sdpa 18337.666015625 MB
+1
+Memory after offload  18337.64453125 MB
+Memory spike after cuda sdpa 18345.791015625 MB
+1
+Memory after offload  18345.76953125 MB
+Memory spike after cuda sdpa 18353.916015625 MB
+1
+Memory after offload  18353.89453125 MB
+Memory spike after cuda sdpa 18362.041015625 MB
+1
+Memory after offload  18362.01953125 MB
+Memory spike after cuda sdpa 18370.166015625 MB
+1
+Memory after offload  18370.14453125 MB
+Memory spike after cuda sdpa 18378.291015625 MB
+1
+Memory after offload  18378.26953125 MB
+Memory spike after cuda sdpa 18386.416015625 MB
+1
+Memory after offload  18386.39453125 MB
+Memory spike after cuda sdpa 18394.541015625 MB
+1
+Memory after offload  18394.51953125 MB
+Memory spike after cuda sdpa 18402.666015625 MB
+1
+Memory after offload  18402.64453125 MB
+Memory spike after cuda sdpa 18410.791015625 MB
+1
+Memory after offload  18410.76953125 MB
+Memory spike after cuda sdpa 18418.916015625 MB
+1
+Memory after offload  18418.89453125 MB
+Memory spike after cuda sdpa 18427.041015625 MB
+1
+Memory after offload  18427.01953125 MB
+Memory spike after cuda sdpa 18435.166015625 MB
+1
+Memory after offload  18435.14453125 MB
+Memory spike after cuda sdpa 18443.291015625 MB
+1
+Memory after offload  18443.26953125 MB
+Memory spike after cuda sdpa 18451.416015625 MB
+1
+Memory after offload  18451.39453125 MB
+Memory spike after cuda sdpa 18459.541015625 MB
+1
+Memory after offload  18459.51953125 MB
+Memory spike after cuda sdpa 18467.666015625 MB
+1
+Memory after offload  18467.64453125 MB
+Memory spike after cuda sdpa 18475.791015625 MB
+1
+Memory after offload  18475.77001953125 MB
+Memory spike after cuda sdpa 18483.91650390625 MB
+1
+Memory after offload  18483.89501953125 MB
+Memory spike after cuda sdpa 18492.04150390625 MB
+1
+Memory after offload  18492.02001953125 MB
+Memory spike after cuda sdpa 18500.16650390625 MB
+1
+Memory after offload  18500.14501953125 MB
+Memory spike after cuda sdpa 18508.29150390625 MB
+1
+Memory after offload  18508.27001953125 MB
+Memory spike after cuda sdpa 18516.41650390625 MB
+1
+Memory after offload  18516.39501953125 MB
+Memory spike after cuda sdpa 18524.54150390625 MB
+1
+Memory after offload  18524.52001953125 MB
+Memory spike after cuda sdpa 18532.66650390625 MB
+1
+Memory after offload  18532.64501953125 MB
+Memory spike after cuda sdpa 18540.79150390625 MB
+1
+Memory after offload  18540.77001953125 MB
+Memory spike after cuda sdpa 18548.91650390625 MB
+1
+Memory after offload  18548.89501953125 MB
+Memory spike after cuda sdpa 18557.04150390625 MB
+1
+Memory after offload  18557.02001953125 MB
+Memory spike after cuda sdpa 18565.16650390625 MB
+1
+Memory after offload  18565.14501953125 MB
+Memory spike after cuda sdpa 18573.29150390625 MB
+1
+Memory after offload  18573.27001953125 MB
+Memory spike after cuda sdpa 18581.41650390625 MB
+1
+Memory after offload  18581.39501953125 MB
+Memory spike after cuda sdpa 18589.54150390625 MB
+1
+Memory after offload  18589.52001953125 MB
+Memory spike after cuda sdpa 18597.66650390625 MB
+1
+Memory after offload  18597.64501953125 MB
+Memory spike after cuda sdpa 18605.79150390625 MB
+1
+Memory after offload  18605.77001953125 MB
+Memory spike after cuda sdpa 18613.91650390625 MB
+1
+Memory after offload  18613.89501953125 MB
+Memory spike after cuda sdpa 18622.04150390625 MB
+1
+Memory after offload  18622.02001953125 MB
+Memory spike after cuda sdpa 18630.16650390625 MB
+1
+Memory after offload  18630.14501953125 MB
+Memory spike after cuda sdpa 18638.29150390625 MB
+1
+Memory after offload  18638.27001953125 MB
+Memory spike after cuda sdpa 18646.41650390625 MB
+1
+Memory after offload  18646.39501953125 MB
+Memory spike after cuda sdpa 18654.54150390625 MB
+1
+Memory after offload  18654.52001953125 MB
+Memory spike after cuda sdpa 18662.66650390625 MB
+1
+Memory after offload  18662.64501953125 MB
+Memory spike after cuda sdpa 18670.79150390625 MB
+1
+Memory after offload  18670.77001953125 MB
+Memory spike after cuda sdpa 18678.91650390625 MB
+1
+Memory after offload  18678.89501953125 MB
+Memory spike after cuda sdpa 18687.04150390625 MB
+1
+Memory after offload  18687.02001953125 MB
+Memory spike after cuda sdpa 18695.16650390625 MB
+1
+Memory after offload  18695.14501953125 MB
+Memory spike after cuda sdpa 18703.29150390625 MB
+1
+Memory after offload  18703.27001953125 MB
+Memory spike after cuda sdpa 18711.41650390625 MB
+1
+Memory after offload  18711.39501953125 MB
+Memory spike after cuda sdpa 18719.54150390625 MB
+1
+Memory after offload  18719.52001953125 MB
+Memory spike after cuda sdpa 18727.66650390625 MB
+1
+Memory after offload  18727.64501953125 MB
+Memory spike after cuda sdpa 18735.79150390625 MB
+1
+Memory after offload  18735.7705078125 MB
+Memory spike after cuda sdpa 18743.9169921875 MB
+1
+Memory after offload  18743.8955078125 MB
+Memory spike after cuda sdpa 18752.0419921875 MB
+1
+Memory after offload  18752.0205078125 MB
+Memory spike after cuda sdpa 18760.1669921875 MB
+1
+Memory after offload  18760.1455078125 MB
+Memory spike after cuda sdpa 18768.2919921875 MB
+1
+Memory after offload  18768.2705078125 MB
+Memory spike after cuda sdpa 18776.4169921875 MB
+1
+Memory after offload  18776.3955078125 MB
+Memory spike after cuda sdpa 18784.5419921875 MB
+1
+Memory after offload  18784.5205078125 MB
+Memory spike after cuda sdpa 18792.6669921875 MB
+1
+Memory after offload  18792.6455078125 MB
+Memory spike after cuda sdpa 18800.7919921875 MB
+1
+Memory after offload  18800.7705078125 MB
+Memory spike after cuda sdpa 18808.9169921875 MB
+1
+Memory after offload  18808.8955078125 MB
+Memory spike after cuda sdpa 18817.0419921875 MB
+1
+Memory after offload  18817.0205078125 MB
+Memory spike after cuda sdpa 18825.1669921875 MB
+1
+Memory after offload  18825.1455078125 MB
+Memory spike after cuda sdpa 18833.2919921875 MB
+1
+Memory after offload  18833.2705078125 MB
+Memory spike after cuda sdpa 18841.4169921875 MB
+1
+Memory after offload  18841.3955078125 MB
+Memory spike after cuda sdpa 18849.5419921875 MB
+1
+Memory after offload  18849.5205078125 MB
+Memory spike after cuda sdpa 18857.6669921875 MB
+1
+Memory after offload  18857.6455078125 MB
+Memory spike after cuda sdpa 18865.7919921875 MB
+1
+Memory after offload  18865.7705078125 MB
+Memory spike after cuda sdpa 18873.9169921875 MB
+1
+Memory after offload  18873.8955078125 MB
+Memory spike after cuda sdpa 18882.0419921875 MB
+1
+Memory after offload  18882.0205078125 MB
+Memory spike after cuda sdpa 18890.1669921875 MB
+1
+Memory after offload  18890.1455078125 MB
+Memory spike after cuda sdpa 18898.2919921875 MB
+1
+Memory after offload  18898.2705078125 MB
+Memory spike after cuda sdpa 18906.4169921875 MB
+1
+Memory after offload  18906.3955078125 MB
+Memory spike after cuda sdpa 18914.5419921875 MB
+1
+Memory after offload  18914.5205078125 MB
+Memory spike after cuda sdpa 18922.6669921875 MB
+1
+Memory after offload  18922.6455078125 MB
+Memory spike after cuda sdpa 18930.7919921875 MB
+1
+Memory after offload  18930.7705078125 MB
+Memory spike after cuda sdpa 18938.9169921875 MB
+1
+Memory after offload  18938.8955078125 MB
+Memory spike after cuda sdpa 18947.0419921875 MB
+1
+Memory after offload  18947.0205078125 MB
+Memory spike after cuda sdpa 18955.1669921875 MB
+1
+Memory after offload  18955.1455078125 MB
+Memory spike after cuda sdpa 18963.2919921875 MB
+1
+Memory after offload  18963.2705078125 MB
+Memory spike after cuda sdpa 18971.4169921875 MB
+1
+Memory after offload  18971.3955078125 MB
+Memory spike after cuda sdpa 18979.5419921875 MB
+1
+Memory after offload  18979.5205078125 MB
+Memory spike after cuda sdpa 18987.6669921875 MB
+1
+Memory after offload  18987.6455078125 MB
+Memory spike after cuda sdpa 18995.7919921875 MB
+1
+Memory after offload  18995.77099609375 MB
+Memory spike after cuda sdpa 19003.91748046875 MB
+1
+Memory after offload  19003.89599609375 MB
+Memory spike after cuda sdpa 19012.04248046875 MB
+1
+Memory after offload  19012.02099609375 MB
+Memory spike after cuda sdpa 19020.16748046875 MB
+1
+Memory after offload  19020.14599609375 MB
+Memory spike after cuda sdpa 19028.29248046875 MB
+1
+Memory after offload  19028.27099609375 MB
+Memory spike after cuda sdpa 19036.41748046875 MB
+1
+Memory after offload  19036.39599609375 MB
+Memory spike after cuda sdpa 19044.54248046875 MB
+1
+Memory after offload  19044.52099609375 MB
+Memory spike after cuda sdpa 19052.66748046875 MB
+1
+Memory after offload  19052.64599609375 MB
+Memory spike after cuda sdpa 19060.79248046875 MB
+1
+Memory after offload  19060.77099609375 MB
+Memory spike after cuda sdpa 19068.91748046875 MB
+1
+Memory after offload  19068.89599609375 MB
+Memory spike after cuda sdpa 19077.04248046875 MB
+1
+Memory after offload  19077.02099609375 MB
+Memory spike after cuda sdpa 19085.16748046875 MB
+1
+Memory after offload  19085.14599609375 MB
+Memory spike after cuda sdpa 19093.29248046875 MB
+1
+Memory after offload  19093.27099609375 MB
+Memory spike after cuda sdpa 19101.41748046875 MB
+1
+Memory after offload  19101.39599609375 MB
+Memory spike after cuda sdpa 19109.54248046875 MB
+1
+Memory after offload  19109.52099609375 MB
+Memory spike after cuda sdpa 19117.66748046875 MB
+1
+Memory after offload  19117.64599609375 MB
+Memory spike after cuda sdpa 19125.79248046875 MB
+1
+Memory after offload  19125.77099609375 MB
+Memory spike after cuda sdpa 19133.91748046875 MB
+1
+Memory after offload  19133.89599609375 MB
+Memory spike after cuda sdpa 19142.04248046875 MB
+1
+Memory after offload  19142.02099609375 MB
+Memory spike after cuda sdpa 19150.16748046875 MB
+1
+Memory after offload  19150.14599609375 MB
+Memory spike after cuda sdpa 19158.29248046875 MB
+1
+Memory after offload  19158.27099609375 MB
+Memory spike after cuda sdpa 19166.41748046875 MB
+1
+Memory after offload  19166.39599609375 MB
+Memory spike after cuda sdpa 19174.54248046875 MB
+1
+Memory after offload  19174.52099609375 MB
+Memory spike after cuda sdpa 19182.66748046875 MB
+1
+Memory after offload  19182.64599609375 MB
+Memory spike after cuda sdpa 19190.79248046875 MB
+1
+Memory after offload  19190.77099609375 MB
+Memory spike after cuda sdpa 19198.91748046875 MB
+1
+Memory after offload  19198.89599609375 MB
+Memory spike after cuda sdpa 19207.04248046875 MB
+1
+Memory after offload  19207.02099609375 MB
+Memory spike after cuda sdpa 19215.16748046875 MB
+1
+Memory after offload  19215.14599609375 MB
+Memory spike after cuda sdpa 19223.29248046875 MB
+1
+Memory after offload  19223.27099609375 MB
+Memory spike after cuda sdpa 19231.41748046875 MB
+1
+Memory after offload  19231.39599609375 MB
+Memory spike after cuda sdpa 19239.54248046875 MB
+1
+Memory after offload  19239.52099609375 MB
+Memory spike after cuda sdpa 19247.66748046875 MB
+1
+Memory after offload  19247.64599609375 MB
+Memory spike after cuda sdpa 19255.79248046875 MB
+1
+Memory after offload  19255.771484375 MB
+Memory spike after cuda sdpa 19263.91796875 MB
+1
+Memory after offload  19263.896484375 MB
+Memory spike after cuda sdpa 19272.04296875 MB
+1
+Memory after offload  19272.021484375 MB
+Memory spike after cuda sdpa 19280.16796875 MB
+1
+Memory after offload  19280.146484375 MB
+Memory spike after cuda sdpa 19288.29296875 MB
+1
+Memory after offload  19288.271484375 MB
+Memory spike after cuda sdpa 19296.41796875 MB
+1
+Memory after offload  19296.396484375 MB
+Memory spike after cuda sdpa 19304.54296875 MB
+1
+Memory after offload  19304.521484375 MB
+Memory spike after cuda sdpa 19312.66796875 MB
+1
+Memory after offload  19312.646484375 MB
+Memory spike after cuda sdpa 19320.79296875 MB
+1
+Memory after offload  19320.771484375 MB
+Memory spike after cuda sdpa 19328.91796875 MB
+1
+Memory after offload  19328.896484375 MB
+Memory spike after cuda sdpa 19337.04296875 MB
+1
+Memory after offload  19337.021484375 MB
+Memory spike after cuda sdpa 19345.16796875 MB
+1
+Memory after offload  19345.146484375 MB
+Memory spike after cuda sdpa 19353.29296875 MB
+1
+Memory after offload  19353.271484375 MB
+Memory spike after cuda sdpa 19361.41796875 MB
+1
+Memory after offload  19361.396484375 MB
+Memory spike after cuda sdpa 19369.54296875 MB
+1
+Memory after offload  19369.521484375 MB
+Memory spike after cuda sdpa 19377.66796875 MB
+1
+Memory after offload  19377.646484375 MB
+Memory spike after cuda sdpa 19385.79296875 MB
+1
+Memory after offload  19385.771484375 MB
+Memory spike after cuda sdpa 19393.91796875 MB
+1
+Memory after offload  19393.896484375 MB
+Memory spike after cuda sdpa 19402.04296875 MB
+1
+Memory after offload  19402.021484375 MB
+Memory spike after cuda sdpa 19410.16796875 MB
+1
+Memory after offload  19410.146484375 MB
+Memory spike after cuda sdpa 19418.29296875 MB
+1
+Memory after offload  19418.271484375 MB
+Memory spike after cuda sdpa 19426.41796875 MB
+1
+Memory after offload  19426.396484375 MB
+Memory spike after cuda sdpa 19434.54296875 MB
+1
+Memory after offload  19434.521484375 MB
+Memory spike after cuda sdpa 19442.66796875 MB
+1
+Memory after offload  19442.646484375 MB
+Memory spike after cuda sdpa 19450.79296875 MB
+1
+Memory after offload  19450.771484375 MB
+Memory spike after cuda sdpa 19458.91796875 MB
+1
+Memory after offload  19458.896484375 MB
+Memory spike after cuda sdpa 19467.04296875 MB
+1
+Memory after offload  19467.021484375 MB
+Memory spike after cuda sdpa 19475.16796875 MB
+1
+Memory after offload  19475.146484375 MB
+Memory spike after cuda sdpa 19483.29296875 MB
+1
+Memory after offload  19483.271484375 MB
+Memory spike after cuda sdpa 19491.41796875 MB
+1
+Memory after offload  19491.396484375 MB
+Memory spike after cuda sdpa 19499.54296875 MB
+1
+Memory after offload  19499.521484375 MB
+Memory spike after cuda sdpa 19507.66796875 MB
+1
+Memory after offload  19507.646484375 MB
+Memory spike after cuda sdpa 19515.79296875 MB
+1
+Memory after offload  19515.77197265625 MB
+Memory spike after cuda sdpa 19523.91845703125 MB
+1
+Memory after offload  19523.89697265625 MB
+Memory spike after cuda sdpa 19532.04345703125 MB
+1
+Memory after offload  19532.02197265625 MB
+Memory spike after cuda sdpa 19540.16845703125 MB
+1
+Memory after offload  19540.14697265625 MB
+Memory spike after cuda sdpa 19548.29345703125 MB
+1
+Memory after offload  19548.27197265625 MB
+Memory spike after cuda sdpa 19556.41845703125 MB
+1
+Memory after offload  19556.39697265625 MB
+Memory spike after cuda sdpa 19564.54345703125 MB
+1
+Memory after offload  19564.52197265625 MB
+Memory spike after cuda sdpa 19572.66845703125 MB
+1
+Memory after offload  19572.64697265625 MB
+Memory spike after cuda sdpa 19580.79345703125 MB
+1
+Memory after offload  19580.77197265625 MB
+Memory spike after cuda sdpa 19588.91845703125 MB
+1
+Memory after offload  19588.89697265625 MB
+Memory spike after cuda sdpa 19597.04345703125 MB
+1
+Memory after offload  19597.02197265625 MB
+Memory spike after cuda sdpa 19605.16845703125 MB
+1
+Memory after offload  19605.14697265625 MB
+Memory spike after cuda sdpa 19613.29345703125 MB
+1
+Memory after offload  19613.27197265625 MB
+Memory spike after cuda sdpa 19621.41845703125 MB
+1
+Memory after offload  19621.39697265625 MB
+Memory spike after cuda sdpa 19629.54345703125 MB
+1
+Memory after offload  19629.52197265625 MB
+Memory spike after cuda sdpa 19637.66845703125 MB
+1
+Memory after offload  19637.64697265625 MB
+Memory spike after cuda sdpa 19645.79345703125 MB
+1
+Memory after offload  19645.77197265625 MB
+Memory spike after cuda sdpa 19653.91845703125 MB
+1
+Memory after offload  19653.89697265625 MB
+Memory spike after cuda sdpa 19662.04345703125 MB
+1
+Memory after offload  19662.02197265625 MB
+Memory spike after cuda sdpa 19670.16845703125 MB
+1
+Memory after offload  19670.14697265625 MB
+Memory spike after cuda sdpa 19678.29345703125 MB
+1
+Memory after offload  19678.27197265625 MB
+Memory spike after cuda sdpa 19686.41845703125 MB
+1
+Memory after offload  19686.39697265625 MB
+Memory spike after cuda sdpa 19694.54345703125 MB
+1
+Memory after offload  19694.52197265625 MB
+Memory spike after cuda sdpa 19702.66845703125 MB
+1
+Memory after offload  19702.64697265625 MB
+Memory spike after cuda sdpa 19710.79345703125 MB
+1
+Memory after offload  19710.77197265625 MB
+Memory spike after cuda sdpa 19718.91845703125 MB
+1
+Memory after offload  19718.89697265625 MB
+Memory spike after cuda sdpa 19727.04345703125 MB
+1
+Memory after offload  19727.02197265625 MB
+Memory spike after cuda sdpa 19735.16845703125 MB
+1
+Memory after offload  19735.14697265625 MB
+Memory spike after cuda sdpa 19743.29345703125 MB
+1
+Memory after offload  19743.27197265625 MB
+Memory spike after cuda sdpa 19751.41845703125 MB
+1
+Memory after offload  19751.39697265625 MB
+Memory spike after cuda sdpa 19759.54345703125 MB
+1
+Memory after offload  19759.52197265625 MB
+Memory spike after cuda sdpa 19767.66845703125 MB
+1
+Memory after offload  19767.64697265625 MB
+Memory spike after cuda sdpa 19775.79345703125 MB
+1
+Memory after offload  19775.7724609375 MB
+Memory spike after cuda sdpa 19783.9189453125 MB
+1
+Memory after offload  19783.8974609375 MB
+Memory spike after cuda sdpa 19792.0439453125 MB
+1
+Memory after offload  19792.0224609375 MB
+Memory spike after cuda sdpa 19800.1689453125 MB
+1
+Memory after offload  19800.1474609375 MB
+Memory spike after cuda sdpa 19808.2939453125 MB
+1
+Memory after offload  19808.2724609375 MB
+Memory spike after cuda sdpa 19816.4189453125 MB
+1
+Memory after offload  19816.3974609375 MB
+Memory spike after cuda sdpa 19824.5439453125 MB
+1
+Memory after offload  19824.5224609375 MB
+Memory spike after cuda sdpa 19832.6689453125 MB
+1
+Memory after offload  19832.6474609375 MB
+Memory spike after cuda sdpa 19840.7939453125 MB
+1
+Memory after offload  19840.7724609375 MB
+Memory spike after cuda sdpa 19848.9189453125 MB
+1
+Memory after offload  19848.8974609375 MB
+Memory spike after cuda sdpa 19857.0439453125 MB
+1
+Memory after offload  19857.0224609375 MB
+Memory spike after cuda sdpa 19865.1689453125 MB
+1
+Memory after offload  19865.1474609375 MB
+Memory spike after cuda sdpa 19873.2939453125 MB
+1
+Memory after offload  19873.2724609375 MB
+Memory spike after cuda sdpa 19881.4189453125 MB
+1
+Memory after offload  19881.3974609375 MB
+Memory spike after cuda sdpa 19889.5439453125 MB
+1
+Memory after offload  19889.5224609375 MB
+Memory spike after cuda sdpa 19897.6689453125 MB
+1
+Memory after offload  19897.6474609375 MB
+Memory spike after cuda sdpa 19905.7939453125 MB
+1
+Memory after offload  19905.7724609375 MB
+Memory spike after cuda sdpa 19913.9189453125 MB
+1
+Memory after offload  19913.8974609375 MB
+Memory spike after cuda sdpa 19922.0439453125 MB
+1
+Memory after offload  19922.0224609375 MB
+Memory spike after cuda sdpa 19930.1689453125 MB
+1
+Memory after offload  19930.1474609375 MB
+Memory spike after cuda sdpa 19938.2939453125 MB
+1
+Memory after offload  19938.2724609375 MB
+Memory spike after cuda sdpa 19946.4189453125 MB
+1
+Memory after offload  19946.3974609375 MB
+Memory spike after cuda sdpa 19954.5439453125 MB
+1
+Memory after offload  19954.5224609375 MB
+Memory spike after cuda sdpa 19962.6689453125 MB
+1
+Memory after offload  19962.6474609375 MB
+Memory spike after cuda sdpa 19970.7939453125 MB
+1
+Memory after offload  19970.7724609375 MB
+Memory spike after cuda sdpa 19978.9189453125 MB
+1
+Memory after offload  19978.8974609375 MB
+Memory spike after cuda sdpa 19987.0439453125 MB
+1
+Memory after offload  19987.0224609375 MB
+Memory spike after cuda sdpa 19995.1689453125 MB
+1
+Memory after offload  19995.1474609375 MB
+Memory spike after cuda sdpa 20003.2939453125 MB
+1
+Memory after offload  20003.2724609375 MB
+Memory spike after cuda sdpa 20011.4189453125 MB
+1
+Memory after offload  20011.3974609375 MB
+Memory spike after cuda sdpa 20019.5439453125 MB
+1
+Memory after offload  20019.5224609375 MB
+Memory spike after cuda sdpa 20027.6689453125 MB
+1
+Memory after offload  20027.6474609375 MB
+Memory spike after cuda sdpa 20035.7939453125 MB
+1
+Memory after offload  20035.77294921875 MB
+Memory spike after cuda sdpa 20043.91943359375 MB
+1
+Memory after offload  20043.89794921875 MB
+Memory spike after cuda sdpa 20052.04443359375 MB
+1
+Memory after offload  20052.02294921875 MB
+Memory spike after cuda sdpa 20060.16943359375 MB
+1
+Memory after offload  20060.14794921875 MB
+Memory spike after cuda sdpa 20068.29443359375 MB
+1
+Memory after offload  20068.27294921875 MB
+Memory spike after cuda sdpa 20076.41943359375 MB
+1
+Memory after offload  20076.39794921875 MB
+Memory spike after cuda sdpa 20084.54443359375 MB
+1
+Memory after offload  20084.52294921875 MB
+Memory spike after cuda sdpa 20092.66943359375 MB
+1
+Memory after offload  20092.64794921875 MB
+Memory spike after cuda sdpa 20100.79443359375 MB
+1
+Memory after offload  20100.77294921875 MB
+Memory spike after cuda sdpa 20108.91943359375 MB
+1
+Memory after offload  20108.89794921875 MB
+Memory spike after cuda sdpa 20117.04443359375 MB
+1
+Memory after offload  20117.02294921875 MB
+Memory spike after cuda sdpa 20125.16943359375 MB
+1
+Memory after offload  20125.14794921875 MB
+Memory spike after cuda sdpa 20133.29443359375 MB
+1
+Memory after offload  20133.27294921875 MB
+Memory spike after cuda sdpa 20141.41943359375 MB
+1
+Memory after offload  20141.39794921875 MB
+Memory spike after cuda sdpa 20149.54443359375 MB
+1
+Memory after offload  20149.52294921875 MB
+Memory spike after cuda sdpa 20157.66943359375 MB
+1
+Memory after offload  20157.64794921875 MB
+Memory spike after cuda sdpa 20165.79443359375 MB
+1
+Memory after offload  20165.77294921875 MB
+Memory spike after cuda sdpa 20173.91943359375 MB
+1
+Memory after offload  20173.89794921875 MB
+Memory spike after cuda sdpa 20182.04443359375 MB
+1
+Memory after offload  20182.02294921875 MB
+Memory spike after cuda sdpa 20190.16943359375 MB
+1
+Memory after offload  20190.14794921875 MB
+Memory spike after cuda sdpa 20198.29443359375 MB
+1
+Memory after offload  20198.27294921875 MB
+Memory spike after cuda sdpa 20206.41943359375 MB
+1
+Memory after offload  20206.39794921875 MB
+Memory spike after cuda sdpa 20214.54443359375 MB
+1
+Memory after offload  20214.52294921875 MB
+Memory spike after cuda sdpa 20222.66943359375 MB
+1
+Memory after offload  20222.64794921875 MB
+Memory spike after cuda sdpa 20230.79443359375 MB
+1
+Memory after offload  20230.77294921875 MB
+Memory spike after cuda sdpa 20238.91943359375 MB
+1
+Memory after offload  20238.89794921875 MB
+Memory spike after cuda sdpa 20247.04443359375 MB
+1
+Memory after offload  20247.02294921875 MB
+Memory spike after cuda sdpa 20255.16943359375 MB
+1
+Memory after offload  20255.14794921875 MB
+Memory spike after cuda sdpa 20263.29443359375 MB
+1
+Memory after offload  20263.27294921875 MB
+Memory spike after cuda sdpa 20271.41943359375 MB
+1
+Memory after offload  20271.39794921875 MB
+Memory spike after cuda sdpa 20279.54443359375 MB
+1
+Memory after offload  20279.52294921875 MB
+Memory spike after cuda sdpa 20287.66943359375 MB
+1
+Memory after offload  20287.64794921875 MB
+Memory spike after cuda sdpa 20295.79443359375 MB
+1
+Memory after offload  20295.7734375 MB
+Memory spike after cuda sdpa 20303.919921875 MB
+1
+Memory after offload  20303.8984375 MB
+Memory spike after cuda sdpa 20312.044921875 MB
+1
+Memory after offload  20312.0234375 MB
+Memory spike after cuda sdpa 20320.169921875 MB
+1
+Memory after offload  20320.1484375 MB
+Memory spike after cuda sdpa 20328.294921875 MB
+1
+Memory after offload  20328.2734375 MB
+Memory spike after cuda sdpa 20336.419921875 MB
+1
+Memory after offload  20336.3984375 MB
+Memory spike after cuda sdpa 20344.544921875 MB
+1
+Memory after offload  20344.5234375 MB
+Memory spike after cuda sdpa 20352.669921875 MB
+1
+Memory after offload  20352.6484375 MB
+Memory spike after cuda sdpa 20360.794921875 MB
+1
+Memory after offload  20360.7734375 MB
+Memory spike after cuda sdpa 20368.919921875 MB
+1
+Memory after offload  20368.8984375 MB
+Memory spike after cuda sdpa 20377.044921875 MB
+1
+Memory after offload  20377.0234375 MB
+Memory spike after cuda sdpa 20385.169921875 MB
+1
+Memory after offload  20385.1484375 MB
+Memory spike after cuda sdpa 20393.294921875 MB
+1
+Memory after offload  20393.2734375 MB
+Memory spike after cuda sdpa 20401.419921875 MB
+1
+Memory after offload  20401.3984375 MB
+Memory spike after cuda sdpa 20409.544921875 MB
+1
+Memory after offload  20409.5234375 MB
+Memory spike after cuda sdpa 20417.669921875 MB
+1
+Memory after offload  20417.6484375 MB
+Memory spike after cuda sdpa 20425.794921875 MB
+1
+Memory after offload  20425.7734375 MB
+Memory spike after cuda sdpa 20433.919921875 MB
+1
+Memory after offload  20433.8984375 MB
+Memory spike after cuda sdpa 20442.044921875 MB
+1
+Memory after offload  20442.0234375 MB
+Memory spike after cuda sdpa 20450.169921875 MB
+1
+Memory after offload  20450.1484375 MB
+Memory spike after cuda sdpa 20458.294921875 MB
+1
+Memory after offload  20458.2734375 MB
+Memory spike after cuda sdpa 20466.419921875 MB
+1
+Memory after offload  20466.3984375 MB
+Memory spike after cuda sdpa 20474.544921875 MB
+1
+Memory after offload  20474.5234375 MB
+Memory spike after cuda sdpa 20482.669921875 MB
+1
+Memory after offload  20482.6484375 MB
+Memory spike after cuda sdpa 20490.794921875 MB
+1
+Memory after offload  20490.7734375 MB
+Memory spike after cuda sdpa 20498.919921875 MB
+1
+Memory after offload  20498.8984375 MB
+Memory spike after cuda sdpa 20507.044921875 MB
+1
+Memory after offload  20507.0234375 MB
+Memory spike after cuda sdpa 20515.169921875 MB
+1
+Memory after offload  20515.1484375 MB
+Memory spike after cuda sdpa 20523.294921875 MB
+1
+Memory after offload  20523.2734375 MB
+Memory spike after cuda sdpa 20531.419921875 MB
+1
+Memory after offload  20531.3984375 MB
+Memory spike after cuda sdpa 20539.544921875 MB
+1
+Memory after offload  20539.5234375 MB
+Memory spike after cuda sdpa 20547.669921875 MB
+1
+Memory after offload  20547.6484375 MB
+Memory spike after cuda sdpa 20555.794921875 MB
+1
+Memory after offload  20555.77392578125 MB
+Memory spike after cuda sdpa 20563.92041015625 MB
+1
+Memory after offload  20563.89892578125 MB
+Memory spike after cuda sdpa 20572.04541015625 MB
+1
+Memory after offload  20572.02392578125 MB
+Memory spike after cuda sdpa 20580.17041015625 MB
+1
+Memory after offload  20580.14892578125 MB
+Memory spike after cuda sdpa 20588.29541015625 MB
+1
+Memory after offload  20588.27392578125 MB
+Memory spike after cuda sdpa 20596.42041015625 MB
+1
+Memory after offload  20596.39892578125 MB
+Memory spike after cuda sdpa 20604.54541015625 MB
+1
+Memory after offload  20604.52392578125 MB
+Memory spike after cuda sdpa 20612.67041015625 MB
+1
+Memory after offload  20612.64892578125 MB
+Memory spike after cuda sdpa 20620.79541015625 MB
+1
+Memory after offload  20620.77392578125 MB
+Memory spike after cuda sdpa 20628.92041015625 MB
+1
+Memory after offload  20628.89892578125 MB
+Memory spike after cuda sdpa 20637.04541015625 MB
+1
+Memory after offload  20637.02392578125 MB
+Memory spike after cuda sdpa 20645.17041015625 MB
+1
+Memory after offload  20645.14892578125 MB
+Memory spike after cuda sdpa 20653.29541015625 MB
+1
+Memory after offload  20653.27392578125 MB
+Memory spike after cuda sdpa 20661.42041015625 MB
+1
+Memory after offload  20661.39892578125 MB
+Memory spike after cuda sdpa 20669.54541015625 MB
+1
+Memory after offload  20669.52392578125 MB
+Memory spike after cuda sdpa 20677.67041015625 MB
+1
+Memory after offload  20677.64892578125 MB
+Memory spike after cuda sdpa 20685.79541015625 MB
+1
+Memory after offload  20685.77392578125 MB
+Memory spike after cuda sdpa 20693.92041015625 MB
+1
+Memory after offload  20693.89892578125 MB
+Memory spike after cuda sdpa 20702.04541015625 MB
+1
+Memory after offload  20702.02392578125 MB
+Memory spike after cuda sdpa 20710.17041015625 MB
+1
+Memory after offload  20710.14892578125 MB
+Memory spike after cuda sdpa 20718.29541015625 MB
+1
+Memory after offload  20718.27392578125 MB
+Memory spike after cuda sdpa 20726.42041015625 MB
+1
+Memory after offload  20726.39892578125 MB
+Memory spike after cuda sdpa 20734.54541015625 MB
+1
+Memory after offload  20734.52392578125 MB
+Memory spike after cuda sdpa 20742.67041015625 MB
+1
+Memory after offload  20742.64892578125 MB
+Memory spike after cuda sdpa 20750.79541015625 MB
+1
+Memory after offload  20750.77392578125 MB
+Memory spike after cuda sdpa 20758.92041015625 MB
+1
+Memory after offload  20758.89892578125 MB
+Memory spike after cuda sdpa 20767.04541015625 MB
+1
+Memory after offload  20767.02392578125 MB
+Memory spike after cuda sdpa 20775.17041015625 MB
+1
+Memory after offload  20775.14892578125 MB
+Memory spike after cuda sdpa 20783.29541015625 MB
+1
+Memory after offload  20783.27392578125 MB
+Memory spike after cuda sdpa 20791.42041015625 MB
+1
+Memory after offload  20791.39892578125 MB
+Memory spike after cuda sdpa 20799.54541015625 MB
+1
+Memory after offload  20799.52392578125 MB
+Memory spike after cuda sdpa 20807.67041015625 MB
+1
+Memory after offload  20807.64892578125 MB
+Memory spike after cuda sdpa 20815.79541015625 MB
+1
+Memory after offload  20815.7744140625 MB
+Memory spike after cuda sdpa 20823.9208984375 MB
+1
+Memory after offload  20823.8994140625 MB
+Memory spike after cuda sdpa 20832.0458984375 MB
+1
+Memory after offload  20832.0244140625 MB
+Memory spike after cuda sdpa 20840.1708984375 MB
+1
+Memory after offload  20840.1494140625 MB
+Memory spike after cuda sdpa 20848.2958984375 MB
+1
+Memory after offload  20848.2744140625 MB
+Memory spike after cuda sdpa 20856.4208984375 MB
+1
+Memory after offload  20856.3994140625 MB
+Memory spike after cuda sdpa 20864.5458984375 MB
+1
+Memory after offload  20864.5244140625 MB
+Memory spike after cuda sdpa 20872.6708984375 MB
+1
+Memory after offload  20872.6494140625 MB
+Memory spike after cuda sdpa 20880.7958984375 MB
+1
+Memory after offload  20880.7744140625 MB
+Memory spike after cuda sdpa 20888.9208984375 MB
+1
+Memory after offload  20888.8994140625 MB
+Memory spike after cuda sdpa 20897.0458984375 MB
+1
+Memory after offload  20897.0244140625 MB
+Memory spike after cuda sdpa 20905.1708984375 MB
+1
+Memory after offload  20905.1494140625 MB
+Memory spike after cuda sdpa 20913.2958984375 MB
+1
+Memory after offload  20913.2744140625 MB
+Memory spike after cuda sdpa 20921.4208984375 MB
+1
+Memory after offload  20921.3994140625 MB
+Memory spike after cuda sdpa 20929.5458984375 MB
+1
+Memory after offload  20929.5244140625 MB
+Memory spike after cuda sdpa 20937.6708984375 MB
+1
+Memory after offload  20937.6494140625 MB
+Memory spike after cuda sdpa 20945.7958984375 MB
+1
+Memory after offload  20945.7744140625 MB
+Memory spike after cuda sdpa 20953.9208984375 MB
+1
+Memory after offload  20953.8994140625 MB
+Memory spike after cuda sdpa 20962.0458984375 MB
+1
+Memory after offload  20962.0244140625 MB
+Memory spike after cuda sdpa 20970.1708984375 MB
+1
+Memory after offload  20970.1494140625 MB
+Memory spike after cuda sdpa 20978.2958984375 MB
+1
+Memory after offload  20978.2744140625 MB
+Memory spike after cuda sdpa 20986.4208984375 MB
+1
+Memory after offload  20986.3994140625 MB
+Memory spike after cuda sdpa 20994.5458984375 MB
+1
+Memory after offload  20994.5244140625 MB
+Memory spike after cuda sdpa 21002.6708984375 MB
+1
+Memory after offload  21002.6494140625 MB
+Memory spike after cuda sdpa 21010.7958984375 MB
+1
+Memory after offload  21010.7744140625 MB
+Memory spike after cuda sdpa 21018.9208984375 MB
+1
+Memory after offload  21018.8994140625 MB
+Memory spike after cuda sdpa 21027.0458984375 MB
+1
+Memory after offload  21027.0244140625 MB
+Memory spike after cuda sdpa 21035.1708984375 MB
+1
+Memory after offload  21035.1494140625 MB
+Memory spike after cuda sdpa 21043.2958984375 MB
+1
+Memory after offload  21043.2744140625 MB
+Memory spike after cuda sdpa 21051.4208984375 MB
+1
+Memory after offload  21051.3994140625 MB
+Memory spike after cuda sdpa 21059.5458984375 MB
+1
+Memory after offload  21059.5244140625 MB
+Memory spike after cuda sdpa 21067.6708984375 MB
+1
+Memory after offload  21067.6494140625 MB
+Memory spike after cuda sdpa 21075.7958984375 MB
+1
+Memory after offload  21075.77490234375 MB
+Memory spike after cuda sdpa 21083.92138671875 MB
+1
+Memory after offload  21083.89990234375 MB
+Memory spike after cuda sdpa 21092.04638671875 MB
+1
+Memory after offload  21092.02490234375 MB
+Memory spike after cuda sdpa 21100.17138671875 MB
+1
+Memory after offload  21100.14990234375 MB
+Memory spike after cuda sdpa 21108.29638671875 MB
+1
+Memory after offload  21108.27490234375 MB
+Memory spike after cuda sdpa 21116.42138671875 MB
+1
+Memory after offload  21116.39990234375 MB
+Memory spike after cuda sdpa 21124.54638671875 MB
+1
+Memory after offload  21124.52490234375 MB
+Memory spike after cuda sdpa 21132.67138671875 MB
+1
+Memory after offload  21132.64990234375 MB
+Memory spike after cuda sdpa 21140.79638671875 MB
+1
+Memory after offload  21140.77490234375 MB
+Memory spike after cuda sdpa 21148.92138671875 MB
+1
+Memory after offload  21148.89990234375 MB
+Memory spike after cuda sdpa 21157.04638671875 MB
+1
+Memory after offload  21157.02490234375 MB
+Memory spike after cuda sdpa 21165.17138671875 MB
+1
+Memory after offload  21165.14990234375 MB
+Memory spike after cuda sdpa 21173.29638671875 MB
+1
+Memory after offload  21173.27490234375 MB
+Memory spike after cuda sdpa 21181.42138671875 MB
+1
+Memory after offload  21181.39990234375 MB
+Memory spike after cuda sdpa 21189.54638671875 MB
+1
+Memory after offload  21189.52490234375 MB
+Memory spike after cuda sdpa 21197.67138671875 MB
+1
+Memory after offload  21197.64990234375 MB
+Memory spike after cuda sdpa 21205.79638671875 MB
+1
+Memory after offload  21205.77490234375 MB
+Memory spike after cuda sdpa 21213.92138671875 MB
+1
+Memory after offload  21213.89990234375 MB
+Memory spike after cuda sdpa 21222.04638671875 MB
+1
+Memory after offload  21222.02490234375 MB
+Memory spike after cuda sdpa 21230.17138671875 MB
+1
+Memory after offload  21230.14990234375 MB
+Memory spike after cuda sdpa 21238.29638671875 MB
+1
+Memory after offload  21238.27490234375 MB
+Memory spike after cuda sdpa 21246.42138671875 MB
+1
+Memory after offload  21246.39990234375 MB
+Memory spike after cuda sdpa 21254.54638671875 MB
+1
+Memory after offload  21254.52490234375 MB
+Memory spike after cuda sdpa 21262.67138671875 MB
+1
+Memory after offload  21262.64990234375 MB
+Memory spike after cuda sdpa 21270.79638671875 MB
+1
+Memory after offload  21270.77490234375 MB
+Memory spike after cuda sdpa 21278.92138671875 MB
+1
+Memory after offload  21278.89990234375 MB
+Memory spike after cuda sdpa 21287.04638671875 MB
+1
+Memory after offload  21287.02490234375 MB
+Memory spike after cuda sdpa 21295.17138671875 MB
+1
+Memory after offload  21295.14990234375 MB
+Memory spike after cuda sdpa 21303.29638671875 MB
+1
+Memory after offload  21303.27490234375 MB
+Memory spike after cuda sdpa 21311.42138671875 MB
+1
+Memory after offload  21311.39990234375 MB
+Memory spike after cuda sdpa 21319.54638671875 MB
+1
+Memory after offload  21319.52490234375 MB
+Memory spike after cuda sdpa 21327.67138671875 MB
+1
+Memory after offload  21327.64990234375 MB
+Memory spike after cuda sdpa 21335.79638671875 MB
+1
+Memory after offload  21335.775390625 MB
+Memory spike after cuda sdpa 21343.921875 MB
+1
+Memory after offload  21343.900390625 MB
+Memory spike after cuda sdpa 21352.046875 MB
+1
+Memory after offload  21352.025390625 MB
+Memory spike after cuda sdpa 21360.171875 MB
+1
+Memory after offload  21360.150390625 MB
+Memory spike after cuda sdpa 21368.296875 MB
+1
+Memory after offload  21368.275390625 MB
+Memory spike after cuda sdpa 21376.421875 MB
+1
+Memory after offload  21376.400390625 MB
+Memory spike after cuda sdpa 21384.546875 MB
+1
+Memory after offload  21384.525390625 MB
+Memory spike after cuda sdpa 21392.671875 MB
+1
+Memory after offload  21392.650390625 MB
+Memory spike after cuda sdpa 21400.796875 MB
+1
+Memory after offload  21400.775390625 MB
+Memory spike after cuda sdpa 21408.921875 MB
+1
+Memory after offload  21408.900390625 MB
+Memory spike after cuda sdpa 21417.046875 MB
+1
+Memory after offload  21417.025390625 MB
+Memory spike after cuda sdpa 21425.171875 MB
+1
+Memory after offload  21425.150390625 MB
+Memory spike after cuda sdpa 21433.296875 MB
+1
+Memory after offload  21433.275390625 MB
+Memory spike after cuda sdpa 21441.421875 MB
+1
+Memory after offload  21441.400390625 MB
+Memory spike after cuda sdpa 21449.546875 MB
+1
+Memory after offload  21449.525390625 MB
+Memory spike after cuda sdpa 21457.671875 MB
+1
+Memory after offload  21457.650390625 MB
+Memory spike after cuda sdpa 21465.796875 MB
+1
+Memory after offload  21465.775390625 MB
+Memory spike after cuda sdpa 21473.921875 MB
+1
+Memory after offload  21473.900390625 MB
+Memory spike after cuda sdpa 21482.046875 MB
+1
+Memory after offload  21482.025390625 MB
+Memory spike after cuda sdpa 21490.171875 MB
+1
+Memory after offload  21490.150390625 MB
+Memory spike after cuda sdpa 21498.296875 MB
+1
+Memory after offload  21498.275390625 MB
+Memory spike after cuda sdpa 21506.421875 MB
+1
+Memory after offload  21506.400390625 MB
+Memory spike after cuda sdpa 21514.546875 MB
+1
+Memory after offload  21514.525390625 MB
+Memory spike after cuda sdpa 21522.671875 MB
+1
+Memory after offload  21522.650390625 MB
+Memory spike after cuda sdpa 21530.796875 MB
+1
+Memory after offload  21530.775390625 MB
+Memory spike after cuda sdpa 21538.921875 MB
+1
+Memory after offload  21538.900390625 MB
+Memory spike after cuda sdpa 21547.046875 MB
+1
+Memory after offload  21547.025390625 MB
+Memory spike after cuda sdpa 21555.171875 MB
+1
+Memory after offload  21555.150390625 MB
+Memory spike after cuda sdpa 21563.296875 MB
+1
+Memory after offload  21563.275390625 MB
+Memory spike after cuda sdpa 21571.421875 MB
+1
+Memory after offload  21571.400390625 MB
+Memory spike after cuda sdpa 21579.546875 MB
+1
+Memory after offload  21579.525390625 MB
+Memory spike after cuda sdpa 21587.671875 MB
+1
+Memory after offload  21587.650390625 MB
+Memory spike after cuda sdpa 21595.796875 MB
+I reach this funciton 32
+Yes I use this function ----------------------------------
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.7958984375 MB
+32
+Memory before Offload Manager initialization 21596.7958984375 MB
+Memory after Offload Manager initialization 21596.79541015625 MB
+1
+Memory after offload  21595.76416015625 MB
+Memory spike after cuda sdpa 21603.91064453125 MB
+1
+Memory after offload  21603.88916015625 MB
+Memory spike after cuda sdpa 21612.03564453125 MB
+1
+Memory after offload  21612.01416015625 MB
+Memory spike after cuda sdpa 21620.16064453125 MB
+1
+Memory after offload  21620.13916015625 MB
+Memory spike after cuda sdpa 21628.28564453125 MB
+1
+Memory after offload  21628.26416015625 MB
+Memory spike after cuda sdpa 21636.41064453125 MB
+1
+Memory after offload  21636.38916015625 MB
+Memory spike after cuda sdpa 21644.53564453125 MB
+1
+Memory after offload  21644.51416015625 MB
+Memory spike after cuda sdpa 21652.66064453125 MB
+1
+Memory after offload  21652.63916015625 MB
+Memory spike after cuda sdpa 21660.78564453125 MB
+1
+Memory after offload  21660.76416015625 MB
+Memory spike after cuda sdpa 21668.91064453125 MB
+1
+Memory after offload  21668.88916015625 MB
+Memory spike after cuda sdpa 21677.03564453125 MB
+1
+Memory after offload  21677.01416015625 MB
+Memory spike after cuda sdpa 21685.16064453125 MB
+1
+Memory after offload  21685.13916015625 MB
+Memory spike after cuda sdpa 21693.28564453125 MB
+1
+Memory after offload  21693.26416015625 MB
+Memory spike after cuda sdpa 21701.41064453125 MB
+1
+Memory after offload  21701.38916015625 MB
+Memory spike after cuda sdpa 21709.53564453125 MB
+1
+Memory after offload  21709.51416015625 MB
+Memory spike after cuda sdpa 21717.66064453125 MB
+1
+Memory after offload  21717.63916015625 MB
+Memory spike after cuda sdpa 21725.78564453125 MB
+1
+Memory after offload  21725.76416015625 MB
+Memory spike after cuda sdpa 21733.91064453125 MB
+1
+Memory after offload  21733.88916015625 MB
+Memory spike after cuda sdpa 21742.03564453125 MB
+1
+Memory after offload  21742.01416015625 MB
+Memory spike after cuda sdpa 21750.16064453125 MB
+1
+Memory after offload  21750.13916015625 MB
+Memory spike after cuda sdpa 21758.28564453125 MB
+1
+Memory after offload  21758.26416015625 MB
+Memory spike after cuda sdpa 21766.41064453125 MB
+1
+Memory after offload  21766.38916015625 MB
+Memory spike after cuda sdpa 21774.53564453125 MB
+1
+Memory after offload  21774.51416015625 MB
+Memory spike after cuda sdpa 21782.66064453125 MB
+1
+Memory after offload  21782.63916015625 MB
+Memory spike after cuda sdpa 21790.78564453125 MB
+1
+Memory after offload  21790.76416015625 MB
+Memory spike after cuda sdpa 21798.91064453125 MB
+1
+Memory after offload  21798.88916015625 MB
+Memory spike after cuda sdpa 21807.03564453125 MB
+1
+Memory after offload  21807.01416015625 MB
+Memory spike after cuda sdpa 21815.16064453125 MB
+1
+Memory after offload  21815.13916015625 MB
+Memory spike after cuda sdpa 21823.28564453125 MB
+1
+Memory after offload  21823.26416015625 MB
+Memory spike after cuda sdpa 21831.41064453125 MB
+1
+Memory after offload  21831.38916015625 MB
+Memory spike after cuda sdpa 21839.53564453125 MB
+1
+Memory after offload  21839.51416015625 MB
+Memory spike after cuda sdpa 21847.66064453125 MB
+1
+Memory after offload  21847.63916015625 MB
+Memory spike after cuda sdpa 21855.78564453125 MB
+1
+Memory after offload  21855.7646484375 MB
+Memory spike after cuda sdpa 21863.9111328125 MB
+1
+Memory after offload  21863.8896484375 MB
+Memory spike after cuda sdpa 21872.0361328125 MB
+1
+Memory after offload  21872.0146484375 MB
+Memory spike after cuda sdpa 21880.1611328125 MB
+1
+Memory after offload  21880.1396484375 MB
+Memory spike after cuda sdpa 21888.2861328125 MB
+1
+Memory after offload  21888.2646484375 MB
+Memory spike after cuda sdpa 21896.4111328125 MB
+1
+Memory after offload  21896.3896484375 MB
+Memory spike after cuda sdpa 21904.5361328125 MB
+1
+Memory after offload  21904.5146484375 MB
+Memory spike after cuda sdpa 21912.6611328125 MB
+1
+Memory after offload  21912.6396484375 MB
+Memory spike after cuda sdpa 21920.7861328125 MB
+1
+Memory after offload  21920.7646484375 MB
+Memory spike after cuda sdpa 21928.9111328125 MB
+1
+Memory after offload  21928.8896484375 MB
+Memory spike after cuda sdpa 21937.0361328125 MB
+1
+Memory after offload  21937.0146484375 MB
+Memory spike after cuda sdpa 21945.1611328125 MB
+1
+Memory after offload  21945.1396484375 MB
+Memory spike after cuda sdpa 21953.2861328125 MB
+1
+Memory after offload  21953.2646484375 MB
+Memory spike after cuda sdpa 21961.4111328125 MB
+1
+Memory after offload  21961.3896484375 MB
+Memory spike after cuda sdpa 21969.5361328125 MB
+1
+Memory after offload  21969.5146484375 MB
+Memory spike after cuda sdpa 21977.6611328125 MB
+1
+Memory after offload  21977.6396484375 MB
+Memory spike after cuda sdpa 21985.7861328125 MB
+1
+Memory after offload  21985.7646484375 MB
+Memory spike after cuda sdpa 21993.9111328125 MB
+1
+Memory after offload  21993.8896484375 MB
+Memory spike after cuda sdpa 22002.0361328125 MB
+1
+Memory after offload  22002.0146484375 MB
+Memory spike after cuda sdpa 22010.1611328125 MB
+1
+Memory after offload  22010.1396484375 MB
+Memory spike after cuda sdpa 22018.2861328125 MB
+1
+Memory after offload  22018.2646484375 MB
+Memory spike after cuda sdpa 22026.4111328125 MB
+1
+Memory after offload  22026.3896484375 MB
+Memory spike after cuda sdpa 22034.5361328125 MB
+1
+Memory after offload  22034.5146484375 MB
+Memory spike after cuda sdpa 22042.6611328125 MB
+1
+Memory after offload  22042.6396484375 MB
+Memory spike after cuda sdpa 22050.7861328125 MB
+1
+Memory after offload  22050.7646484375 MB
+Memory spike after cuda sdpa 22058.9111328125 MB
+1
+Memory after offload  22058.8896484375 MB
+Memory spike after cuda sdpa 22067.0361328125 MB
+1
+Memory after offload  22067.0146484375 MB
+Memory spike after cuda sdpa 22075.1611328125 MB
+1
+Memory after offload  22075.1396484375 MB
+Memory spike after cuda sdpa 22083.2861328125 MB
+1
+Memory after offload  22083.2646484375 MB
+Memory spike after cuda sdpa 22091.4111328125 MB
+1
+Memory after offload  22091.3896484375 MB
+Memory spike after cuda sdpa 22099.5361328125 MB
+1
+Memory after offload  22099.5146484375 MB
+Memory spike after cuda sdpa 22107.6611328125 MB
+1
+Memory after offload  22107.6396484375 MB
+Memory spike after cuda sdpa 22115.7861328125 MB
+1
+Memory after offload  22115.76513671875 MB
+Memory spike after cuda sdpa 22123.91162109375 MB
+1
+Memory after offload  22123.89013671875 MB
+Memory spike after cuda sdpa 22132.03662109375 MB
+1
+Memory after offload  22132.01513671875 MB
+Memory spike after cuda sdpa 22140.16162109375 MB
+1
+Memory after offload  22140.14013671875 MB
+Memory spike after cuda sdpa 22148.28662109375 MB
+1
+Memory after offload  22148.26513671875 MB
+Memory spike after cuda sdpa 22156.41162109375 MB
+1
+Memory after offload  22156.39013671875 MB
+Memory spike after cuda sdpa 22164.53662109375 MB
+1
+Memory after offload  22164.51513671875 MB
+Memory spike after cuda sdpa 22172.66162109375 MB
+1
+Memory after offload  22172.64013671875 MB
+Memory spike after cuda sdpa 22180.78662109375 MB
+1
+Memory after offload  22180.76513671875 MB
+Memory spike after cuda sdpa 22188.91162109375 MB
+1
+Memory after offload  22188.89013671875 MB
+Memory spike after cuda sdpa 22197.03662109375 MB
+1
+Memory after offload  22197.01513671875 MB
+Memory spike after cuda sdpa 22205.16162109375 MB
+1
+Memory after offload  22205.14013671875 MB
+Memory spike after cuda sdpa 22213.28662109375 MB
+1
+Memory after offload  22213.26513671875 MB
+Memory spike after cuda sdpa 22221.41162109375 MB
+1
+Memory after offload  22221.39013671875 MB
+Memory spike after cuda sdpa 22229.53662109375 MB
+1
+Memory after offload  22229.51513671875 MB
+Memory spike after cuda sdpa 22237.66162109375 MB
+1
+Memory after offload  22237.64013671875 MB
+Memory spike after cuda sdpa 22245.78662109375 MB
+1
+Memory after offload  22245.76513671875 MB
+Memory spike after cuda sdpa 22253.91162109375 MB
+1
+Memory after offload  22253.89013671875 MB
+Memory spike after cuda sdpa 22262.03662109375 MB
+1
+Memory after offload  22262.01513671875 MB
+Memory spike after cuda sdpa 22270.16162109375 MB
+1
+Memory after offload  22270.14013671875 MB
+Memory spike after cuda sdpa 22278.28662109375 MB
+1
+Memory after offload  22278.26513671875 MB
+Memory spike after cuda sdpa 22286.41162109375 MB
+1
+Memory after offload  22286.39013671875 MB
+Memory spike after cuda sdpa 22294.53662109375 MB
+1
+Memory after offload  22294.51513671875 MB
+Memory spike after cuda sdpa 22302.66162109375 MB
+1
+Memory after offload  22302.64013671875 MB
+Memory spike after cuda sdpa 22310.78662109375 MB
+1
+Memory after offload  22310.76513671875 MB
+Memory spike after cuda sdpa 22318.91162109375 MB
+1
+Memory after offload  22318.89013671875 MB
+Memory spike after cuda sdpa 22327.03662109375 MB
+1
+Memory after offload  22327.01513671875 MB
+Memory spike after cuda sdpa 22335.16162109375 MB
+1
+Memory after offload  22335.14013671875 MB
+Memory spike after cuda sdpa 22343.28662109375 MB
+1
+Memory after offload  22343.26513671875 MB
+Memory spike after cuda sdpa 22351.41162109375 MB
+1
+Memory after offload  22351.39013671875 MB
+Memory spike after cuda sdpa 22359.53662109375 MB
+1
+Memory after offload  22359.51513671875 MB
+Memory spike after cuda sdpa 22367.66162109375 MB
+1
+Memory after offload  22367.64013671875 MB
+Memory spike after cuda sdpa 22375.78662109375 MB
+1
+Memory after offload  22375.765625 MB
+Memory spike after cuda sdpa 22383.912109375 MB
+1
+Memory after offload  22383.890625 MB
+Memory spike after cuda sdpa 22392.037109375 MB
+1
+Memory after offload  22392.015625 MB
+Memory spike after cuda sdpa 22400.162109375 MB
+1
+Memory after offload  22400.140625 MB
+Memory spike after cuda sdpa 22408.287109375 MB
+1
+Memory after offload  22408.265625 MB
+Memory spike after cuda sdpa 22416.412109375 MB
+1
+Memory after offload  22416.390625 MB
+Memory spike after cuda sdpa 22424.537109375 MB
+1
+Memory after offload  22424.515625 MB
+Memory spike after cuda sdpa 22432.662109375 MB
+1
+Memory after offload  22432.640625 MB
+Memory spike after cuda sdpa 22440.787109375 MB
+1
+Memory after offload  22440.765625 MB
+Memory spike after cuda sdpa 22448.912109375 MB
+1
+Memory after offload  22448.890625 MB
+Memory spike after cuda sdpa 22457.037109375 MB
+1
+Memory after offload  22457.015625 MB
+Memory spike after cuda sdpa 22465.162109375 MB
+1
+Memory after offload  22465.140625 MB
+Memory spike after cuda sdpa 22473.287109375 MB
+1
+Memory after offload  22473.265625 MB
+Memory spike after cuda sdpa 22481.412109375 MB
+1
+Memory after offload  22481.390625 MB
+Memory spike after cuda sdpa 22489.537109375 MB
+1
+Memory after offload  22489.515625 MB
+Memory spike after cuda sdpa 22497.662109375 MB
+1
+Memory after offload  22497.640625 MB
+Memory spike after cuda sdpa 22505.787109375 MB
+1
+Memory after offload  22505.765625 MB
+Memory spike after cuda sdpa 22513.912109375 MB
+1
+Memory after offload  22513.890625 MB
+Memory spike after cuda sdpa 22522.037109375 MB
+1
+Memory after offload  22522.015625 MB
+Memory spike after cuda sdpa 22530.162109375 MB
+1
+Memory after offload  22530.140625 MB
+Memory spike after cuda sdpa 22538.287109375 MB
+1
+Memory after offload  22538.265625 MB
+Memory spike after cuda sdpa 22546.412109375 MB
+1
+Memory after offload  22546.390625 MB
+Memory spike after cuda sdpa 22554.537109375 MB
+1
+Memory after offload  22554.515625 MB
+Memory spike after cuda sdpa 22562.662109375 MB
+1
+Memory after offload  22562.640625 MB
+Memory spike after cuda sdpa 22570.787109375 MB
+1
+Memory after offload  22570.765625 MB
+Memory spike after cuda sdpa 22578.912109375 MB
+1
+Memory after offload  22578.890625 MB
+Memory spike after cuda sdpa 22587.037109375 MB
+1
+Memory after offload  22587.015625 MB
+Memory spike after cuda sdpa 22595.162109375 MB
+1
+Memory after offload  22595.140625 MB
+Memory spike after cuda sdpa 22603.287109375 MB
+1
+Memory after offload  22603.265625 MB
+Memory spike after cuda sdpa 22611.412109375 MB
+1
+Memory after offload  22611.390625 MB
+Memory spike after cuda sdpa 22619.537109375 MB
+1
+Memory after offload  22619.515625 MB
+Memory spike after cuda sdpa 22627.662109375 MB
+1
+Memory after offload  22627.640625 MB
+Memory spike after cuda sdpa 22635.787109375 MB
+1
+Memory after offload  22635.76611328125 MB
+Memory spike after cuda sdpa 22643.91259765625 MB
+1
+Memory after offload  22643.89111328125 MB
+Memory spike after cuda sdpa 22652.03759765625 MB
+1
+Memory after offload  22652.01611328125 MB
+Memory spike after cuda sdpa 22660.16259765625 MB
+1
+Memory after offload  22660.14111328125 MB
+Memory spike after cuda sdpa 22668.28759765625 MB
+1
+Memory after offload  22668.26611328125 MB
+Memory spike after cuda sdpa 22676.41259765625 MB
+1
+Memory after offload  22676.39111328125 MB
+Memory spike after cuda sdpa 22684.53759765625 MB
+1
+Memory after offload  22684.51611328125 MB
+Memory spike after cuda sdpa 22692.66259765625 MB
+1
+Memory after offload  22692.64111328125 MB
+Memory spike after cuda sdpa 22700.78759765625 MB
+1
+Memory after offload  22700.76611328125 MB
+Memory spike after cuda sdpa 22708.91259765625 MB
+1
+Memory after offload  22708.89111328125 MB
+Memory spike after cuda sdpa 22717.03759765625 MB
+1
+Memory after offload  22717.01611328125 MB
+Memory spike after cuda sdpa 22725.16259765625 MB
+1
+Memory after offload  22725.14111328125 MB
+Memory spike after cuda sdpa 22733.28759765625 MB
+1
+Memory after offload  22733.26611328125 MB
+Memory spike after cuda sdpa 22741.41259765625 MB
+1
+Memory after offload  22741.39111328125 MB
+Memory spike after cuda sdpa 22749.53759765625 MB
+1
+Memory after offload  22749.51611328125 MB
+Memory spike after cuda sdpa 22757.66259765625 MB
+1
+Memory after offload  22757.64111328125 MB
+Memory spike after cuda sdpa 22765.78759765625 MB
+1
+Memory after offload  22765.76611328125 MB
+Memory spike after cuda sdpa 22773.91259765625 MB
+1
+Memory after offload  22773.89111328125 MB
+Memory spike after cuda sdpa 22782.03759765625 MB
+1
+Memory after offload  22782.01611328125 MB
+Memory spike after cuda sdpa 22790.16259765625 MB
+1
+Memory after offload  22790.14111328125 MB
+Memory spike after cuda sdpa 22798.28759765625 MB
+1
+Memory after offload  22798.26611328125 MB
+Memory spike after cuda sdpa 22806.41259765625 MB
+1
+Memory after offload  22806.39111328125 MB
+Memory spike after cuda sdpa 22814.53759765625 MB
+1
+Memory after offload  22814.51611328125 MB
+Memory spike after cuda sdpa 22822.66259765625 MB
+1
+Memory after offload  22822.64111328125 MB
+Memory spike after cuda sdpa 22830.78759765625 MB
+1
+Memory after offload  22830.76611328125 MB
+Memory spike after cuda sdpa 22838.91259765625 MB
+1
+Memory after offload  22838.89111328125 MB
+Memory spike after cuda sdpa 22847.03759765625 MB
+1
+Memory after offload  22847.01611328125 MB
+Memory spike after cuda sdpa 22855.16259765625 MB
+1
+Memory after offload  22855.14111328125 MB
+Memory spike after cuda sdpa 22863.28759765625 MB
+1
+Memory after offload  22863.26611328125 MB
+Memory spike after cuda sdpa 22871.41259765625 MB
+1
+Memory after offload  22871.39111328125 MB
+Memory spike after cuda sdpa 22879.53759765625 MB
+1
+Memory after offload  22879.51611328125 MB
+Memory spike after cuda sdpa 22887.66259765625 MB
+1
+Memory after offload  22887.64111328125 MB
+Memory spike after cuda sdpa 22895.78759765625 MB
+1
+Memory after offload  22895.7666015625 MB
+Memory spike after cuda sdpa 22903.9130859375 MB
+1
+Memory after offload  22903.8916015625 MB
+Memory spike after cuda sdpa 22912.0380859375 MB
+1
+Memory after offload  22912.0166015625 MB
+Memory spike after cuda sdpa 22920.1630859375 MB
+1
+Memory after offload  22920.1416015625 MB
+Memory spike after cuda sdpa 22928.2880859375 MB
+1
+Memory after offload  22928.2666015625 MB
+Memory spike after cuda sdpa 22936.4130859375 MB
+1
+Memory after offload  22936.3916015625 MB
+Memory spike after cuda sdpa 22944.5380859375 MB
+1
+Memory after offload  22944.5166015625 MB
+Memory spike after cuda sdpa 22952.6630859375 MB
+1
+Memory after offload  22952.6416015625 MB
+Memory spike after cuda sdpa 22960.7880859375 MB
+1
+Memory after offload  22960.7666015625 MB
+Memory spike after cuda sdpa 22968.9130859375 MB
+1
+Memory after offload  22968.8916015625 MB
+Memory spike after cuda sdpa 22977.0380859375 MB
+1
+Memory after offload  22977.0166015625 MB
+Memory spike after cuda sdpa 22985.1630859375 MB
+1
+Memory after offload  22985.1416015625 MB
+Memory spike after cuda sdpa 22993.2880859375 MB
+1
+Memory after offload  22993.2666015625 MB
+Memory spike after cuda sdpa 23001.4130859375 MB
+1
+Memory after offload  23001.3916015625 MB
+Memory spike after cuda sdpa 23009.5380859375 MB
+1
+Memory after offload  23009.5166015625 MB
+Memory spike after cuda sdpa 23017.6630859375 MB
+1
+Memory after offload  23017.6416015625 MB
+Memory spike after cuda sdpa 23025.7880859375 MB
+1
+Memory after offload  23025.7666015625 MB
+Memory spike after cuda sdpa 23033.9130859375 MB
+1
+Memory after offload  23033.8916015625 MB
+Memory spike after cuda sdpa 23042.0380859375 MB
+1
+Memory after offload  23042.0166015625 MB
+Memory spike after cuda sdpa 23050.1630859375 MB
+1
+Memory after offload  23050.1416015625 MB
+Memory spike after cuda sdpa 23058.2880859375 MB
+1
+Memory after offload  23058.2666015625 MB
+Memory spike after cuda sdpa 23066.4130859375 MB
+1
+Memory after offload  23066.3916015625 MB
+Memory spike after cuda sdpa 23074.5380859375 MB
+1
+Memory after offload  23074.5166015625 MB
+Memory spike after cuda sdpa 23082.6630859375 MB
+1
+Memory after offload  23082.6416015625 MB
+Memory spike after cuda sdpa 23090.7880859375 MB
+1
+Memory after offload  23090.7666015625 MB
+Memory spike after cuda sdpa 23098.9130859375 MB
+1
+Memory after offload  23098.8916015625 MB
+Memory spike after cuda sdpa 23107.0380859375 MB
+1
+Memory after offload  23107.0166015625 MB
+Memory spike after cuda sdpa 23115.1630859375 MB
+1
+Memory after offload  23115.1416015625 MB
+Memory spike after cuda sdpa 23123.2880859375 MB
+1
+Memory after offload  23123.2666015625 MB
+Memory spike after cuda sdpa 23131.4130859375 MB
+1
+Memory after offload  23131.3916015625 MB
+Memory spike after cuda sdpa 23139.5380859375 MB
+1
+Memory after offload  23139.5166015625 MB
+Memory spike after cuda sdpa 23147.6630859375 MB
+1
+Memory after offload  23147.6416015625 MB
+Memory spike after cuda sdpa 23155.7880859375 MB
+1
+Memory after offload  23155.76708984375 MB
+Memory spike after cuda sdpa 23163.91357421875 MB
+1
+Memory after offload  23163.89208984375 MB
+Memory spike after cuda sdpa 23172.03857421875 MB
+1
+Memory after offload  23172.01708984375 MB
+Memory spike after cuda sdpa 23180.16357421875 MB
+1
+Memory after offload  23180.14208984375 MB
+Memory spike after cuda sdpa 23188.28857421875 MB
+1
+Memory after offload  23188.26708984375 MB
+Memory spike after cuda sdpa 23196.41357421875 MB
+1
+Memory after offload  23196.39208984375 MB
+Memory spike after cuda sdpa 23204.53857421875 MB
+1
+Memory after offload  23204.51708984375 MB
+Memory spike after cuda sdpa 23212.66357421875 MB
+1
+Memory after offload  23212.64208984375 MB
+Memory spike after cuda sdpa 23220.78857421875 MB
+1
+Memory after offload  23220.76708984375 MB
+Memory spike after cuda sdpa 23228.91357421875 MB
+1
+Memory after offload  23228.89208984375 MB
+Memory spike after cuda sdpa 23237.03857421875 MB
+1
+Memory after offload  23237.01708984375 MB
+Memory spike after cuda sdpa 23245.16357421875 MB
+1
+Memory after offload  23245.14208984375 MB
+Memory spike after cuda sdpa 23253.28857421875 MB
+1
+Memory after offload  23253.26708984375 MB
+Memory spike after cuda sdpa 23261.41357421875 MB
+1
+Memory after offload  23261.39208984375 MB
+Memory spike after cuda sdpa 23269.53857421875 MB
+1
+Memory after offload  23269.51708984375 MB
+Memory spike after cuda sdpa 23277.66357421875 MB
+1
+Memory after offload  23277.64208984375 MB
+Memory spike after cuda sdpa 23285.78857421875 MB
+1
+Memory after offload  23285.76708984375 MB
+Memory spike after cuda sdpa 23293.91357421875 MB
+1
+Memory after offload  23293.89208984375 MB
+Memory spike after cuda sdpa 23302.03857421875 MB
+1
+Memory after offload  23302.01708984375 MB
+Memory spike after cuda sdpa 23310.16357421875 MB
+1
+Memory after offload  23310.14208984375 MB
+Memory spike after cuda sdpa 23318.28857421875 MB
+1
+Memory after offload  23318.26708984375 MB
+Memory spike after cuda sdpa 23326.41357421875 MB
+1
+Memory after offload  23326.39208984375 MB
+Memory spike after cuda sdpa 23334.53857421875 MB
+1
+Memory after offload  23334.51708984375 MB
+Memory spike after cuda sdpa 23342.66357421875 MB
+1
+Memory after offload  23342.64208984375 MB
+Memory spike after cuda sdpa 23350.78857421875 MB
+1
+Memory after offload  23350.76708984375 MB
+Memory spike after cuda sdpa 23358.91357421875 MB
+1
+Memory after offload  23358.89208984375 MB
+Memory spike after cuda sdpa 23367.03857421875 MB
+1
+Memory after offload  23367.01708984375 MB
+Memory spike after cuda sdpa 23375.16357421875 MB
+1
+Memory after offload  23375.14208984375 MB
+Memory spike after cuda sdpa 23383.28857421875 MB
+1
+Memory after offload  23383.26708984375 MB
+Memory spike after cuda sdpa 23391.41357421875 MB
+1
+Memory after offload  23391.39208984375 MB
+Memory spike after cuda sdpa 23399.53857421875 MB
+1
+Memory after offload  23399.51708984375 MB
+Memory spike after cuda sdpa 23407.66357421875 MB
+1
+Memory after offload  23407.64208984375 MB
+Memory spike after cuda sdpa 23415.78857421875 MB
+1
+Memory after offload  23415.767578125 MB
+Memory spike after cuda sdpa 23423.9140625 MB
+1
+Memory after offload  23423.892578125 MB
+Memory spike after cuda sdpa 23432.0390625 MB
+1
+Memory after offload  23432.017578125 MB
+Memory spike after cuda sdpa 23440.1640625 MB
+1
+Memory after offload  23440.142578125 MB
+Memory spike after cuda sdpa 23448.2890625 MB
+1
+Memory after offload  23448.267578125 MB
+Memory spike after cuda sdpa 23456.4140625 MB
+1
+Memory after offload  23456.392578125 MB
+Memory spike after cuda sdpa 23464.5390625 MB
+1
+Memory after offload  23464.517578125 MB
+Memory spike after cuda sdpa 23472.6640625 MB
+1
+Memory after offload  23472.642578125 MB
+Memory spike after cuda sdpa 23480.7890625 MB
+1
+Memory after offload  23480.767578125 MB
+Memory spike after cuda sdpa 23488.9140625 MB
+1
+Memory after offload  23488.892578125 MB
+Memory spike after cuda sdpa 23497.0390625 MB
+1
+Memory after offload  23497.017578125 MB
+Memory spike after cuda sdpa 23505.1640625 MB
+1
+Memory after offload  23505.142578125 MB
+Memory spike after cuda sdpa 23513.2890625 MB
+1
+Memory after offload  23513.267578125 MB
+Memory spike after cuda sdpa 23521.4140625 MB
+1
+Memory after offload  23521.392578125 MB
+Memory spike after cuda sdpa 23529.5390625 MB
+1
+Memory after offload  23529.517578125 MB
+Memory spike after cuda sdpa 23537.6640625 MB
+1
+Memory after offload  23537.642578125 MB
+Memory spike after cuda sdpa 23545.7890625 MB
+1
+Memory after offload  23545.767578125 MB
+Memory spike after cuda sdpa 23553.9140625 MB
+1
+Memory after offload  23553.892578125 MB
+Memory spike after cuda sdpa 23562.0390625 MB
+1
+Memory after offload  23562.017578125 MB
+Memory spike after cuda sdpa 23570.1640625 MB
+1
+Memory after offload  23570.142578125 MB
+Memory spike after cuda sdpa 23578.2890625 MB
+1
+Memory after offload  23578.267578125 MB
+Memory spike after cuda sdpa 23586.4140625 MB
+1
+Memory after offload  23586.392578125 MB
+Memory spike after cuda sdpa 23594.5390625 MB
+1
+Memory after offload  23594.517578125 MB
+Memory spike after cuda sdpa 23602.6640625 MB
+1
+Memory after offload  23602.642578125 MB
+Memory spike after cuda sdpa 23610.7890625 MB
+1
+Memory after offload  23610.767578125 MB
+Memory spike after cuda sdpa 23618.9140625 MB
+1
+Memory after offload  23618.892578125 MB
+Memory spike after cuda sdpa 23627.0390625 MB
+1
+Memory after offload  23627.017578125 MB
+Memory spike after cuda sdpa 23635.1640625 MB
+1
+Memory after offload  23635.142578125 MB
+Memory spike after cuda sdpa 23643.2890625 MB
+1
+Memory after offload  23643.267578125 MB
+Memory spike after cuda sdpa 23651.4140625 MB
+1
+Memory after offload  23651.392578125 MB
+Memory spike after cuda sdpa 23659.5390625 MB
+1
+Memory after offload  23659.517578125 MB
+Memory spike after cuda sdpa 23667.6640625 MB
+1
+Memory after offload  23667.642578125 MB
+Memory spike after cuda sdpa 23675.7890625 MB
+1
+Memory after offload  23675.76806640625 MB
+Memory spike after cuda sdpa 23683.91455078125 MB
+1
+Memory after offload  23683.89306640625 MB
+Memory spike after cuda sdpa 23692.03955078125 MB
+1
+Memory after offload  23692.01806640625 MB
+Memory spike after cuda sdpa 23700.16455078125 MB
+1
+Memory after offload  23700.14306640625 MB
+Memory spike after cuda sdpa 23708.28955078125 MB
+1
+Memory after offload  23708.26806640625 MB
+Memory spike after cuda sdpa 23716.41455078125 MB
+1
+Memory after offload  23716.39306640625 MB
+Memory spike after cuda sdpa 23724.53955078125 MB
+1
+Memory after offload  23724.51806640625 MB
+Memory spike after cuda sdpa 23732.66455078125 MB
+1
+Memory after offload  23732.64306640625 MB
+Memory spike after cuda sdpa 23740.78955078125 MB
+1
+Memory after offload  23740.76806640625 MB
+Memory spike after cuda sdpa 23748.91455078125 MB
+1
+Memory after offload  23748.89306640625 MB
+Memory spike after cuda sdpa 23757.03955078125 MB
+1
+Memory after offload  23757.01806640625 MB
+Memory spike after cuda sdpa 23765.16455078125 MB
+1
+Memory after offload  23765.14306640625 MB
+Memory spike after cuda sdpa 23773.28955078125 MB
+1
+Memory after offload  23773.26806640625 MB
+Memory spike after cuda sdpa 23781.41455078125 MB
+1
+Memory after offload  23781.39306640625 MB
+Memory spike after cuda sdpa 23789.53955078125 MB
+1
+Memory after offload  23789.51806640625 MB
+Memory spike after cuda sdpa 23797.66455078125 MB
+1
+Memory after offload  23797.64306640625 MB
+Memory spike after cuda sdpa 23805.78955078125 MB
+1
+Memory after offload  23805.76806640625 MB
+Memory spike after cuda sdpa 23813.91455078125 MB
+1
+Memory after offload  23813.89306640625 MB
+Memory spike after cuda sdpa 23822.03955078125 MB
+1
+Memory after offload  23822.01806640625 MB
+Memory spike after cuda sdpa 23830.16455078125 MB
+1
+Memory after offload  23830.14306640625 MB
+Memory spike after cuda sdpa 23838.28955078125 MB
+1
+Memory after offload  23838.26806640625 MB
+Memory spike after cuda sdpa 23846.41455078125 MB
+1
+Memory after offload  23846.39306640625 MB
+Memory spike after cuda sdpa 23854.53955078125 MB
+1
+Memory after offload  23854.51806640625 MB
+Memory spike after cuda sdpa 23862.66455078125 MB
+1
+Memory after offload  23862.64306640625 MB
+Memory spike after cuda sdpa 23870.78955078125 MB
+1
+Memory after offload  23870.76806640625 MB
+Memory spike after cuda sdpa 23878.91455078125 MB
+1
+Memory after offload  23878.89306640625 MB
+Memory spike after cuda sdpa 23887.03955078125 MB
+1
+Memory after offload  23887.01806640625 MB
+Memory spike after cuda sdpa 23895.16455078125 MB
+1
+Memory after offload  23895.14306640625 MB
+Memory spike after cuda sdpa 23903.28955078125 MB
+1
+Memory after offload  23903.26806640625 MB
+Memory spike after cuda sdpa 23911.41455078125 MB
+1
+Memory after offload  23911.39306640625 MB
+Memory spike after cuda sdpa 23919.53955078125 MB
+1
+Memory after offload  23919.51806640625 MB
+Memory spike after cuda sdpa 23927.66455078125 MB
+1
+Memory after offload  23927.64306640625 MB
+Memory spike after cuda sdpa 23935.78955078125 MB
+1
+Memory after offload  23935.7685546875 MB
+Memory spike after cuda sdpa 23943.9150390625 MB
+1
+Memory after offload  23943.8935546875 MB
+Memory spike after cuda sdpa 23952.0400390625 MB
+1
+Memory after offload  23952.0185546875 MB
+Memory spike after cuda sdpa 23960.1650390625 MB
+1
+Memory after offload  23960.1435546875 MB
+Memory spike after cuda sdpa 23968.2900390625 MB
+1
+Memory after offload  23968.2685546875 MB
+Memory spike after cuda sdpa 23976.4150390625 MB
+1
+Memory after offload  23976.3935546875 MB
+Memory spike after cuda sdpa 23984.5400390625 MB
+1
+Memory after offload  23984.5185546875 MB
+Memory spike after cuda sdpa 23992.6650390625 MB
+1
+Memory after offload  23992.6435546875 MB
+Memory spike after cuda sdpa 24000.7900390625 MB
+1
+Memory after offload  24000.7685546875 MB
+Memory spike after cuda sdpa 24008.9150390625 MB
+1
+Memory after offload  24008.8935546875 MB
+Memory spike after cuda sdpa 24017.0400390625 MB
+1
+Memory after offload  24017.0185546875 MB
+Memory spike after cuda sdpa 24025.1650390625 MB
+1
+Memory after offload  24025.1435546875 MB
+Memory spike after cuda sdpa 24033.2900390625 MB
+1
+Memory after offload  24033.2685546875 MB
+Memory spike after cuda sdpa 24041.4150390625 MB
+1
+Memory after offload  24041.3935546875 MB
+Memory spike after cuda sdpa 24049.5400390625 MB
+1
+Memory after offload  24049.5185546875 MB
+Memory spike after cuda sdpa 24057.6650390625 MB
+1
+Memory after offload  24057.6435546875 MB
+Memory spike after cuda sdpa 24065.7900390625 MB
+1
+Memory after offload  24065.7685546875 MB
+Memory spike after cuda sdpa 24073.9150390625 MB
+1
+Memory after offload  24073.8935546875 MB
+Memory spike after cuda sdpa 24082.0400390625 MB
+1
+Memory after offload  24082.0185546875 MB
+Memory spike after cuda sdpa 24090.1650390625 MB
+1
+Memory after offload  24090.1435546875 MB
+Memory spike after cuda sdpa 24098.2900390625 MB
+1
+Memory after offload  24098.2685546875 MB
+Memory spike after cuda sdpa 24106.4150390625 MB
+1
+Memory after offload  24106.3935546875 MB
+Memory spike after cuda sdpa 24114.5400390625 MB
+1
+Memory after offload  24114.5185546875 MB
+Memory spike after cuda sdpa 24122.6650390625 MB
+1
+Memory after offload  24122.6435546875 MB
+Memory spike after cuda sdpa 24130.7900390625 MB
+1
+Memory after offload  24130.7685546875 MB
+Memory spike after cuda sdpa 24138.9150390625 MB
+1
+Memory after offload  24138.8935546875 MB
+Memory spike after cuda sdpa 24147.0400390625 MB
+1
+Memory after offload  24147.0185546875 MB
+Memory spike after cuda sdpa 24155.1650390625 MB
+1
+Memory after offload  24155.1435546875 MB
+Memory spike after cuda sdpa 24163.2900390625 MB
+1
+Memory after offload  24163.2685546875 MB
+Memory spike after cuda sdpa 24171.4150390625 MB
+1
+Memory after offload  24171.3935546875 MB
+Memory spike after cuda sdpa 24179.5400390625 MB
+1
+Memory after offload  24179.5185546875 MB
+Memory spike after cuda sdpa 24187.6650390625 MB
+1
+Memory after offload  24187.6435546875 MB
+Memory spike after cuda sdpa 24195.7900390625 MB
+1
+Memory after offload  24195.76904296875 MB
+Memory spike after cuda sdpa 24203.91552734375 MB
+1
+Memory after offload  24203.89404296875 MB
+Memory spike after cuda sdpa 24212.04052734375 MB
+1
+Memory after offload  24212.01904296875 MB
+Memory spike after cuda sdpa 24220.16552734375 MB
+1
+Memory after offload  24220.14404296875 MB
+Memory spike after cuda sdpa 24228.29052734375 MB
+1
+Memory after offload  24228.26904296875 MB
+Memory spike after cuda sdpa 24236.41552734375 MB
+1
+Memory after offload  24236.39404296875 MB
+Memory spike after cuda sdpa 24244.54052734375 MB
+1
+Memory after offload  24244.51904296875 MB
+Memory spike after cuda sdpa 24252.66552734375 MB
+1
+Memory after offload  24252.64404296875 MB
+Memory spike after cuda sdpa 24260.79052734375 MB
+1
+Memory after offload  24260.76904296875 MB
+Memory spike after cuda sdpa 24268.91552734375 MB
+1
+Memory after offload  24268.89404296875 MB
+Memory spike after cuda sdpa 24277.04052734375 MB
+1
+Memory after offload  24277.01904296875 MB
+Memory spike after cuda sdpa 24285.16552734375 MB
+1
+Memory after offload  24285.14404296875 MB
+Memory spike after cuda sdpa 24293.29052734375 MB
+1
+Memory after offload  24293.26904296875 MB
+Memory spike after cuda sdpa 24301.41552734375 MB
+1
+Memory after offload  24301.39404296875 MB
+Memory spike after cuda sdpa 24309.54052734375 MB
+1
+Memory after offload  24309.51904296875 MB
+Memory spike after cuda sdpa 24317.66552734375 MB
+1
+Memory after offload  24317.64404296875 MB
+Memory spike after cuda sdpa 24325.79052734375 MB
+1
+Memory after offload  24325.76904296875 MB
+Memory spike after cuda sdpa 24333.91552734375 MB
+1
+Memory after offload  24333.89404296875 MB
+Memory spike after cuda sdpa 24342.04052734375 MB
+1
+Memory after offload  24342.01904296875 MB
+Memory spike after cuda sdpa 24350.16552734375 MB
+1
+Memory after offload  24350.14404296875 MB
+Memory spike after cuda sdpa 24358.29052734375 MB
+1
+Memory after offload  24358.26904296875 MB
+Memory spike after cuda sdpa 24366.41552734375 MB
+1
+Memory after offload  24366.39404296875 MB
+Memory spike after cuda sdpa 24374.54052734375 MB
+1
+Memory after offload  24374.51904296875 MB
+Memory spike after cuda sdpa 24382.66552734375 MB
+1
+Memory after offload  24382.64404296875 MB
+Memory spike after cuda sdpa 24390.79052734375 MB
+1
+Memory after offload  24390.76904296875 MB
+Memory spike after cuda sdpa 24398.91552734375 MB
+1
+Memory after offload  24398.89404296875 MB
+Memory spike after cuda sdpa 24407.04052734375 MB
+1
+Memory after offload  24407.01904296875 MB
+Memory spike after cuda sdpa 24415.16552734375 MB
+1
+Memory after offload  24415.14404296875 MB
+Memory spike after cuda sdpa 24423.29052734375 MB
+1
+Memory after offload  24423.26904296875 MB
+Memory spike after cuda sdpa 24431.41552734375 MB
+1
+Memory after offload  24431.39404296875 MB
+Memory spike after cuda sdpa 24439.54052734375 MB
+1
+Memory after offload  24439.51904296875 MB
+Memory spike after cuda sdpa 24447.66552734375 MB
+1
+Memory after offload  24447.64404296875 MB
+Memory spike after cuda sdpa 24455.79052734375 MB
+1
+Memory after offload  24455.76953125 MB
+Memory spike after cuda sdpa 24463.916015625 MB
+1
+Memory after offload  24463.89453125 MB
+Memory spike after cuda sdpa 24472.041015625 MB
+1
+Memory after offload  24472.01953125 MB
+Memory spike after cuda sdpa 24480.166015625 MB
+1
+Memory after offload  24480.14453125 MB
+Memory spike after cuda sdpa 24488.291015625 MB
+1
+Memory after offload  24488.26953125 MB
+Memory spike after cuda sdpa 24496.416015625 MB
+1
+Memory after offload  24496.39453125 MB
+Memory spike after cuda sdpa 24504.541015625 MB
+1
+Memory after offload  24504.51953125 MB
+Memory spike after cuda sdpa 24512.666015625 MB
+1
+Memory after offload  24512.64453125 MB
+Memory spike after cuda sdpa 24520.791015625 MB
+1
+Memory after offload  24520.76953125 MB
+Memory spike after cuda sdpa 24528.916015625 MB
+1
+Memory after offload  24528.89453125 MB
+Memory spike after cuda sdpa 24537.041015625 MB
+1
+Memory after offload  24537.01953125 MB
+Memory spike after cuda sdpa 24545.166015625 MB
+1
+Memory after offload  24545.14453125 MB
+Memory spike after cuda sdpa 24553.291015625 MB
+1
+Memory after offload  24553.26953125 MB
+Memory spike after cuda sdpa 24561.416015625 MB
+1
+Memory after offload  24561.39453125 MB
+Memory spike after cuda sdpa 24569.541015625 MB
+1
+Memory after offload  24569.51953125 MB
+Memory spike after cuda sdpa 24577.666015625 MB
+1
+Memory after offload  24577.64453125 MB
+Memory spike after cuda sdpa 24585.791015625 MB
+1
+Memory after offload  24585.76953125 MB
+Memory spike after cuda sdpa 24593.916015625 MB
+1
+Memory after offload  24593.89453125 MB
+Memory spike after cuda sdpa 24602.041015625 MB
+1
+Memory after offload  24602.01953125 MB
+Memory spike after cuda sdpa 24610.166015625 MB
+1
+Memory after offload  24610.14453125 MB
+Memory spike after cuda sdpa 24618.291015625 MB
+1
+Memory after offload  24618.26953125 MB
+Memory spike after cuda sdpa 24626.416015625 MB
+1
+Memory after offload  24626.39453125 MB
+Memory spike after cuda sdpa 24634.541015625 MB
+1
+Memory after offload  24634.51953125 MB
+Memory spike after cuda sdpa 24642.666015625 MB
+1
+Memory after offload  24642.64453125 MB
+Memory spike after cuda sdpa 24650.791015625 MB
+1
+Memory after offload  24650.76953125 MB
+Memory spike after cuda sdpa 24658.916015625 MB
+1
+Memory after offload  24658.89453125 MB
+Memory spike after cuda sdpa 24667.041015625 MB
+1
+Memory after offload  24667.01953125 MB
+Memory spike after cuda sdpa 24675.166015625 MB
+1
+Memory after offload  24675.14453125 MB
+Memory spike after cuda sdpa 24683.291015625 MB
+1
+Memory after offload  24683.26953125 MB
+Memory spike after cuda sdpa 24691.416015625 MB
+1
+Memory after offload  24691.39453125 MB
+Memory spike after cuda sdpa 24699.541015625 MB
+1
+Memory after offload  24699.51953125 MB
+Memory spike after cuda sdpa 24707.666015625 MB
+1
+Memory after offload  24707.64453125 MB
+Memory spike after cuda sdpa 24715.791015625 MB
+1
+Memory after offload  24715.77001953125 MB
+Memory spike after cuda sdpa 24723.91650390625 MB
+1
+Memory after offload  24723.89501953125 MB
+Memory spike after cuda sdpa 24732.04150390625 MB
+1
+Memory after offload  24732.02001953125 MB
+Memory spike after cuda sdpa 24740.16650390625 MB
+1
+Memory after offload  24740.14501953125 MB
+Memory spike after cuda sdpa 24748.29150390625 MB
+1
+Memory after offload  24748.27001953125 MB
+Memory spike after cuda sdpa 24756.41650390625 MB
+1
+Memory after offload  24756.39501953125 MB
+Memory spike after cuda sdpa 24764.54150390625 MB
+1
+Memory after offload  24764.52001953125 MB
+Memory spike after cuda sdpa 24772.66650390625 MB
+1
+Memory after offload  24772.64501953125 MB
+Memory spike after cuda sdpa 24780.79150390625 MB
+1
+Memory after offload  24780.77001953125 MB
+Memory spike after cuda sdpa 24788.91650390625 MB
+1
+Memory after offload  24788.89501953125 MB
+Memory spike after cuda sdpa 24797.04150390625 MB
+1
+Memory after offload  24797.02001953125 MB
+Memory spike after cuda sdpa 24805.16650390625 MB
+1
+Memory after offload  24805.14501953125 MB
+Memory spike after cuda sdpa 24813.29150390625 MB
+1
+Memory after offload  24813.27001953125 MB
+Memory spike after cuda sdpa 24821.41650390625 MB
+1
+Memory after offload  24821.39501953125 MB
+Memory spike after cuda sdpa 24829.54150390625 MB
+1
+Memory after offload  24829.52001953125 MB
+Memory spike after cuda sdpa 24837.66650390625 MB
+1
+Memory after offload  24837.64501953125 MB
+Memory spike after cuda sdpa 24845.79150390625 MB
+1
+Memory after offload  24845.77001953125 MB
+Memory spike after cuda sdpa 24853.91650390625 MB
+1
+Memory after offload  24853.89501953125 MB
+Memory spike after cuda sdpa 24862.04150390625 MB
+1
+Memory after offload  24862.02001953125 MB
+Memory spike after cuda sdpa 24870.16650390625 MB
+1
+Memory after offload  24870.14501953125 MB
+Memory spike after cuda sdpa 24878.29150390625 MB
+1
+Memory after offload  24878.27001953125 MB
+Memory spike after cuda sdpa 24886.41650390625 MB
+1
+Memory after offload  24886.39501953125 MB
+Memory spike after cuda sdpa 24894.54150390625 MB
+1
+Memory after offload  24894.52001953125 MB
+Memory spike after cuda sdpa 24902.66650390625 MB
+1
+Memory after offload  24902.64501953125 MB
+Memory spike after cuda sdpa 24910.79150390625 MB
+1
+Memory after offload  24910.77001953125 MB
+Memory spike after cuda sdpa 24918.91650390625 MB
+1
+Memory after offload  24918.89501953125 MB
+Memory spike after cuda sdpa 24927.04150390625 MB
+1
+Memory after offload  24927.02001953125 MB
+Memory spike after cuda sdpa 24935.16650390625 MB
+1
+Memory after offload  24935.14501953125 MB
+Memory spike after cuda sdpa 24943.29150390625 MB
+1
+Memory after offload  24943.27001953125 MB
+Memory spike after cuda sdpa 24951.41650390625 MB
+1
+Memory after offload  24951.39501953125 MB
+Memory spike after cuda sdpa 24959.54150390625 MB
+1
+Memory after offload  24959.52001953125 MB
+Memory spike after cuda sdpa 24967.66650390625 MB
+1
+Memory after offload  24967.64501953125 MB
+Memory spike after cuda sdpa 24975.79150390625 MB
+1
+Memory after offload  24975.7705078125 MB
+Memory spike after cuda sdpa 24983.9169921875 MB
+1
+Memory after offload  24983.8955078125 MB
+Memory spike after cuda sdpa 24992.0419921875 MB
+1
+Memory after offload  24992.0205078125 MB
+Memory spike after cuda sdpa 25000.1669921875 MB
+1
+Memory after offload  25000.1455078125 MB
+Memory spike after cuda sdpa 25008.2919921875 MB
+1
+Memory after offload  25008.2705078125 MB
+Memory spike after cuda sdpa 25016.4169921875 MB
+1
+Memory after offload  25016.3955078125 MB
+Memory spike after cuda sdpa 25024.5419921875 MB
+1
+Memory after offload  25024.5205078125 MB
+Memory spike after cuda sdpa 25032.6669921875 MB
+1
+Memory after offload  25032.6455078125 MB
+Memory spike after cuda sdpa 25040.7919921875 MB
+1
+Memory after offload  25040.7705078125 MB
+Memory spike after cuda sdpa 25048.9169921875 MB
+1
+Memory after offload  25048.8955078125 MB
+Memory spike after cuda sdpa 25057.0419921875 MB
+1
+Memory after offload  25057.0205078125 MB
+Memory spike after cuda sdpa 25065.1669921875 MB
+1
+Memory after offload  25065.1455078125 MB
+Memory spike after cuda sdpa 25073.2919921875 MB
+1
+Memory after offload  25073.2705078125 MB
+Memory spike after cuda sdpa 25081.4169921875 MB
+1
+Memory after offload  25081.3955078125 MB
+Memory spike after cuda sdpa 25089.5419921875 MB
+1
+Memory after offload  25089.5205078125 MB
+Memory spike after cuda sdpa 25097.6669921875 MB
+1
+Memory after offload  25097.6455078125 MB
+Memory spike after cuda sdpa 25105.7919921875 MB
+1
+Memory after offload  25105.7705078125 MB
+Memory spike after cuda sdpa 25113.9169921875 MB
+1
+Memory after offload  25113.8955078125 MB
+Memory spike after cuda sdpa 25122.0419921875 MB
+1
+Memory after offload  25122.0205078125 MB
+Memory spike after cuda sdpa 25130.1669921875 MB
+1
+Memory after offload  25130.1455078125 MB

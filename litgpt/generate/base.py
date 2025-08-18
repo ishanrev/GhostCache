@@ -153,7 +153,7 @@ def generate_fn(
         include_prompt: Whether to output the prompt tokens.
         include_eos: Whether to output the stop tokens if generation stops early.
     """
-
+    print("Yes I use this function ----------------------------------")
     prompt_size = prompt.size(0)
     device = prompt.device
 
@@ -183,6 +183,7 @@ def generate_fn(
     input_pos_maxp1 = prompt_size if all(m.__class__.__name__ != "ThunderModule" for m in model.modules()) else None
     for current_idx in range(max_returned_tokens - prompt_size):
         # Generate the token
+        print(f"Decode step {current_idx}")
         token = next_token(
             model,
             input_pos,
@@ -199,27 +200,27 @@ def generate_fn(
         # For each stop sequence, we keep a running total of how many are matched in stop_progress.
         # If the current token matches the next token in the stop sequence, we increment the
         # running total and hold off on yielding the token.
-        for i, seq in enumerate(stop_tokens):
-            if int_token == seq[stop_progress[i]]:
-                stop_progress[i] += 1
-                if stop_progress[i] == len(seq):
-                    if include_eos:
-                        yield from tokens[yielded_idx:]
-                    return
-            else:
-                stop_progress[i] = 0
+        # for i, seq in enumerate(stop_tokens):
+        #     if int_token == seq[stop_progress[i]]:
+        #         stop_progress[i] += 1
+        #         if stop_progress[i] == len(seq):
+        #             if include_eos:
+        #                 yield from tokens[yielded_idx:]
+        #             return
+        #     else:
+        #         stop_progress[i] = 0
 
-        # Yield tokens that are not part of a stop sequence in progress.
-        # If there are no stop sequences, then that's all of them.
-        if stop_tokens:
-            safe_idx = len(tokens) - max(stop_progress)
-        else:
-            safe_idx = current_idx + 1  # include the token just generated
+        # # Yield tokens that are not part of a stop sequence in progress.
+        # # If there are no stop sequences, then that's all of them.
+        # if stop_tokens:
+        #     safe_idx = len(tokens) - max(stop_progress)
+        # else:
+        #     safe_idx = current_idx + 1  # include the token just generated
 
-        if yielded_idx < safe_idx:
-            y_tokens = tokens[yielded_idx:safe_idx]
-            yield from y_tokens
-            yielded_idx = safe_idx
+        # if yielded_idx < safe_idx:
+        #     y_tokens = tokens[yielded_idx:safe_idx]
+        #     yield from y_tokens
+        #     yielded_idx = safe_idx
 
         # Update input_pos for the next iteration.
         if prefill_token:

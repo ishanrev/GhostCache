@@ -10,8 +10,32 @@
 #include <ATen/core/Tensor.h>
 #include <ATen/TensorOperators.h>
 #include <pybind11/pybind11.h>
+#include <iostream>
 
+#include <c10/cuda/CUDACachingAllocator.h>
+#include <c10/cuda/CUDAFunctions.h>
+#include <iostream>
+#include <iomanip>
+#include <string>
 
+inline void print_allocated_mem_2(const std::string& prefix = "", int device = -1) {
+  if (device < 0) {
+    device = c10::cuda::current_device();
+}
+
+auto stats = c10::cuda::CUDACachingAllocator::getDeviceStats(device);
+
+// `allocated_bytes[0]` holds the "current" stat struct
+uint64_t bytes = stats.allocated_bytes[0].current;
+
+double mb = static_cast<double>(bytes) / (1024.0 * 1024.0);
+
+if (!prefix.empty()) {
+    std::cout << prefix << " ";
+}
+std::cout << "= " << std::fixed << std::setprecision(5)
+          << mb << " MB" << std::endl;
+}
 
 std::optional<at::Tensor> convert_boolean_attn_mask_(const std::optional<at::Tensor>& attn_mask, caffe2::TypeMeta dtype, double neg_inf) {
   
@@ -72,64 +96,76 @@ std::tuple<at::Tensor, at::Tensor> pre_process_group_query_attention_input(
 }
 
 
-std::tuple<at::Tensor, at::Tensor, at::Tensor> chunked_sdpa(
+void chunked_sdpa(
         const at::Tensor& query_, const at::Tensor& key, const at::Tensor& value,
         const std::optional<at::Tensor>& attn_mask_, double dropout_p, bool is_causal,
-        const std::optional<at::Tensor>& dropout_mask, std::optional<double> scale, bool enable_gqa) {
+        const std::optional<at::Tensor>& dropout_mask, std::optional<double> scale, bool enable_gqa,
+        at::Tensor& local_max, at::Tensor& local_output, at::Tensor& local_sum, int T
+
+      ) {
   C10_LOG_API_USAGE_ONCE("torch.sdpa.math_fallback");
+  
+  print_allocated_mem_2("On chunked entry");
   
   auto& ctx = at::globalContext();
   auto origin_dtype = query_.scalar_type();
-
+  
   
   auto attn_mask = attn_mask_;
   
   bool is_negative_scaling = scale.has_value() && scale.value() < 0.0;
   const auto scaling_factor =
-      calculate_scale(
-          query_, is_negative_scaling ? std::abs(scale.value()) : scale)
-          .sqrt();
-
-  const auto query = query_ *
-      (is_negative_scaling ? c10::SymFloat(0.0) - scaling_factor
-                           : scaling_factor);
-
-  if (is_causal) {
-    TORCH_CHECK(
-        !attn_mask.has_value(),
-        "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True");
-    TORCH_CHECK(
-        !query.is_nested() && !key.is_nested(),
-        "_scaled_dot_product_attention: Nested tensors for query / key are not supported when is_causal=True");
-
+  calculate_scale(
+    query_, is_negative_scaling ? std::abs(scale.value()) : scale)
+    .sqrt();
     
-    const auto L = query.sym_size(-2), S = key.sym_size(-2);
-    attn_mask =
-        at::ones_symint({L, S}, query.options().dtype(at::kBool)).tril();
-    attn_mask = convert_boolean_attn_mask(attn_mask, query.dtype());
-    }
-
-
+    const auto query = query_ *
+    (is_negative_scaling ? c10::SymFloat(0.0) - scaling_factor
+    : scaling_factor);
     
+  print_allocated_mem_2("On scale calculation");
+  // if (is_causal) {
+    //   TORCH_CHECK(
+      //       !attn_mask.has_value(),
+      //       "_scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True");
+      //   TORCH_CHECK(
+        //       !query.is_nested() && !key.is_nested(),
+        //       "_scaled_dot_product_attention: Nested tensors for query / key are not supported when is_causal=True");
+        
+        
+        //   const auto L = query.sym_size(-2), S = key.sym_size(-2);
+        //   attn_mask =
+        //       at::ones_symint({L, S}, query.options().dtype(at::kBool)).tril();
+        //   attn_mask = convert_boolean_attn_mask(attn_mask, query.dtype());
+        //   }
+        
+        
+        
+    print_allocated_mem_2("Before interleave");
     auto [key_expanded, value_expanded] = pre_process_group_query_attention_input(query, key, value, enable_gqa);
-
+    print_allocated_mem_2("After interleave");
+    
     auto attn = at::matmul(query, key_expanded.transpose(-2, -1) * scaling_factor);
-    if (attn_mask.has_value()) {
-
-      attn.add_(*attn_mask);
+    print_allocated_mem_2("After matmul");
+    // if (attn_mask.has_value()) {
+      //   attn_mask = convert_boolean_attn_mask(attn_mask, query.dtype());
+      //   attn.add_(*attn_mask);
       
-    }
-
-    // Custom chunking mechanisms.
-    auto [local_max, indices] = attn.max(-1, true);
-    auto exp_attn = torch::exp(attn-local_max);
-    auto local_sum = exp_attn.sum(-1, true);
-    auto local_output = at::matmul(exp_attn, value_expanded).to(origin_dtype);
-
+      // }
+      
+      // Custom chunking mechanisms.
+    print_allocated_mem_2("Before local copies matmul");
+    auto [local_max_temp, indices] = attn.max(-1, true);
+    local_max.copy_(local_max_temp.squeeze(-1));
+    auto exp_attn = torch::exp(attn-local_max_temp);
+    local_sum.copy_( exp_attn.sum(-1, true).squeeze(-1));
+    local_output.copy_( at::matmul(exp_attn, value_expanded).to(origin_dtype));
+    print_allocated_mem_2("After local copies");
+    
     
     // attn = at::_safe_softmax(attn, -1);
 
-    return std::make_tuple(local_max, local_output, local_sum);
+    // return std::make_tuple(local_max, local_output, local_sum);
 }
 
 
