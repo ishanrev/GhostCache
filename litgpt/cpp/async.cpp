@@ -176,7 +176,7 @@ torch::Tensor streamed_sdpa_cuda(OffloadManager& manager,
   c10::InferenceMode guard(true);    
     // Reference the intermediate tensors now itself.
   int device_index = c10::cuda::current_device();
-  print_allocated_mem("On entering CUDA sdpa main function ", device_index);
+  // print_allocated_mem("On entering CUDA sdpa main function ", device_index);
   auto local_max = manager.local_max;
   auto local_output = manager.local_output;
   auto local_sum = manager.local_sum;
@@ -216,7 +216,7 @@ torch::Tensor streamed_sdpa_cuda(OffloadManager& manager,
     auto torch_stream_compute = c10::cuda::getStreamFromExternal(manager.streamCompute, device_index);
     
     
-    print_allocated_mem("Before first SDPA", device_index);
+    // print_allocated_mem("Before first SDPA", device_index);
     {
           
       c10::cuda::CUDAStreamGuard guard(torch_stream_compute);
@@ -227,7 +227,7 @@ torch::Tensor streamed_sdpa_cuda(OffloadManager& manager,
       offset += first_T;
 
     }
-    print_allocated_mem("After first SDPA", device_index);
+    // print_allocated_mem("After first SDPA", device_index);
     
     
     std::array<torch::Tensor, 2> staging;
@@ -257,7 +257,7 @@ torch::Tensor streamed_sdpa_cuda(OffloadManager& manager,
       manager.streamLoad
     );
     cudaEventRecord(loaded[0], manager.streamLoad);
-    print_allocated_mem("After first copy", device_index);
+    // print_allocated_mem("After first copy", device_index);
     
     for(int x = 1; x <= N; x++){
 
@@ -282,7 +282,7 @@ torch::Tensor streamed_sdpa_cuda(OffloadManager& manager,
           );
 
           cudaEventRecord(loaded[cur], manager.streamLoad);
-          print_allocated_mem("After copy chunk" + x, device_index);
+          // print_allocated_mem("After copy chunk" + x, device_index);
           
         }
         cudaStreamWaitEvent(manager.streamCompute, loaded[prev], 0);
@@ -305,7 +305,7 @@ torch::Tensor streamed_sdpa_cuda(OffloadManager& manager,
           offset+=T;
 
           cudaEventRecord(done[prev], manager.streamCompute);
-          print_allocated_mem("After compute chunk" + x , device_index);
+          // print_allocated_mem("After compute chunk" + x , device_index);
           
         }
       

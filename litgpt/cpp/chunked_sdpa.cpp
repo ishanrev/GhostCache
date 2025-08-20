@@ -123,7 +123,7 @@ void chunked_sdpa(
     (is_negative_scaling ? c10::SymFloat(0.0) - scaling_factor
     : scaling_factor);
     
-  print_allocated_mem_2("On scale calculation");
+  // print_allocated_mem_2("On scale calculation");
   // if (is_causal) {
     //   TORCH_CHECK(
       //       !attn_mask.has_value(),
@@ -141,12 +141,12 @@ void chunked_sdpa(
         
         
         
-    print_allocated_mem_2("Before interleave");
+    // print_allocated_mem_2("Before interleave");
     auto [key_expanded, value_expanded] = pre_process_group_query_attention_input(query, key, value, enable_gqa);
-    print_allocated_mem_2("After interleave");
+    // print_allocated_mem_2("After interleave");
     
     auto attn = at::matmul(query, key_expanded.transpose(-2, -1) * scaling_factor);
-    print_allocated_mem_2("After matmul");
+    // print_allocated_mem_2("After matmul");
     // if (attn_mask.has_value()) {
       //   attn_mask = convert_boolean_attn_mask(attn_mask, query.dtype());
       //   attn.add_(*attn_mask);
@@ -154,13 +154,13 @@ void chunked_sdpa(
       // }
       
       // Custom chunking mechanisms.
-    print_allocated_mem_2("Before local copies matmul");
+    // print_allocated_mem_2("Before local copies matmul");
     auto [local_max_temp, indices] = attn.max(-1, true);
     local_max.copy_(local_max_temp.squeeze(-1));
     auto exp_attn = torch::exp(attn-local_max_temp);
     local_sum.copy_( exp_attn.sum(-1, true).squeeze(-1));
     local_output.copy_( at::matmul(exp_attn, value_expanded).to(origin_dtype));
-    print_allocated_mem_2("After local copies");
+    // print_allocated_mem_2("After local copies");
     
     
     // attn = at::_safe_softmax(attn, -1);

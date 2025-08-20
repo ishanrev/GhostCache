@@ -12,6 +12,7 @@
 #include <ATen/core/Tensor.h>
 #include <ATen/TensorOperators.h>
 #include <pybind11/pybind11.h>
+#include <cuda_runtime.h>
 
 using namespace torch::indexing;
 
