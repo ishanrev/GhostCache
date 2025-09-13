@@ -217,16 +217,16 @@ torch::Tensor streamed_sdpa_cuda(OffloadManager& manager,
     
     
     // print_allocated_mem("Before first SDPA", device_index);
-    {
+    // {
           
-      c10::cuda::CUDAStreamGuard guard(torch_stream_compute);
-      chunked_sdpa(
-        query_, key, value, attn_mask_,  dropout_p,  is_causal, dropout_mask, scale,  enable_gqa,
-        global_max, numerator, denominator, first_T
-      );
-      offset += first_T;
+    //   c10::cuda::CUDAStreamGuard guard(torch_stream_compute);
+    //   chunked_sdpa(
+    //     query_, key, value, attn_mask_,  dropout_p,  is_causal, dropout_mask, scale,  enable_gqa,
+    //     global_max, numerator, denominator, first_T
+    //   );
+    //   offset += first_T;
 
-    }
+    // }
     // print_allocated_mem("After first SDPA", device_index);
     
     
@@ -293,14 +293,25 @@ torch::Tensor streamed_sdpa_cuda(OffloadManager& manager,
           auto k_buffer = manager.gpu_buf[prev][0].narrow(2, 0, T );
           auto v_buffer = manager.gpu_buf[prev][1].narrow(2, 0, T );
           // attn_mask_.value().narrow(-1, offset, T)
-          chunked_sdpa(
-            query_, k_buffer, v_buffer, attn_mask_,  dropout_p,  is_causal, dropout_mask, scale,  enable_gqa,
-            local_max, local_output, local_sum, T
-          );
 
-          combine(
-            local_max, local_output, local_sum, numerator, denominator, global_max, T
-          );
+          if(x == 1){ // This means we are doing compute onthe first chunk which we have already loaded, so this needs to be used to initialize the numerator, denominator and the global_max
+            
+            chunked_sdpa(
+              query_, k_buffer, v_buffer, attn_mask_,  dropout_p,  is_causal, dropout_mask, scale,  enable_gqa,
+              global_max, numerator, denominator, T
+            );
+            // I dont need to do the combine obviously on this since this initilizes the local numerator and denominator
+          }else{
+            
+            chunked_sdpa(
+              query_, k_buffer, v_buffer, attn_mask_,  dropout_p,  is_causal, dropout_mask, scale,  enable_gqa,
+              local_max, local_output, local_sum, T
+            );
+  
+            combine(
+              local_max, local_output, local_sum, numerator, denominator, global_max, T
+            );
+          }
 
           offset+=T;
 

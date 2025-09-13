@@ -11,7 +11,9 @@ import numpy as np
 import torch
 from lightning.fabric.accelerators import CUDAAccelerator
 from lightning.fabric.plugins import BitsandbytesPrecision
+from lightning.fabric.plugins.precision.half import HalfPrecision
 from tqdm import tqdm
+from typing_extensions import override
 
 from litgpt.chat.base import generate as stream_generate_fn
 from litgpt.config import Config, name_to_config
@@ -33,6 +35,10 @@ from litgpt.utils import (
     save_config,
 )
 
+class HalfNoCast(HalfPrecision):
+    @override
+    def convert_output(self, data):
+        return data
 
 class LLM(torch.nn.Module):
     def __init__(
@@ -217,11 +223,16 @@ class LLM(torch.nn.Module):
                 accelerator = "mps"
             else:
                 accelerator = "cpu"
-
+            
+            
+            
+            precision = get_default_supported_precision(training=False)
+            print(f"precision: {precision}")
             fabric = L.Fabric(
                 accelerator=accelerator,
                 devices=1,
-                precision=get_default_supported_precision(training=False),
+                # precision= precision,
+                plugins = [HalfNoCast(precision)]
             )
 
             with fabric.init_module(empty_init=False):

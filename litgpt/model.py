@@ -35,7 +35,7 @@ class GPT(nn.Module):
             )
         )
         self.mask_cache: Optional[torch.Tensor] = None
-        self.max_seq_length = self.config.block_size
+        self.max_seq_length = self.config.block_size * 10
 
     @property
     def max_seq_length(self) -> int:
@@ -46,12 +46,12 @@ class GPT(nn.Module):
         """
         When doing inference, the sequences used might be shorter than the model's context length.
         This allows setting a smaller number to avoid allocating unused memory
-        """
         if value > self.config.block_size:
             raise ValueError(
                 f"Cannot attend to {value}, block size is only {self.config.block_size}."
                 " This is likely because the input text exceeds the supported context length of this model."
             )
+        """
         self._max_seq_length = value
         if not hasattr(self, "cos"):
             # first call
@@ -117,9 +117,12 @@ class GPT(nn.Module):
 
         """
         T = idx.size(1)
+        """
+        Dont need this for nwo, we dont want any limit on the sequencmaxe length
+
+        """
         if self.max_seq_length < T:
             raise ValueError(f"Cannot forward sequence of length {T}, max seq length is only {self.max_seq_length}.")
-
         if input_pos is not None:  # use the kv cache
             if input_pos.dim() > 2:
                 # otherwise, things go wrong in `apply_rope`
@@ -167,17 +170,22 @@ class GPT(nn.Module):
                 )
             else:
                 x = block(x, cos, sin, mask, input_pos, input_pos_maxp1)
+        
+        print("Done with all the blocks luckily")
+                
         x = self.transformer.ln_f(x)
         clamp_head = (
             partial(do_softcapping, thresh=self.config.final_logit_softcapping)
             if self.config.final_logit_softcapping is not None
             else nn.Identity()
         )
+        print("done with clamp head")
         if lm_head_chunk_size > 0:
             # chunk the lm head logits to reduce the peak memory used by autograd
             return [clamp_head(self.lm_head(x_i)) for x_i in x.split(lm_head_chunk_size, dim=1)]
         else:
             return clamp_head(self.lm_head(x))  # (B, T, padded_vocab_size)
+        print("Done with the actual clamping as well")
 
     @classmethod
     def from_name(cls, name: str, **kwargs: Any) -> Self:
@@ -432,11 +440,12 @@ class CausalSelfAttention(nn.Module):
             # if input_pos_maxp1<50:
             print(T)
             if T>1:
-                k, v = self.kv_cache(input_pos, k, v)
+                # k, v = self.kv_cache(input_pos, k, v)
            
                 print("Memory before Offload Manager initialization", torch.cuda.memory_allocated() / 1024**2, "MB")
-                self.kv_cache.offload_manager = OffloadManager(B, n_head, n_query_groups, head_size, k.dtype, 50, 100)
+                self.kv_cache.offload_manager = OffloadManager(B, n_head, n_query_groups, head_size, k.dtype, 1000, 100)
                 print("Memory after Offload Manager initialization", torch.cuda.memory_allocated() / 1024**2, "MB")
+                offload(self.kv_cache.offload_manager, k, v, input_pos)
                 
                 # if input_pos_maxp1 is not None:
                 #     # Subselect along sequence dimension
@@ -843,8 +852,8 @@ class KVCache(nn.Module):
     ) -> None:
         super().__init__()
         B, H, M, D = k_shape
-        self.register_buffer("k", torch.zeros(k_shape, device=device, dtype=dtype), persistent=False)
-        self.register_buffer("v", torch.zeros(v_shape, device=device, dtype=dtype), persistent=False)
+        self.register_buffer("k", torch.zeros((B,H,1,D), device=device, dtype=dtype), persistent=False)
+        self.register_buffer("v", torch.zeros((B,H,1,D), device=device, dtype=dtype), persistent=False)
         self.tokens_stored = torch.tensor(0, device = device, dtype = torch.int32)
         
 

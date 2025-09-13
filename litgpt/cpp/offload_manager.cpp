@@ -70,7 +70,7 @@ std::vector<OffloadedKVTensor>& OffloadManager::get_reference_list() {
 
 
 
-void offload(OffloadManager& offload_manager, torch::Tensor k, torch::Tensor v, torch::Tensor token_number){
+void offload_helper(OffloadManager& offload_manager, torch::Tensor k, torch::Tensor v, torch::Tensor token_number){
     // Offloading logic here that will actally be based on a lot  of cahcing strategies and everything hopefully fingers crossed basically - essentially
 
 
@@ -78,7 +78,13 @@ void offload(OffloadManager& offload_manager, torch::Tensor k, torch::Tensor v, 
     // First offload the new tensors
     k = k.cpu();
     v = v.cpu();
+    int T = k.size(2);
 
+    // Prefill phase
+
+  
+
+    // Decode Phase
     if(offload_manager.num_chunks_!=-1 && offload_manager.chunk_size_[offload_manager.num_chunks_] < offload_manager.max_chunk_size_){
 
       auto& offload_tensor = offload_manager.get_reference_list()[offload_manager.num_chunks_];
@@ -87,21 +93,15 @@ void offload(OffloadManager& offload_manager, torch::Tensor k, torch::Tensor v, 
         throw std::runtime_error("Attempted to access KV pair of an unintialized OffloadedKVTensor");
       }
       auto& kv_buffer = offload_tensor.ref.in_memory.value();
-      kv_buffer[0].narrow(2, num_filled, 1).copy_(k);               
-      kv_buffer[1].narrow(2, num_filled, 1).copy_(v);               
+      kv_buffer[0].narrow(2, num_filled, T).copy_(k);               
+      kv_buffer[1].narrow(2, num_filled, T).copy_(v);               
       
 
-      offload_manager.chunk_size_[offload_manager.num_chunks_]++;
+      offload_manager.chunk_size_[offload_manager.num_chunks_]+=T;
     }else{
-
-
-   
-    // Determine the location
 
         StorageType kv_location = StorageType::RAM;
 
-        // Move the tensor to the specific location depending on the location chosen - 
-        // further storages would require you to generate and create handshakes when you use the particular data transfer livraries so keep that in mind
         OffloadedKVTensor off_tensor;
         switch(kv_location){
           case StorageType::RAM: 
@@ -109,15 +109,10 @@ void offload(OffloadManager& offload_manager, torch::Tensor k, torch::Tensor v, 
             std::vector<int64_t> buffer_dimension = {2, k.size(0), k.size(1), offload_manager.max_chunk_size_, k.size(3) };
             auto options = torch::TensorOptions().dtype(k.dtype()).pinned_memory(true).device(torch::kCPU);
             auto kv_buffer = torch::zeros(buffer_dimension, options);
-            // auto v_buffer = torch::zeros(buffer_dimension, options);
-            // std::vector<TensorIndex> index = {
-            //   Slice(), Slice(), 0, Slice()
-            // };
-            // k_buffer.index_put_(index, k.cpu());
-            // v_buffer.index_put_(index, v.cpu());
+           
 
-            kv_buffer[0].narrow(2, 0, 1).copy_(k);
-            kv_buffer[1].narrow(2, 0, 1).copy_(v);
+            kv_buffer[0].narrow(2, 0, T).copy_(k);
+            kv_buffer[1].narrow(2, 0, T).copy_(v);
 
             LazyTensorReference reference = LazyTensorReference {
               .in_memory = kv_buffer,
@@ -136,13 +131,40 @@ void offload(OffloadManager& offload_manager, torch::Tensor k, torch::Tensor v, 
 
         offload_manager.add_reference(off_tensor);
         offload_manager.num_chunks_ +=1;
-        offload_manager.chunk_size_[offload_manager.num_chunks_] = 1;
+        offload_manager.chunk_size_[offload_manager.num_chunks_] = T;
 
     }
 
     return;
 
   }
+
+
+void offload(OffloadManager& offload_manager, torch::Tensor k, torch::Tensor v, torch::Tensor token_number){
+  int T = k.size(2);
+  if(T > 1){
+
+    int offset = 0;
+    int num_chunks_needed = (T / offload_manager.max_chunk_size_);
+    for(int x = 0; x < num_chunks_needed;x++ ){
+
+      offload_helper(offload_manager, k.narrow(2,offset, offload_manager.max_chunk_size_), v.narrow(2,offset, offload_manager.max_chunk_size_), token_number);
+      offset+=offload_manager.max_chunk_size_;
+    }
+
+    if (T % offload_manager.max_chunk_size_ > 0){
+      offload_helper(offload_manager, k.narrow(2,offset, T-offset), v.narrow(2,offset, T-offset), token_number);
+    }
+
+    return;
+  }
+
+  offload_helper(offload_manager, k, v, token_number);
+  
+}
+
+
+
 // Binding function
 void bind_offload_manager(pybind11::module_& m){
 

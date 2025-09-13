@@ -81,6 +81,7 @@ def next_token(
     **sample_kwargs: Dict[str, Any],
 ) -> torch.Tensor:
     logits = model(x, input_pos, input_pos_maxp1=input_pos_maxp1)
+    print("Finished logits conversion")
     _next = sample(logits, **sample_kwargs).to(dtype=torch.int64)
     return _next
 
@@ -160,8 +161,12 @@ def generate_fn(
     assert max_returned_tokens > prompt_size, (
         f"Not enough space for {prompt_size} prompt tokens in a context length of {max_returned_tokens}."
     )
-    if model.max_seq_length < max_returned_tokens - 1:
-        raise NotImplementedError(f"max_seq_length {model.max_seq_length} needs to be >= {max_returned_tokens - 1}")
+    
+    """
+        For now no need to have a token limit because this project supprots extended context lengths.
+    """
+    # if model.max_seq_length < max_returned_tokens - 1:
+    #     raise NotImplementedError(f"max_seq_length {model.max_seq_length} needs to be >= {max_returned_tokens - 1}")
 
     # Yield the prompt if include_prompt is True
     if include_prompt:
@@ -230,6 +235,9 @@ def generate_fn(
             input_pos.add_(1)
         if input_pos_maxp1 is not None:
             input_pos_maxp1 += 1
+            
+        # if current_idx == 0:
+        #     token = token.cuda()
 
     # Yield any remaining tokens
     if yielded_idx < len(tokens):
